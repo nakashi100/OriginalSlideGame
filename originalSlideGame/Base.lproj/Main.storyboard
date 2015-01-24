@@ -32,246 +32,195 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP2-Hy-KSm">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP2-Hy-KSm">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nxa-bP-z4Q">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BRK-6c-YDP">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Nxa-bP-z4Q"/>
+                                        <exclude reference="BRK-6c-YDP"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="50" y="147" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="Nxa-bP-z4Q"/>
+                                        <include reference="BRK-6c-YDP"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCB-aB-hMQ">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCB-aB-hMQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sey-Qg-T6a">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mkc-qq-Q5G">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="sey-Qg-T6a"/>
+                                        <exclude reference="mkc-qq-Q5G"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="153" y="147" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="sey-Qg-T6a"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-Da-8ab">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umC-vH-28L">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="umC-vH-28L"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="256" y="147" width="97" height="88"/>
-                                    <mask key="subviews">
-                                        <include reference="umC-vH-28L"/>
+                                        <include reference="mkc-qq-Q5G"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBL-85-Jhx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-Q1-ahf">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-AQ-qir">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="c5c-Q1-ahf"/>
+                                        <exclude reference="Ddp-AQ-qir"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="49" y="240" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="c5c-Q1-ahf"/>
+                                        <include reference="Ddp-AQ-qir"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGa-U8-t2I">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCn-Qe-hHy">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-5w-vdQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="17" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="-2" y="0.0" width="99" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="hCn-Qe-hHy"/>
+                                        <exclude reference="sbt-5w-vdQ"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="152" y="240" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="hCn-Qe-hHy"/>
+                                        <include reference="sbt-5w-vdQ"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QxG-hx-ybb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjt-w9-Zbj">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bse-0Y-r0x">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="Bjt-w9-Zbj"/>
+                                        <exclude reference="bse-0Y-r0x"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="255" y="240" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="Bjt-w9-Zbj"/>
+                                        <include reference="bse-0Y-r0x"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ab-Ay-ntH">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI1-Pk-A9I">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tj-UX-y4L">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="oI1-Pk-A9I"/>
+                                        <exclude reference="5tj-UX-y4L"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="50" y="333" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="oI1-Pk-A9I"/>
+                                        <include reference="5tj-UX-y4L"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBX-WX-9ap">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZx-ZZ-Ai6">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-Hn-fw8">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="UZx-ZZ-Ai6"/>
+                                        <exclude reference="wcD-Hn-fw8"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="153" y="333" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="UZx-ZZ-Ai6"/>
+                                        <include reference="wcD-Hn-fw8"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <view tag="9" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfG-Qg-9I0">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfG-Qg-9I0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-xe-57i">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
+                                    <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-Hu-Gdx">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="16" width="62" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
                                         </variation>
-                                    </label>
+                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="txJ-xe-57i"/>
+                                        <exclude reference="WcO-Hu-Gdx"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="256" y="333" width="97" height="88"/>
                                     <mask key="subviews">
-                                        <include reference="txJ-xe-57i"/>
+                                        <include reference="WcO-Hu-Gdx"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -287,13 +236,36 @@
                                     <action selector="playButton:" destination="NdR-dS-FN1" eventType="touchUpInside" id="IGg-8f-fdM"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-Da-8ab">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-Jq-ugX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3LK-Jq-ugX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="255" y="147" width="97" height="88"/>
+                                    <mask key="subviews">
+                                        <include reference="3LK-Jq-ugX"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YP2-Hy-KSm"/>
                                 <exclude reference="KCB-aB-hMQ"/>
-                                <exclude reference="kJ6-Da-8ab"/>
                                 <exclude reference="NBL-85-Jhx"/>
                                 <exclude reference="LGa-U8-t2I"/>
                                 <exclude reference="QxG-hx-ybb"/>
@@ -301,13 +273,13 @@
                                 <exclude reference="CBX-WX-9ap"/>
                                 <exclude reference="vfG-Qg-9I0"/>
                                 <exclude reference="7MK-7L-d60"/>
+                                <exclude reference="kJ6-Da-8ab"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YP2-Hy-KSm"/>
                                 <include reference="KCB-aB-hMQ"/>
-                                <include reference="kJ6-Da-8ab"/>
                                 <include reference="NBL-85-Jhx"/>
                                 <include reference="LGa-U8-t2I"/>
                                 <include reference="QxG-hx-ybb"/>
@@ -315,12 +287,29 @@
                                 <include reference="CBX-WX-9ap"/>
                                 <include reference="vfG-Qg-9I0"/>
                                 <include reference="7MK-7L-d60"/>
+                                <include reference="kJ6-Da-8ab"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Bdk-I9-mSp"/>
                     <connections>
-                        <outlet property="view1" destination="YP2-Hy-KSm" id="gXR-5i-9CI"/>
+                        <outlet property="image1" destination="BRK-6c-YDP" id="XMv-ae-vDN"/>
+                        <outlet property="image2" destination="mkc-qq-Q5G" id="9R9-nh-YgV"/>
+                        <outlet property="image3" destination="3LK-Jq-ugX" id="Q0f-fV-ley"/>
+                        <outlet property="image4" destination="Ddp-AQ-qir" id="pqO-X2-tAh"/>
+                        <outlet property="image5" destination="sbt-5w-vdQ" id="nYW-81-kI9"/>
+                        <outlet property="image6" destination="bse-0Y-r0x" id="l8a-aW-VeO"/>
+                        <outlet property="image7" destination="5tj-UX-y4L" id="JKc-Ds-ppZ"/>
+                        <outlet property="image8" destination="wcD-Hn-fw8" id="2H2-0d-HAc"/>
+                        <outlet property="image9" destination="WcO-Hu-Gdx" id="RBA-1k-OSy"/>
+                        <outlet property="view1" destination="YP2-Hy-KSm" id="edZ-v4-HVn"/>
+                        <outlet property="view2" destination="KCB-aB-hMQ" id="DjL-wq-eWL"/>
+                        <outlet property="view3" destination="kJ6-Da-8ab" id="qZ3-US-byQ"/>
+                        <outlet property="view4" destination="NBL-85-Jhx" id="Mwc-Nx-ZYL"/>
+                        <outlet property="view5" destination="LGa-U8-t2I" id="Lso-Pr-RgT"/>
+                        <outlet property="view6" destination="QxG-hx-ybb" id="qi2-fa-Xag"/>
+                        <outlet property="view7" destination="5Ab-Ay-ntH" id="D0k-pN-PTZ"/>
+                        <outlet property="view8" destination="CBX-WX-9ap" id="HVv-jL-XrH"/>
                         <outlet property="view9" destination="vfG-Qg-9I0" id="ELa-Jv-pwE"/>
                     </connections>
                 </viewController>
