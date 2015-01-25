@@ -29,6 +29,11 @@
     self.image9.image = [UIImage imageNamed:@"sample9"];
     
     
+    // 見本画像をセットする
+    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
+    
+    
+    
     // for文でループ処理を使いたいが、、、
 //    for (int i=1; i<10; i++) {
 //        NSString *imageNum = [NSString stringWithFormat:@"image%d", i];
@@ -61,7 +66,7 @@
     NSString *randPic7 = [NSString stringWithFormat:@"sample%@", self.randNums[6]];
     NSString *randPic8 = [NSString stringWithFormat:@"sample%@", self.randNums[7]];
     
-    self.image1.image = [UIImage imageNamed:randPic1];
+    self.image1.image = [UIImage imageNamed:randPic1];  //応用するためにはtagでセットしたほうがよさそう
     self.image2.image = [UIImage imageNamed:randPic2];
     self.image3.image = [UIImage imageNamed:randPic3];
     self.image4.image = [UIImage imageNamed:randPic4];
@@ -118,7 +123,8 @@
                 //
             }else if ([self.view viewWithTag:9] == nil) {
                 NSLog(@"成功です");
-//                [self.view viewWithTag:8] =
+                [self push];
+//                self.image8.frame = CGRectMake(100, 0, self.image8.frame.size.width, self.image8.frame.size.height);
             }
             break;
             
@@ -127,17 +133,37 @@
     }
     
     
-//    switch (touch.view.tag)
-//        case 8:
-////            if ([self.view viewWithTag:19] == nil) {
-//                    NSLog(@"成功");
-////            }
-//            break;
-//}
+//    NSLog(@"%@",[self.view viewWithTag:100]);
+    
+//    if ([self.view viewWithTag:9] == nil) {
+//        NSLog(@"二度目成功です");
+//    }
+//    
+//    if ([self.view viewWithTag:8] == nil) {
+//        NSLog(@"三度目成功です");
+//    }
 
-
+    NSLog(@"%@",[self.view viewWithTag:8]);
+    NSLog(@"%@",[self.view viewWithTag:9]);
     
 }
 
+
+
+
+
+- (IBAction)push{
+    [UIView animateWithDuration:0.1f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect rect = CGRectMake([self.view viewWithTag:8].frame.size.width+2, 0, [self.view viewWithTag:8].frame.size.width, [self.view viewWithTag:8].frame.size.height);
+                         [[self.view viewWithTag:8] setFrame:rect];
+                     }
+                     completion:^(BOOL finished){
+//                         [[self.view viewWithTag:8] setBackgroundColor:[UIColor redColor]];
+                    }
+     ];
+}
 
 @end

@@ -38,11 +38,11 @@
                                     <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BRK-6c-YDP">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -50,7 +50,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="50" y="147" width="97" height="88"/>
+                                    <rect key="frame" x="23" y="100" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="BRK-6c-YDP"/>
                                     </mask>
@@ -62,11 +62,11 @@
                                     <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mkc-qq-Q5G">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -74,9 +74,33 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="153" y="147" width="97" height="88"/>
+                                    <rect key="frame" x="115" y="100" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="mkc-qq-Q5G"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-Da-8ab">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-Jq-ugX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3LK-Jq-ugX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="207" y="100" width="90" height="90"/>
+                                    <mask key="subviews">
+                                        <include reference="3LK-Jq-ugX"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -86,11 +110,11 @@
                                     <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-AQ-qir">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -98,7 +122,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="49" y="240" width="97" height="88"/>
+                                    <rect key="frame" x="23" y="192" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="Ddp-AQ-qir"/>
                                     </mask>
@@ -110,11 +134,11 @@
                                     <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-5w-vdQ">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="-2" y="0.0" width="99" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -122,7 +146,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="240" width="97" height="88"/>
+                                    <rect key="frame" x="115" y="192" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="sbt-5w-vdQ"/>
                                     </mask>
@@ -134,11 +158,11 @@
                                     <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bse-0Y-r0x">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -146,7 +170,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="255" y="240" width="97" height="88"/>
+                                    <rect key="frame" x="207" y="192" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="bse-0Y-r0x"/>
                                     </mask>
@@ -158,11 +182,11 @@
                                     <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5tj-UX-y4L">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -170,23 +194,23 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="50" y="333" width="97" height="88"/>
+                                    <rect key="frame" x="23" y="284" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="5tj-UX-y4L"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBX-WX-9ap">
+                            <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBX-WX-9ap">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wcD-Hn-fw8">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -194,7 +218,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="153" y="333" width="97" height="88"/>
+                                    <rect key="frame" x="115" y="284" width="90" height="90"/>
                                     <mask key="subviews">
                                         <include reference="wcD-Hn-fw8"/>
                                     </mask>
@@ -203,69 +227,54 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfG-Qg-9I0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
+                                    <imageView hidden="YES" tag="20" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-Wj-aY5">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        </variation>
+                                    </imageView>
                                     <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-Hu-Gdx">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="Jl6-Wj-aY5"/>
                                         <exclude reference="WcO-Hu-Gdx"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="256" y="333" width="97" height="88"/>
+                                    <rect key="frame" x="207" y="284" width="90" height="90"/>
                                     <mask key="subviews">
+                                        <include reference="Jl6-Wj-aY5"/>
                                         <include reference="WcO-Hu-Gdx"/>
                                     </mask>
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MK-7L-d60">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="152" y="450" width="97" height="34"/>
+                                    <rect key="frame" x="112" y="409" width="97" height="34"/>
                                 </variation>
                                 <connections>
                                     <action selector="playButton:" destination="NdR-dS-FN1" eventType="touchUpInside" id="IGg-8f-fdM"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJ6-Da-8ab">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <subviews>
-                                    <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LK-Jq-ugX">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="97" height="88"/>
-                                        </variation>
-                                    </imageView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="3LK-Jq-ugX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="255" y="147" width="97" height="88"/>
-                                    <mask key="subviews">
-                                        <include reference="3LK-Jq-ugX"/>
-                                    </mask>
-                                </variation>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YP2-Hy-KSm"/>
                                 <exclude reference="KCB-aB-hMQ"/>
+                                <exclude reference="kJ6-Da-8ab"/>
                                 <exclude reference="NBL-85-Jhx"/>
                                 <exclude reference="LGa-U8-t2I"/>
                                 <exclude reference="QxG-hx-ybb"/>
@@ -273,13 +282,13 @@
                                 <exclude reference="CBX-WX-9ap"/>
                                 <exclude reference="vfG-Qg-9I0"/>
                                 <exclude reference="7MK-7L-d60"/>
-                                <exclude reference="kJ6-Da-8ab"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="YP2-Hy-KSm"/>
                                 <include reference="KCB-aB-hMQ"/>
+                                <include reference="kJ6-Da-8ab"/>
                                 <include reference="NBL-85-Jhx"/>
                                 <include reference="LGa-U8-t2I"/>
                                 <include reference="QxG-hx-ybb"/>
@@ -287,7 +296,6 @@
                                 <include reference="CBX-WX-9ap"/>
                                 <include reference="vfG-Qg-9I0"/>
                                 <include reference="7MK-7L-d60"/>
-                                <include reference="kJ6-Da-8ab"/>
                             </mask>
                         </variation>
                     </view>
@@ -302,6 +310,7 @@
                         <outlet property="image7" destination="5tj-UX-y4L" id="JKc-Ds-ppZ"/>
                         <outlet property="image8" destination="wcD-Hn-fw8" id="2H2-0d-HAc"/>
                         <outlet property="image9" destination="WcO-Hu-Gdx" id="RBA-1k-OSy"/>
+                        <outlet property="mihon9" destination="Jl6-Wj-aY5" id="FyQ-yd-f6b"/>
                         <outlet property="view1" destination="YP2-Hy-KSm" id="edZ-v4-HVn"/>
                         <outlet property="view2" destination="KCB-aB-hMQ" id="DjL-wq-eWL"/>
                         <outlet property="view3" destination="kJ6-Da-8ab" id="qZ3-US-byQ"/>

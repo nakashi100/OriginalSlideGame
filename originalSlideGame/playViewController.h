@@ -34,8 +34,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image9;
 
 
-@property NSMutableArray *randNums;
+@property (weak, nonatomic) IBOutlet UIImageView *mihon9;
 
+
+@property NSMutableArray *randNums;
 
 
 @end
