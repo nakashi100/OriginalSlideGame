@@ -44,6 +44,17 @@
 // tap判定用の透明view (tag 1〜9)
 
 
+// 管理用の配列
+@property NSMutableArray *viewArray1;
+@property NSMutableArray *viewArray2;
+@property NSMutableArray *viewArray3;
+@property NSMutableArray *viewArray4;
+@property NSMutableArray *viewArray5;
+@property NSMutableArray *viewArray6;
+@property NSMutableArray *viewArray7;
+@property NSMutableArray *viewArray8;
+@property NSMutableArray *viewArray9;
+
 
 
 @end

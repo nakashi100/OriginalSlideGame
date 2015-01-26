@@ -49,7 +49,7 @@
 
 - (IBAction)playButton:(id)sender {
     
-    // image9(tag:9)を削除する
+    // image9(tag:19)を削除する
      [[self.view viewWithTag:19] removeFromSuperview];
     
     
@@ -76,17 +76,17 @@
 
     
     
-    // ゲーム管理用の配列を作成する
-    // array[0]は空判定(0が空で1が空でない)、array[1]はtabの番号、array[2]は実際の値(パズル完成の判定に用いる))
-    NSMutableArray *viewArray1 = [@[@1,@11,self.randNums[0]]mutableCopy];
-    NSMutableArray *viewArray2 = [@[@1,@12,self.randNums[1]]mutableCopy];
-    NSMutableArray *viewArray3 = [@[@1,@13,self.randNums[2]]mutableCopy];
-    NSMutableArray *viewArray4 = [@[@1,@14,self.randNums[3]]mutableCopy];
-    NSMutableArray *viewArray5 = [@[@1,@15,self.randNums[4]]mutableCopy];
-    NSMutableArray *viewArray6 = [@[@1,@16,self.randNums[5]]mutableCopy];
-    NSMutableArray *viewArray7 = [@[@1,@17,self.randNums[6]]mutableCopy];
-    NSMutableArray *viewArray8 = [@[@1,@18,self.randNums[7]]mutableCopy];
-    NSMutableArray *viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0}を入れておく
+    // スライドしたときの処理で使用する配列を作成する
+    // array[0]はスライド空判定(0が空・1が空でない)、array[1]はimageがもつtagの番号、array[2]はtagの値(パズル完成の判定に用いる))
+    self.viewArray1 = [@[@1,@11,self.randNums[0]]mutableCopy];
+    self.viewArray2 = [@[@1,@12,self.randNums[1]]mutableCopy];
+    self.viewArray3 = [@[@1,@13,self.randNums[2]]mutableCopy];
+    self.viewArray4 = [@[@1,@14,self.randNums[3]]mutableCopy];
+    self.viewArray5 = [@[@1,@15,self.randNums[4]]mutableCopy];
+    self.viewArray6 = [@[@1,@16,self.randNums[5]]mutableCopy];
+    self.viewArray7 = [@[@1,@17,self.randNums[6]]mutableCopy];
+    self.viewArray8 = [@[@1,@18,self.randNums[7]]mutableCopy];
+    self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
 
     //うまくできない
 //    for (int i=1; i<10; i++) {
@@ -97,7 +97,7 @@
 }
 
 
-//重複しない乱数を発生させる関数(1〜8)
+//重複しない乱数を発生させるメソッド(1〜8)
 -(void)createRndArray{
     
     //配列を初期化
@@ -121,6 +121,7 @@
 }
 
 
+
 /****************************************************************
                         スライドした時の処理
 ****************************************************************/
@@ -129,56 +130,103 @@
 {
     UITouch *touch = [touches anyObject];
 
-    NSLog(@"タッチしたビューは、%@", touch.view);
-    NSLog(@"image1は、%@", self.image1.tag);
+//    NSLog(@"タッチしたビューは、%@", touch.view);
     
+    int aaa = 11;
     
-    
-    
-    
-    
-    
-    
-//    switch (touch.view.tag) {
-//        case 8:
-//             NSLog(@"やーやーやー");
-//            if ([self.view viewWithTag:5] == nil) {
-//                //
-//            }else if ([self.view viewWithTag:7] == nil) {
-//                //
-//            }else if ([self.view viewWithTag:9] == nil) {
-//                NSLog(@"成功です");
-//            if ([self.view viewWithTag:9] == nil) {
-//
-//                [self push];
-//                self.image8.frame = CGRectMake(100, 0, self.image8.frame.size.width, self.image8.frame.size.height);
-//            }
-//            break;
-//
-//        default:
-//            break;
-//    }
-//
+    switch (touch.view.tag) {
+            NSLog(@"タッチしたビューは、%@", touch.view);
+        
+        //--------------------------------------------------------------
+        case 8:
+            
+            if([self.viewArray9[0] intValue] == 0){
+                // タグを動かす
+                [self push:[self.viewArray8[1] intValue] xzahyo:92 yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray9 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
+                self.viewArray8 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            
+            
+            
+            
+            
+                /********************
+                    検証用コード
+                ********************/
+                // 入れ替え前
+//                NSLog(@"前のview%@", self.viewArray8);
+//                NSLog(@"後のview%@", self.viewArray9);
+                
+                //入れ替え後
+//                NSLog(@"前のview%@", self.viewArray8);
+//                NSLog(@"後のview%@", self.viewArray9);
 
+            break;
+            
+            
+        //--------------------------------------------------------------
+        case 9:
+            
+            break;
+            
+        //--------------------------------------------------------------
+        case 1:
+            
+            break;
+        //--------------------------------------------------------------
+        case 2:
+            
+            break;
+        //--------------------------------------------------------------
+        case 3:
+            
+            break;
+        //--------------------------------------------------------------
+        case 4:
+            
+            break;
+        //--------------------------------------------------------------
+        case 5:
+            
+            break;
+        //--------------------------------------------------------------
+        case 6:
+            
+            break;
+        //--------------------------------------------------------------
+        case 7:
+            
+            break;
+        //--------------------------------------------------------------
+        default:
+            
+            break;
+            }
     
+    }
+
+
+
+
+
+
+// スライドを動かすメソッド (tag番号とx座標とy座標を指定する)
+- (IBAction)push:(int)test xzahyo:(int)xzahyo yzahyo:(int)yzahyo {
+    [UIView animateWithDuration:0.1f
+                          delay:0.0f
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         CGRect rect = CGRectMake(xzahyo, yzahyo, self.image1.frame.size.width, self.image1.frame.size.height);
+                         [[self.view viewWithTag:test] setFrame:rect];
+                     }
+                     completion:^(BOOL finished){
+//                         [[self.view viewWithTag:test] setBackgroundColor:[UIColor redColor]];
+                    }
+     ];
 }
-
-
-
-
-//
-//- (IBAction)push{
-//    [UIView animateWithDuration:0.1f
-//                          delay:0.0f
-//                        options:UIViewAnimationOptionCurveEaseIn
-//                     animations:^{
-//                         CGRect rect = CGRectMake([self.view viewWithTag:8].frame.size.width+2, 0, [self.view viewWithTag:8].frame.size.width, [self.view viewWithTag:8].frame.size.height);
-//                         [[self.view viewWithTag:8] setFrame:rect];
-//                     }
-//                     completion:^(BOOL finished){
-//                         [[self.view viewWithTag:8] setBackgroundColor:[UIColor redColor]];
-//                    }
-//     ];
-//}
 
 @end
