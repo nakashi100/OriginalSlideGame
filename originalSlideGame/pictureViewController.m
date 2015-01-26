@@ -114,19 +114,55 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
-    
-    
-    
-    //UserDefautで画像のデータを保存する
-//    NSData *prePictureImageData = UIImagePNGRepresentation(self.displayPictureView.image);
-    NSData *prePictureImageData = UIImageJPEGRepresentation(self.displayPictureView.image , 1.0);
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:prePictureImageData forKey:@"temporaryPicture"];
-    [userDefault synchronize];
+    // 画像を分割
+    [self divImage:image];
+
 }
 
 
+
+// 画像を分割して配列に保存するメソッド
+- (NSMutableArray *)divImage:(UIImage *)image
+{
+    
+    int DVICOUNT = 3;   // 3×3にする場合
+    
+//    NSLog(@"ref::%@",image);
+    CGImageRef srcImageRef = [image CGImage];
+    
+    CGFloat blockWith = image.size.width / DVICOUNT;
+    CGFloat blockHeight = image.size.height / DVICOUNT;
+    
+    NSMutableArray *divImages = [[NSMutableArray alloc] init];
+    
+    for (int heightCount=0; heightCount < DVICOUNT; heightCount++) {
+        for(int widthCount=0; widthCount < DVICOUNT; widthCount++){
+            CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, CGRectMake(widthCount*blockWith, heightCount*blockHeight, blockWith, blockHeight));
+            UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
+            [divImages addObject:trimmedImage];
+        }
+    }
+    
+    
+    // UserDefaultsで引継ぐためにimageをdata型に変換して配列に格納し直す
+    NSMutableArray *divImageData = [NSMutableArray array];
+    
+    for(int i=0; i < [divImages count]; i++){
+        NSData *data = UIImageJPEGRepresentation(divImages[i], 1.0);
+        [divImageData addObject:data];
+    }
+    
+//    NSLog(@"個数は%d",[divImageData count]);
+    
+    
+    // UserDefautで画像のデータを保存
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:divImageData forKey:@"divImageData"];
+    [userDefault synchronize];
+    
+    
+    return divImages;
+}
 
 
 @end
