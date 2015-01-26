@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
 
+- (IBAction)useDefaultReset:(id)sender;
+
 @end

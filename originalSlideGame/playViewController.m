@@ -35,8 +35,8 @@
     
     // for文でループ処理を使いたいがうまくできない、、、
 //    for (int i=1; i<10; i++) {
-//        NSString *imageNum = [NSString stringWithFormat:@"image%d", i];
-//        NSString *sampleNum = [NSString stringWithFormat:@"sample%d", i];
+//        NSString *imageNum = [NSString stringWithFormat:@"image%d", i];　//こっちがうまくいかない
+//        NSString *sampleNum = [NSString stringWithFormat:@"sample%d", i]; //こっちはOK
 //        self.imageNum.image = [UIImage imageNamed:sampleNum];
 //    }
 }

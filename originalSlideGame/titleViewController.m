@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)useDefaultReset:(id)sender {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSLog(@"UserDefaultリセットしたよー!");
+}
 @end

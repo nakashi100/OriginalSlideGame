@@ -145,11 +145,13 @@
     
     
     // UserDefaultsで引継ぐためにimageをdata型に変換して配列に格納し直す
-    NSMutableArray *divImageData = [NSMutableArray array];
+    NSData *mihonPic = UIImageJPEGRepresentation(image, 1.0);
+    NSMutableArray *divPicData = [NSMutableArray array];
+    [divPicData addObject:mihonPic];    //divPicData[0]には見本画像を格納
     
     for(int i=0; i < [divImages count]; i++){
         NSData *data = UIImageJPEGRepresentation(divImages[i], 1.0);
-        [divImageData addObject:data];
+        [divPicData addObject:data];    // divPicData[1]〜[n]には分割画像を格納
     }
     
 //    NSLog(@"個数は%d",[divImageData count]);
@@ -157,7 +159,7 @@
     
     // UserDefautで画像のデータを保存
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:divImageData forKey:@"divImageData"];
+    [userDefault setObject:divPicData forKey:@"divPicData"];
     [userDefault synchronize];
     
     

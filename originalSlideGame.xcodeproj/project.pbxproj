@@ -10,6 +10,7 @@
 		C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4250B791A7375A9005B5F27 /* playViewController.m */; };
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
+		C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC9A1A766522005E25B0 /* confirmViewController.m */; };
 		C4A9D4F21A736D0900DA4AEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F11A736D0900DA4AEA /* main.m */; };
 		C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F41A736D0900DA4AEA /* AppDelegate.m */; };
 		C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */; };
@@ -36,6 +37,8 @@
 		C456DC941A76325F005E25B0 /* titleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleViewController.m; sourceTree = "<group>"; };
 		C456DC961A763303005E25B0 /* pictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pictureViewController.h; sourceTree = "<group>"; };
 		C456DC971A763303005E25B0 /* pictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureViewController.m; sourceTree = "<group>"; };
+		C456DC991A766522005E25B0 /* confirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmViewController.h; sourceTree = "<group>"; };
+		C456DC9A1A766522005E25B0 /* confirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmViewController.m; sourceTree = "<group>"; };
 		C4A9D4EC1A736D0900DA4AEA /* originalSlideGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalSlideGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A9D4F01A736D0900DA4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A9D4F11A736D0900DA4AEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 				C4250B791A7375A9005B5F27 /* playViewController.m */,
 				C456DC961A763303005E25B0 /* pictureViewController.h */,
 				C456DC971A763303005E25B0 /* pictureViewController.m */,
+				C456DC991A766522005E25B0 /* confirmViewController.h */,
+				C456DC9A1A766522005E25B0 /* confirmViewController.m */,
 				C4A9D4FF1A736D0A00DA4AEA /* Images.xcassets */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
 				C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */,
@@ -234,6 +239,7 @@
 			files = (
 				C456DC951A76325F005E25B0 /* titleViewController.m in Sources */,
 				C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */,
+				C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */,
 				C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */,
 				C456DC981A763303005E25B0 /* pictureViewController.m in Sources */,
 				C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */,

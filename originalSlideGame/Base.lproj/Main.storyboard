@@ -453,6 +453,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="215" y="400" width="39" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="VrV-J5-gG3" kind="push" id="9tf-Ka-77y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -482,18 +485,121 @@
             </objects>
             <point key="canvasLocation" x="1312.5" y="1004"/>
         </scene>
-        <!--View Controller-->
+        <!--Confirm View Controller-->
         <scene sceneID="0K4-ei-Xk4">
             <objects>
-                <viewController id="VrV-J5-gG3" sceneMemberID="viewController">
+                <viewController id="VrV-J5-gG3" customClass="confirmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t6h-Oi-Dhz"/>
                         <viewControllerLayoutGuide type="bottom" id="949-PG-sH8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I46-QZ-SCD">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-Ax-tpz">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="197" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsy-wv-PBX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="107" y="197" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-zp-lel">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="198" y="197" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KhP-cl-p14">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="289" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aSx-Il-osa">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="107" y="289" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k5C-tu-DaJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="198" y="288" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNA-xI-iqv">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="381" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VyH-cb-sFa">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="107" y="381" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JCK-g1-vQn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="198" y="381" width="90" height="90"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EQU-B5-BiU">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="92" y="69" width="120" height="120"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="KgE-Ax-tpz"/>
+                                <exclude reference="hsy-wv-PBX"/>
+                                <exclude reference="gBm-zp-lel"/>
+                                <exclude reference="KhP-cl-p14"/>
+                                <exclude reference="aSx-Il-osa"/>
+                                <exclude reference="k5C-tu-DaJ"/>
+                                <exclude reference="hNA-xI-iqv"/>
+                                <exclude reference="VyH-cb-sFa"/>
+                                <exclude reference="JCK-g1-vQn"/>
+                                <exclude reference="EQU-B5-BiU"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="KgE-Ax-tpz"/>
+                                <include reference="hsy-wv-PBX"/>
+                                <include reference="gBm-zp-lel"/>
+                                <include reference="KhP-cl-p14"/>
+                                <include reference="aSx-Il-osa"/>
+                                <include reference="k5C-tu-DaJ"/>
+                                <include reference="hNA-xI-iqv"/>
+                                <include reference="VyH-cb-sFa"/>
+                                <include reference="JCK-g1-vQn"/>
+                                <include reference="EQU-B5-BiU"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="GfT-uJ-24M"/>
+                    <connections>
+                        <outlet property="samplePic0" destination="EQU-B5-BiU" id="AGa-dg-zXK"/>
+                        <outlet property="samplePic1" destination="KgE-Ax-tpz" id="3ZF-X0-8gc"/>
+                        <outlet property="samplePic2" destination="hsy-wv-PBX" id="tHc-qt-mxV"/>
+                        <outlet property="samplePic3" destination="gBm-zp-lel" id="0Wb-j2-aP9"/>
+                        <outlet property="samplePic4" destination="KhP-cl-p14" id="Dw6-Yq-kpb"/>
+                        <outlet property="samplePic5" destination="aSx-Il-osa" id="sNm-7A-g4O"/>
+                        <outlet property="samplePic6" destination="k5C-tu-DaJ" id="xjP-1w-Jcy"/>
+                        <outlet property="samplePic7" destination="hNA-xI-iqv" id="rSC-d0-nPN"/>
+                        <outlet property="samplePic8" destination="VyH-cb-sFa" id="WVr-tT-h4a"/>
+                        <outlet property="samplePic9" destination="JCK-g1-vQn" id="Fnf-eZ-y1B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ui-Zr-vJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -511,6 +617,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO5-4x-iVc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="303" width="209" height="36"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="YOd-Nb-r9v" kind="push" id="b6z-qE-O7x"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -533,33 +652,36 @@
                                     <rect key="frame" x="0.0" y="84" width="307" height="86"/>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO5-4x-iVc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPc-Up-ULF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="CREATE">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="UD Reset">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="49" y="303" width="209" height="36"/>
+                                    <rect key="frame" x="229" y="268" width="78" height="64"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="YOd-Nb-r9v" kind="push" id="b6z-qE-O7x"/>
+                                    <action selector="useDefaultReset:" destination="Mpc-bT-tvy" eventType="touchUpInside" id="scL-Q6-aY3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="FO5-4x-iVc"/>
                                 <exclude reference="qa6-HW-obW"/>
                                 <exclude reference="MAd-Hn-ajh"/>
-                                <exclude reference="FO5-4x-iVc"/>
+                                <exclude reference="iPc-Up-ULF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="FO5-4x-iVc"/>
                                 <include reference="qa6-HW-obW"/>
                                 <include reference="MAd-Hn-ajh"/>
-                                <include reference="FO5-4x-iVc"/>
+                                <include reference="iPc-Up-ULF"/>
                             </mask>
                         </variation>
                     </view>
