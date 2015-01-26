@@ -17,20 +17,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // 写真を呼び出す
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *divPicturesData = [userDefault arrayForKey:@"divPicData"];
+    
+    // 写真のデータをdataからimageに変換する
+    self.pic0 = [UIImage imageWithData:divPicturesData[0]];
+    self.pic1 = [UIImage imageWithData:divPicturesData[1]];
+    self.pic2 = [UIImage imageWithData:divPicturesData[2]];
+    self.pic3 = [UIImage imageWithData:divPicturesData[3]];
+    self.pic4 = [UIImage imageWithData:divPicturesData[4]];
+    self.pic5 = [UIImage imageWithData:divPicturesData[5]];
+    self.pic6 = [UIImage imageWithData:divPicturesData[6]];
+    self.pic7 = [UIImage imageWithData:divPicturesData[7]];
+    self.pic8 = [UIImage imageWithData:divPicturesData[8]];
+    self.pic9 = [UIImage imageWithData:divPicturesData[9]];
+    
+    
+    // 写真のimageデータをimageにセットする
+    self.image1.image = self.pic1;
+    self.image2.image = self.pic2;
+    self.image3.image = self.pic3;
+    self.image4.image = self.pic4;
+    self.image5.image = self.pic5;
+    self.image6.image = self.pic6;
+    self.image7.image = self.pic7;
+    self.image8.image = self.pic8;
+    self.image9.image = self.pic9;
+    
+    
     // 1〜9の数字をimageにセットする
-    self.image1.image = [UIImage imageNamed:@"sample1"];
-    self.image2.image = [UIImage imageNamed:@"sample2"];
-    self.image3.image = [UIImage imageNamed:@"sample3"];
-    self.image4.image = [UIImage imageNamed:@"sample4"];
-    self.image5.image = [UIImage imageNamed:@"sample5"];
-    self.image6.image = [UIImage imageNamed:@"sample6"];
-    self.image7.image = [UIImage imageNamed:@"sample7"];
-    self.image8.image = [UIImage imageNamed:@"sample8"];
-    self.image9.image = [UIImage imageNamed:@"sample9"];
+//    self.image1.image = [UIImage imageNamed:@"sample1"];
+//    self.image2.image = [UIImage imageNamed:@"sample2"];
+//    self.image3.image = [UIImage imageNamed:@"sample3"];
+//    self.image4.image = [UIImage imageNamed:@"sample4"];
+//    self.image5.image = [UIImage imageNamed:@"sample5"];
+//    self.image6.image = [UIImage imageNamed:@"sample6"];
+//    self.image7.image = [UIImage imageNamed:@"sample7"];
+//    self.image8.image = [UIImage imageNamed:@"sample8"];
+//    self.image9.image = [UIImage imageNamed:@"sample9"];
     
     
     // 見本画像をセットする
-    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
+//    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
     
     
     // for文でループ処理を使いたいがうまくできない、、、
@@ -53,28 +82,28 @@
      [[self.view viewWithTag:19] removeFromSuperview];
     
     
-    // image1〜8を並び替える
+/**********************************************************************************
+    // image1〜8の中の数字(sample1〜9)を並び替える
     [self createRndArray];
     
-    NSString *randPic1 = [NSString stringWithFormat:@"sample%@", self.randNums[0]];
-    NSString *randPic2 = [NSString stringWithFormat:@"sample%@", self.randNums[1]];
-    NSString *randPic3 = [NSString stringWithFormat:@"sample%@", self.randNums[2]];
-    NSString *randPic4 = [NSString stringWithFormat:@"sample%@", self.randNums[3]];
-    NSString *randPic5 = [NSString stringWithFormat:@"sample%@", self.randNums[4]];
-    NSString *randPic6 = [NSString stringWithFormat:@"sample%@", self.randNums[5]];
-    NSString *randPic7 = [NSString stringWithFormat:@"sample%@", self.randNums[6]];
-    NSString *randPic8 = [NSString stringWithFormat:@"sample%@", self.randNums[7]];
-    
-    self.image1.image = [UIImage imageNamed:randPic1];
-    self.image2.image = [UIImage imageNamed:randPic2];
-    self.image3.image = [UIImage imageNamed:randPic3];
-    self.image4.image = [UIImage imageNamed:randPic4];
-    self.image5.image = [UIImage imageNamed:randPic5];
-    self.image6.image = [UIImage imageNamed:randPic6];
-    self.image7.image = [UIImage imageNamed:randPic7];
-    self.image8.image = [UIImage imageNamed:randPic8];
+//    NSString *randPic1 = [NSString stringWithFormat:@"sample%@", self.randNums[0]];
+//    NSString *randPic2 = [NSString stringWithFormat:@"sample%@", self.randNums[1]];
+//    NSString *randPic3 = [NSString stringWithFormat:@"sample%@", self.randNums[2]];
+//    NSString *randPic4 = [NSString stringWithFormat:@"sample%@", self.randNums[3]];
+//    NSString *randPic5 = [NSString stringWithFormat:@"sample%@", self.randNums[4]];
+//    NSString *randPic6 = [NSString stringWithFormat:@"sample%@", self.randNums[5]];
+//    NSString *randPic7 = [NSString stringWithFormat:@"sample%@", self.randNums[6]];
+//    NSString *randPic8 = [NSString stringWithFormat:@"sample%@", self.randNums[7]];
+//    
+//    self.image1.image = [UIImage imageNamed:randPic1];
+//    self.image2.image = [UIImage imageNamed:randPic2];
+//    self.image3.image = [UIImage imageNamed:randPic3];
+//    self.image4.image = [UIImage imageNamed:randPic4];
+//    self.image5.image = [UIImage imageNamed:randPic5];
+//    self.image6.image = [UIImage imageNamed:randPic6];
+//    self.image7.image = [UIImage imageNamed:randPic7];
+//    self.image8.image = [UIImage imageNamed:randPic8];
 
-    
     
     // スライドしたときの処理で使用する配列を作成する
     // array[0]はスライド空判定(0が空・1が空でない)、array[1]はimageがもつtagの番号、array[2]はtagの値(パズル完成の判定に用いる))
@@ -93,7 +122,13 @@
 //        NSString *testArray = [NSString stringWithFormat:@"viewArray%d",i];
 //        NSLog(@"%@",testArray);
 //    }
-
+**********************************************************************************/
+ 
+ 
+// image1〜8の中の数字を並び替える
+    // 実際にはrand関数を使ってpatternをランダムに指定する
+    int pattern = 1;
+    [self puzzlePattern:pattern];
 }
 
 
@@ -117,9 +152,45 @@
             [self.randNums addObject:@(num)];
         }
     }
-//    NSLog(@"%@",randNums);
+//    NSLog(@"%@",self.randNums);
 }
 
+
+// 解ける配列パターン(8種類以上もちたい)
+-(void)puzzlePattern:(int )num {
+    
+    switch (num) {
+        case 1:     //クリア済
+            self.image1.image = self.pic3;
+            self.image2.image = self.pic6;
+            self.image3.image = self.pic8;
+            self.image4.image = self.pic4;
+            self.image5.image = self.pic2;
+            self.image6.image = self.pic5;
+            self.image7.image = self.pic7;
+            self.image8.image = self.pic1;
+ 
+            self.viewArray1 = [@[@1,@11,@3]mutableCopy];
+            self.viewArray2 = [@[@1,@12,@6]mutableCopy];
+            self.viewArray3 = [@[@1,@13,@8]mutableCopy];
+            self.viewArray4 = [@[@1,@14,@4]mutableCopy];
+            self.viewArray5 = [@[@1,@15,@2]mutableCopy];
+            self.viewArray6 = [@[@1,@16,@5]mutableCopy];
+            self.viewArray7 = [@[@1,@17,@7]mutableCopy];
+            self.viewArray8 = [@[@1,@18,@1]mutableCopy];
+            self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
+            
+            break;
+            
+        case 2:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+}
 
 
 /*********************************************************************************
