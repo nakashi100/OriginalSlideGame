@@ -13,12 +13,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="NdR-dS-FN1" kind="relationship" relationship="rootViewController" id="Aa5-FJ-i7f"/>
+                        <segue destination="Mpc-bT-tvy" kind="relationship" relationship="rootViewController" id="bXG-Lg-eTl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kiH-hX-mmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-51" y="525"/>
+            <point key="canvasLocation" x="-552" y="525"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="gqH-ip-qHs">
@@ -405,7 +405,145 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaA-0y-xBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="525"/>
+            <point key="canvasLocation" x="1312.5" y="274"/>
+        </scene>
+        <!--Picture View Controller-->
+        <scene sceneID="ool-32-HH9">
+            <objects>
+                <viewController id="YOd-Nb-r9v" customClass="pictureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1r-gY-1tt"/>
+                        <viewControllerLayoutGuide type="bottom" id="l8j-3p-8Yn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7aE-K7-V6H">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Using favorite photographs, Let's make games only for yourself!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FAT-kU-v6F">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="125" width="289" height="184"/>
+                                </variation>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-1" y="64" width="314" height="315"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="47" y="385" width="195" height="44"/>
+                                </variation>
+                                <connections>
+                                    <action selector="createPictureBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="zk4-0I-gTN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="FAT-kU-v6F"/>
+                                <exclude reference="kBZ-E9-DBX"/>
+                                <exclude reference="J0f-pw-dKJ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="FAT-kU-v6F"/>
+                                <include reference="kBZ-E9-DBX"/>
+                                <include reference="J0f-pw-dKJ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="y6j-P5-ak3"/>
+                    <connections>
+                        <outlet property="displayPictureView" destination="kBZ-E9-DBX" id="RbV-4n-Y6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="urm-M3-tFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312.5" y="1004"/>
+        </scene>
+        <!--Title View Controller-->
+        <scene sceneID="G6z-Ra-VPB">
+            <objects>
+                <viewController id="Mpc-bT-tvy" customClass="titleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zax-ef-C4w"/>
+                        <viewControllerLayoutGuide type="bottom" id="dL6-jn-DyG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ez-6v-Jpw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="220" width="209" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="NdR-dS-FN1" kind="push" id="mfG-x8-h23"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" Original Slide Game" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MAd-Hn-ajh">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="84" width="307" height="86"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO5-4x-iVc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="303" width="209" height="36"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="YOd-Nb-r9v" kind="push" id="b6z-qE-O7x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qa6-HW-obW"/>
+                                <exclude reference="MAd-Hn-ajh"/>
+                                <exclude reference="FO5-4x-iVc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="qa6-HW-obW"/>
+                                <include reference="MAd-Hn-ajh"/>
+                                <include reference="FO5-4x-iVc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="oYx-MN-Uli"/>
+                    <connections>
+                        <outlet property="createButton" destination="FO5-4x-iVc" id="ott-86-PP3"/>
+                        <outlet property="playButton" destination="qa6-HW-obW" id="RyO-Ro-YRO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vbQ-WY-Cjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="525"/>
         </scene>
     </scenes>
 </document>
