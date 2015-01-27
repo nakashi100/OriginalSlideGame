@@ -69,7 +69,18 @@
 @property UIImage *pic9;
 
 
+// タイマーで使用するプロパティ
+- (IBAction)timerBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property NSTimer *myTimer;  //一定間隔でなにかする為のタイマー
+@property BOOL isStart;      //タイマーが動いているかのフラグ
+@property BOOL isFstCalled;  //タイマーがはじめて呼ばれたフラグ
+@property float second;       //秒を表す変数
+@property float timerCount;
+@property NSString *playTime;
 
+
+@property (weak, nonatomic) IBOutlet UIView *sampleView;
 
 
 @end

@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
 - (IBAction)retryBtn:(id)sender;
 - (IBAction)goTitleBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *resultTime;
+
+@property NSString *result;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "playViewController.h"
 #import "resultViewController.h"
+#import "resultViewController.h"
 
 @interface playViewController ()
 
@@ -34,7 +35,7 @@
     for (int i=1; i<10; i++) {
 //        self.image1.image = self.pic1; //やりたい処理はこれの繰り返し
         
-        NSString *imageViewNum = [NSString stringWithFormat:@"image%d", i];　//こっちがうまくいかない
+        NSString *imageViewNum = [NSString stringWithFormat:@"image%d", i]; //こっちがうまくいかない
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i]; //こっちはOK
         
         UIImageView *imageView = [self valueForKey:imageViewNum]; //これがself.image1(UIImageView型)となる
@@ -107,10 +108,14 @@
 **********************************************************************************/
  
  
-// image1〜8の中の数字を並び替える
-    // 実際にはrand関数を使ってpatternをランダムに指定する
-    int pattern = 1;
+    // image1〜8の中の数字を並び替える
+    int pattern = 1; // 実際にはrand関数を使ってpatternをランダムに指定する
     [self puzzlePattern:pattern];
+    
+    
+    // タイマーを起動する
+    [self timerStart];
+    
 }
 
 
@@ -137,42 +142,6 @@
 //    NSLog(@"%@",self.randNums);
 }
 
-
-// 解ける配列パターン(8種類以上もちたい)
--(void)puzzlePattern:(int )num {
-    
-    switch (num) {
-        case 1:     //クリア済
-            self.image1.image = self.pic3;
-            self.image2.image = self.pic6;
-            self.image3.image = self.pic8;
-            self.image4.image = self.pic4;
-            self.image5.image = self.pic2;
-            self.image6.image = self.pic5;
-            self.image7.image = self.pic7;
-            self.image8.image = self.pic1;
- 
-            self.viewArray1 = [@[@1,@11,@3]mutableCopy];
-            self.viewArray2 = [@[@1,@12,@6]mutableCopy];
-            self.viewArray3 = [@[@1,@13,@8]mutableCopy];
-            self.viewArray4 = [@[@1,@14,@4]mutableCopy];
-            self.viewArray5 = [@[@1,@15,@2]mutableCopy];
-            self.viewArray6 = [@[@1,@16,@5]mutableCopy];
-            self.viewArray7 = [@[@1,@17,@7]mutableCopy];
-            self.viewArray8 = [@[@1,@18,@1]mutableCopy];
-            self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
-            
-            break;
-            
-        case 2:
-            
-            break;
-            
-        default:
-            break;
-    }
-    
-}
 
 
 /*********************************************************************************
@@ -482,16 +451,120 @@
 }
 
 
-// パズル完成を判定するメソッド
-- (void)judge{
+// パズル完成後の処理
+- (void)judge {
     if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8)){
         
-        // Resultページへモーダルで遷移させる
-        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
-        [self presentViewController:controller animated:YES completion:nil];
+        
 
+        // タイマーを止めて、タイムを次のページへ引継ぐ
+        [self.myTimer invalidate];
+        resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
+        resultView.result = self.playTime;
+        
+        // Resultページへモーダルで遷移させる
+//        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
+        [self presentViewController:resultView animated:YES completion:nil];
+NSLog(@"%@",resultView.result);
     }
 }
 
+// タイマー機能メソッド
+- (void)timerStart {
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
+                                               target:self
+                                             selector:@selector(timer)  // 0.01秒毎にtimerを呼び出す
+                                             userInfo:nil
+                                              repeats:YES];
+//    self.isStart = NO;
+//    self.isFstCalled = NO;
+}
+
+- (void)timer{
+    self.timerCount = self.timerCount + 0.01f; // 0.01秒ずつ足してゆく
+    self.second = fmodf(self.timerCount, 10000); //00.00←ここのための処理。timerCount % 60(余剰)をsecondに入れたいが、float(double)では%が使えないのでfmodf(0,0)というのを使用
+//    self.minute = self.timerCount / 60; //00:00:00.00←ここのための処理。timerCount ÷ 60 を minute に入れる
+    
+    // ラベルに表示する
+    self.playTime = [NSString stringWithFormat:@"%6.2f", self.second]; //%05.2f は5桁で記述・小数点以下は2桁・不足は0で補う言う意味
+    self.timerLabel.text = self.playTime;
+    
+// 過去のベストタイムと比較して、最高タイムだったら配列に格納して使ってもよいかも
+}
+
+
+- (IBAction)timerBtn:(id)sender {
+    // タイマーを止める
+    [self.myTimer invalidate];
+    
+//    if (self.isStart){
+//        isStart = !isStart;
+//    }
+}
+
+
+/*********************************************************************************
+                    解ける配列パターン(8種類以上もちたい)
+ *********************************************************************************/
+-(void)puzzlePattern:(int )num {
+    
+    switch (num) {
+        case 1:     //クリア済
+            self.image1.image = self.pic3;
+            self.image2.image = self.pic6;
+            self.image3.image = self.pic8;
+            self.image4.image = self.pic4;
+            self.image5.image = self.pic2;
+            self.image6.image = self.pic5;
+            self.image7.image = self.pic7;
+            self.image8.image = self.pic1;
+            
+            self.viewArray1 = [@[@1,@11,@3]mutableCopy];
+            self.viewArray2 = [@[@1,@12,@6]mutableCopy];
+            self.viewArray3 = [@[@1,@13,@8]mutableCopy];
+            self.viewArray4 = [@[@1,@14,@4]mutableCopy];
+            self.viewArray5 = [@[@1,@15,@2]mutableCopy];
+            self.viewArray6 = [@[@1,@16,@5]mutableCopy];
+            self.viewArray7 = [@[@1,@17,@7]mutableCopy];
+            self.viewArray8 = [@[@1,@18,@1]mutableCopy];
+            self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
+            
+            break;
+            
+        case 2:
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+//
+//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+//    UITouch *touch = [touches anyObject];
+//    
+//    switch (touch.view.tag) {
+//        case <#constant#>:
+//            <#statements#>
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//}
+//
+//   - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [touches anyObject];
+//    
+//    //    NSLog(@"タッチしたビューは、%@", touch.view);
+//    //    CGPoint location = [[touches anyObject] locationInView:self];
+//    //    NSLog(@"タッチした座標は、%@", location);
+//
+//    
+//    switch (touch.view.tag) {
 
 @end
