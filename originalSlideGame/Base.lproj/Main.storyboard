@@ -23,7 +23,7 @@
         <!--Play View Controller-->
         <scene sceneID="gqH-ip-qHs">
             <objects>
-                <viewController id="NdR-dS-FN1" customClass="playViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playView" id="NdR-dS-FN1" customClass="playViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j9h-rk-iJB"/>
                         <viewControllerLayoutGuide type="bottom" id="SZM-fU-kzI"/>
@@ -407,6 +407,105 @@
             </objects>
             <point key="canvasLocation" x="1312.5" y="274"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="pzJ-Ss-cYB">
+            <objects>
+                <viewController storyboardIdentifier="resultView" id="ceH-a5-PbE" customClass="resultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OTH-2K-aFN"/>
+                        <viewControllerLayoutGuide type="bottom" id="RNs-ve-gCa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F6F-8u-QHv">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excellent! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-08-Veg">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="70" width="140" height="39"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDv-zO-POs">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="83" y="141" width="60" height="38"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="XX.XXX" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdD-bm-cJp">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="151" y="145" width="85" height="30"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H31-gy-YKH">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="TITLE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="366" width="113" height="43"/>
+                                </variation>
+                                <connections>
+                                    <action selector="goTitleBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="PBk-r7-0re"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Mx-o7l">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="RETRY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="97" y="308" width="113" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="retryBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="HFc-N5-bko"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ov-bq-8Nn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="123" y="214" width="60" height="60"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZIi-08-Veg"/>
+                                <exclude reference="VDv-zO-POs"/>
+                                <exclude reference="mdD-bm-cJp"/>
+                                <exclude reference="H31-gy-YKH"/>
+                                <exclude reference="iO5-Mx-o7l"/>
+                                <exclude reference="9Ov-bq-8Nn"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZIi-08-Veg"/>
+                                <include reference="VDv-zO-POs"/>
+                                <include reference="mdD-bm-cJp"/>
+                                <include reference="H31-gy-YKH"/>
+                                <include reference="iO5-Mx-o7l"/>
+                                <include reference="9Ov-bq-8Nn"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="twitterImage" destination="9Ov-bq-8Nn" id="1Pc-Ki-KD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Bq-gE-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2181" y="274"/>
+        </scene>
         <!--Picture View Controller-->
         <scene sceneID="ool-32-HH9">
             <objects>
@@ -416,6 +515,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l8j-3p-8Yn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7aE-K7-V6H">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Using favorite photographs, Let's make games only for yourself!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FAT-kU-v6F">
@@ -494,6 +594,7 @@
                         <viewControllerLayoutGuide type="bottom" id="949-PG-sH8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I46-QZ-SCD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgE-Ax-tpz">
@@ -608,7 +709,7 @@
         <!--Title View Controller-->
         <scene sceneID="G6z-Ra-VPB">
             <objects>
-                <viewController id="Mpc-bT-tvy" customClass="titleViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="titleView" id="Mpc-bT-tvy" customClass="titleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zax-ef-C4w"/>
                         <viewControllerLayoutGuide type="bottom" id="dL6-jn-DyG"/>

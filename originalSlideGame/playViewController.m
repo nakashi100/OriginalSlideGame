@@ -7,6 +7,7 @@
 //
 
 #import "playViewController.h"
+#import "resultViewController.h"
 
 @interface playViewController ()
 
@@ -503,7 +504,11 @@
 // パズル完成を判定するメソッド
 - (void)judge{
     if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8)){
-        NSLog(@"完成");
+        
+        // Resultページへモーダルで遷移させる
+        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
+        [self presentViewController:controller animated:YES completion:nil];
+
     }
 }
 
