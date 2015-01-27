@@ -18,57 +18,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 写真を呼び出す
+    // UserDefaultで保存した写真を呼び出す
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSArray *divPicturesData = [userDefault arrayForKey:@"divPicData"];
     
-    // 写真のデータをdataからimageに変換する
-    self.pic0 = [UIImage imageWithData:divPicturesData[0]];
-    self.pic1 = [UIImage imageWithData:divPicturesData[1]];
-    self.pic2 = [UIImage imageWithData:divPicturesData[2]];
-    self.pic3 = [UIImage imageWithData:divPicturesData[3]];
-    self.pic4 = [UIImage imageWithData:divPicturesData[4]];
-    self.pic5 = [UIImage imageWithData:divPicturesData[5]];
-    self.pic6 = [UIImage imageWithData:divPicturesData[6]];
-    self.pic7 = [UIImage imageWithData:divPicturesData[7]];
-    self.pic8 = [UIImage imageWithData:divPicturesData[8]];
-    self.pic9 = [UIImage imageWithData:divPicturesData[9]];
     
+    // 写真のデータをdata型からimage型に変換する
+    for (int i=0; i<10; i++) {
+//        self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し
+        NSString *picNum = [NSString stringWithFormat:@"pic%d", i];
+        [self setValue:[UIImage imageWithData:divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
+    }
     
-    // 写真のimageデータをimageにセットする
-    self.image1.image = self.pic1;
-    self.image2.image = self.pic2;
-    self.image3.image = self.pic3;
-    self.image4.image = self.pic4;
-    self.image5.image = self.pic5;
-    self.image6.image = self.pic6;
-    self.image7.image = self.pic7;
-    self.image8.image = self.pic8;
-    self.image9.image = self.pic9;
-    
-    
-    // 1〜9の数字をimageにセットする
-//    self.image1.image = [UIImage imageNamed:@"sample1"];
-//    self.image2.image = [UIImage imageNamed:@"sample2"];
-//    self.image3.image = [UIImage imageNamed:@"sample3"];
-//    self.image4.image = [UIImage imageNamed:@"sample4"];
-//    self.image5.image = [UIImage imageNamed:@"sample5"];
-//    self.image6.image = [UIImage imageNamed:@"sample6"];
-//    self.image7.image = [UIImage imageNamed:@"sample7"];
-//    self.image8.image = [UIImage imageNamed:@"sample8"];
-//    self.image9.image = [UIImage imageNamed:@"sample9"];
-    
+    // 写真のimageを各viewにセットする
+    for (int i=1; i<10; i++) {
+//        self.image1.image = self.pic1; //やりたい処理はこれの繰り返し
+        
+        NSString *imageViewNum = [NSString stringWithFormat:@"image%d", i];　//こっちがうまくいかない
+        NSString *picNum = [NSString stringWithFormat:@"pic%d", i]; //こっちはOK
+        
+        UIImageView *imageView = [self valueForKey:imageViewNum]; //これがself.image1(UIImageView型)となる
+        UIImage *pic = [self valueForKey:picNum]; //これがself.pic1(UIImage型)となる
+        
+        imageView.image = pic; //写真をセット
+    }
     
     // 見本画像をセットする
 //    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
     
-    
-    // for文でループ処理を使いたいがうまくできない、、、
-//    for (int i=1; i<10; i++) {
-//        NSString *imageNum = [NSString stringWithFormat:@"image%d", i];　//こっちがうまくいかない
-//        NSString *sampleNum = [NSString stringWithFormat:@"sample%d", i]; //こっちはOK
-//        self.imageNum.image = [UIImage imageNamed:sampleNum];
-//    }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
 }
 
 

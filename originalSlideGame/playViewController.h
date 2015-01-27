@@ -55,6 +55,7 @@
 @property NSMutableArray *viewArray8;
 @property NSMutableArray *viewArray9;
 
+
 // 分割画像用のプロパティ
 @property UIImage *pic0;
 @property UIImage *pic1;
@@ -66,6 +67,9 @@
 @property UIImage *pic7;
 @property UIImage *pic8;
 @property UIImage *pic9;
+
+
+
 
 
 @end
