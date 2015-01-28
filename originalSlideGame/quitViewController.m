@@ -8,6 +8,7 @@
 
 #import "quitViewController.h"
 #import "UIViewController+MJPopupViewController.h"
+#import "playViewController.h"
 
 @interface quitViewController ()
 
@@ -18,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+NSLog(@"テスト1");
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,8 +31,10 @@
 
 
 - (IBAction)continueBtn:(id)sender {
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
-//    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
+    
+NSLog(@"テスト2");
+//    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
 }
 
 - (IBAction)quitBtn:(id)sender {

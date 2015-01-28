@@ -28,15 +28,14 @@
     
     // 写真のデータをdata型からimage型に変換する
     for (int i=0; i<10; i++) {
-//        self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し
+        // self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i];
         [self setValue:[UIImage imageWithData:divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
     }
     
     // 写真のimageを各viewにセットする
     for (int i=1; i<10; i++) {
-//        self.image1.image = self.pic1; //やりたい処理はこれの繰り返し
-        
+        //　self.image1.image = self.pic1; //やりたい処理はこれの繰り返し
         NSString *imageViewNum = [NSString stringWithFormat:@"image%d", i]; //こっちがうまくいかない
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i]; //こっちはOK
         
@@ -46,13 +45,23 @@
         imageView.image = pic; //写真をセット
     }
     
-    // 見本画像をセットする
+    
+    //タイマーの初期設定
+    self.isStart = NO;
+    self.isFstCalled = NO;
+    
+//    見本画像をセットする
 //    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
     
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
+//    if (self.isFstCalled = NO) {
+//        [self timerStart];
+//    }
+    
 }
 
 
@@ -494,9 +503,11 @@ NSLog(@"%@",resultView.result);
                                              selector:@selector(timer)  // 0.01秒毎にtimerを呼び出す
                                              userInfo:nil
                                               repeats:YES];
-//    self.isStart = NO;
-//    self.isFstCalled = NO;
+    self.isStart = YES;
+    self.isFstCalled = NO;
 }
+
+
 
 - (void)timer{
     self.timerCount = self.timerCount + 0.01f; // 0.01秒ずつ足してゆく
@@ -510,21 +521,19 @@ NSLog(@"%@",resultView.result);
 // 過去のベストタイムと比較して、最高タイムだったら配列に格納して使ってもよいかも
 }
 
+
+
 - (IBAction)timerBtn:(id)sender {
     // タイマーを止める
-    [self.myTimer invalidate];
-    
-//    if (self.isStart){
-//        isStart = !isStart;
-//    }
+    if (self.isStart) {
+        [self.myTimer invalidate];
+        self.isStart = !self.isStart;
+    }
     
     
     // quit画面を表示する
-    quitViewController *quitView = [self.storyboard instantiateViewControllerWithIdentifier:@"quitView"];
-    [self presentPopupViewController:quitView animationType:MJPopupViewAnimationSlideTopTop];
-    
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
-    
+//    quitViewController *quitView = [self.storyboard instantiateViewControllerWithIdentifier:@"quitView"];
+//    [self presentPopupViewController:quitView animationType:MJPopupViewAnimationSlideTopTop];
     
 }
 
@@ -537,7 +546,7 @@ NSLog(@"%@",resultView.result);
         case 30:
             self.sampleImageView.image = nil;
             break;
-            
+
         default:
             break;
     }
@@ -589,6 +598,35 @@ NSLog(@"%@",resultView.result);
 
 
 
+
+
+- (IBAction)testBtn:(id)sender {
+    
+    // 全画面サイズのViewを作成
+    UIView *uiAdd = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 480)];
+    // 確認のために赤くする
+    uiAdd.backgroundColor = [UIColor redColor];
+    // 追加したViewを識別するため（ここも調査不足だけどcloseAddViewのsenderを使えば不要かも
+    uiAdd.tag = 255;
+    // タッチイベントを取れるようにする
+    uiAdd.userInteractionEnabled = YES;
+    // タップジェスチャでcloseAddViewメソッドを実行させる
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeAddView:)];
+    [uiAdd addGestureRecognizer:tapGesture];
+    // サブビューに作ったUIViewを追加する
+    [self.view addSubview:uiAdd];
+}
+
+// タッチジェスチャで実行されるメソッド
+-(void)closeAddView:(UITapGestureRecognizer*)sender {
+    // 上に書いてる通り、senderで判別できるかもしれない
+    UIView *uiAdd = [self.view viewWithTag:255];
+    if(uiAdd)
+    {
+        // この方法だと更に子を入れた時とか、このUIViewとかちゃんと解放されるのか…。
+        [uiAdd removeFromSuperview];
+    }
+}
 
 
 @end

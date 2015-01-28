@@ -83,5 +83,6 @@
 @property (weak, nonatomic) IBOutlet UIView *sampleView;
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
+- (IBAction)testBtn:(id)sender;
 
 @end
