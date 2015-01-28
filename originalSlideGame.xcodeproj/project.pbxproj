@@ -11,6 +11,11 @@
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
 		C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC9A1A766522005E25B0 /* confirmViewController.m */; };
+		C47865BA1A790DBB0090350E /* quitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47865B81A790DBB0090350E /* quitViewController.m */; };
+		C47865BB1A790DBB0090350E /* quitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C47865B91A790DBB0090350E /* quitViewController.xib */; };
+		C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47865BC1A790E480090350E /* QuartzCore.framework */; };
+		C47865C31A790EFC0090350E /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C47865C01A790EFC0090350E /* MJPopupBackgroundView.m */; };
+		C47865C41A790EFC0090350E /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47865C21A790EFC0090350E /* UIViewController+MJPopupViewController.m */; };
 		C4A9D4F21A736D0900DA4AEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F11A736D0900DA4AEA /* main.m */; };
 		C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F41A736D0900DA4AEA /* AppDelegate.m */; };
 		C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */; };
@@ -40,6 +45,14 @@
 		C456DC971A763303005E25B0 /* pictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureViewController.m; sourceTree = "<group>"; };
 		C456DC991A766522005E25B0 /* confirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmViewController.h; sourceTree = "<group>"; };
 		C456DC9A1A766522005E25B0 /* confirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmViewController.m; sourceTree = "<group>"; };
+		C47865B71A790DBB0090350E /* quitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quitViewController.h; sourceTree = "<group>"; };
+		C47865B81A790DBB0090350E /* quitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = quitViewController.m; sourceTree = "<group>"; };
+		C47865B91A790DBB0090350E /* quitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = quitViewController.xib; sourceTree = "<group>"; };
+		C47865BC1A790E480090350E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C47865BF1A790EFC0090350E /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJPopupBackgroundView.h; path = ../../../../../Desktop/popUpView/MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		C47865C01A790EFC0090350E /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJPopupBackgroundView.m; path = ../../../../../Desktop/popUpView/MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		C47865C11A790EFC0090350E /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MJPopupViewController.h"; path = "../../../../../Desktop/popUpView/UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		C47865C21A790EFC0090350E /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MJPopupViewController.m"; path = "../../../../../Desktop/popUpView/UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		C4A9D4EC1A736D0900DA4AEA /* originalSlideGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalSlideGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A9D4F01A736D0900DA4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A9D4F11A736D0900DA4AEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +88,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C47865C51A7910DB0090350E /* popUpView */ = {
+			isa = PBXGroup;
+			children = (
+				C47865BF1A790EFC0090350E /* MJPopupBackgroundView.h */,
+				C47865C01A790EFC0090350E /* MJPopupBackgroundView.m */,
+				C47865C11A790EFC0090350E /* UIViewController+MJPopupViewController.h */,
+				C47865C21A790EFC0090350E /* UIViewController+MJPopupViewController.m */,
+			);
+			name = popUpView;
+			sourceTree = "<group>";
+		};
 		C4A9D4E31A736D0900DA4AEA = {
 			isa = PBXGroup;
 			children = (
 				C4A9D4EE1A736D0900DA4AEA /* originalSlideGame */,
 				C4A9D50B1A736D0A00DA4AEA /* originalSlideGameTests */,
 				C4A9D4ED1A736D0900DA4AEA /* Products */,
+				C47865BC1A790E480090350E /* QuartzCore.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +134,10 @@
 				C456DC9A1A766522005E25B0 /* confirmViewController.m */,
 				C4F3327F1A771C1700374362 /* resultViewController.h */,
 				C4F332801A771C1700374362 /* resultViewController.m */,
+				C47865B71A790DBB0090350E /* quitViewController.h */,
+				C47865B81A790DBB0090350E /* quitViewController.m */,
+				C47865B91A790DBB0090350E /* quitViewController.xib */,
+				C47865C51A7910DB0090350E /* popUpView */,
 				C4A9D4FF1A736D0A00DA4AEA /* Images.xcassets */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
 				C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */,
@@ -223,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4A9D4FE1A736D0A00DA4AEA /* Main.storyboard in Resources */,
+				C47865BB1A790DBB0090350E /* quitViewController.xib in Resources */,
 				C4A9D5031A736D0A00DA4AEA /* LaunchScreen.xib in Resources */,
 				C4A9D5001A736D0A00DA4AEA /* Images.xcassets in Resources */,
 			);
@@ -242,9 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C47865C41A790EFC0090350E /* UIViewController+MJPopupViewController.m in Sources */,
 				C456DC951A76325F005E25B0 /* titleViewController.m in Sources */,
+				C47865BA1A790DBB0090350E /* quitViewController.m in Sources */,
 				C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */,
 				C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */,
+				C47865C31A790EFC0090350E /* MJPopupBackgroundView.m in Sources */,
 				C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */,
 				C456DC981A763303005E25B0 /* pictureViewController.m in Sources */,
 				C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */,

@@ -8,7 +8,9 @@
 
 #import "playViewController.h"
 #import "resultViewController.h"
-#import "resultViewController.h"
+#import "quitViewController.h"
+#import "UIViewController+MJPopupViewController.h"
+
 
 @interface playViewController ()
 
@@ -422,7 +424,6 @@
         
         // 完成画像を表示する
         case 30:
-            self.test.backgroundColor = [UIColor redColor];
             self.sampleImageView.image = self.pic0;
             break;
 
@@ -516,6 +517,15 @@ NSLog(@"%@",resultView.result);
 //    if (self.isStart){
 //        isStart = !isStart;
 //    }
+    
+    
+    // quit画面を表示する
+    quitViewController *quitView = [self.storyboard instantiateViewControllerWithIdentifier:@"quitView"];
+    [self presentPopupViewController:quitView animationType:MJPopupViewAnimationSlideTopTop];
+    
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationFade];
+    
+    
 }
 
 
@@ -525,7 +535,6 @@ NSLog(@"%@",resultView.result);
     
     switch (touch.view.tag) {
         case 30:
-            self.test.backgroundColor = [UIColor blueColor];
             self.sampleImageView.image = nil;
             break;
             
