@@ -416,14 +416,30 @@
             }
             
             break;
-            
+
             
         //--------------------------------------------------------------------------
+        
+        // 完成画像を表示する
+        case 30:
+            self.test.backgroundColor = [UIColor redColor];
+            self.sampleImageView.image = self.pic0;
+            break;
+
+        
+        
         default:
             
             break;
     }
     
+    
+    switch (touch.view.tag) {
+            
+        default:
+            break;
+    }
+
     
     [self judge];
 }
@@ -469,6 +485,7 @@ NSLog(@"%@",resultView.result);
     }
 }
 
+
 // タイマー機能メソッド
 - (void)timerStart {
     self.myTimer = [NSTimer scheduledTimerWithTimeInterval:0.01
@@ -492,7 +509,6 @@ NSLog(@"%@",resultView.result);
 // 過去のベストタイムと比較して、最高タイムだったら配列に格納して使ってもよいかも
 }
 
-
 - (IBAction)timerBtn:(id)sender {
     // タイマーを止める
     [self.myTimer invalidate];
@@ -501,6 +517,25 @@ NSLog(@"%@",resultView.result);
 //        isStart = !isStart;
 //    }
 }
+
+
+// 完成画像を閉じる処理
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    
+    switch (touch.view.tag) {
+        case 30:
+            self.test.backgroundColor = [UIColor blueColor];
+            self.sampleImageView.image = nil;
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
 
 
 /*********************************************************************************
@@ -542,29 +577,9 @@ NSLog(@"%@",resultView.result);
 }
 
 
-//
-//- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    UITouch *touch = [touches anyObject];
-//    
-//    switch (touch.view.tag) {
-//        case <#constant#>:
-//            <#statements#>
-//            break;
-//            
-//        default:
-//            break;
-//    }
-//}
-//
-//   - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [touches anyObject];
-//    
-//    //    NSLog(@"タッチしたビューは、%@", touch.view);
-//    //    CGPoint location = [[touches anyObject] locationInView:self];
-//    //    NSLog(@"タッチした座標は、%@", location);
-//
-//    
-//    switch (touch.view.tag) {
+
+
+
+
 
 @end

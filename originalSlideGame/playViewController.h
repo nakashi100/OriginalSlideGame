@@ -57,8 +57,8 @@
 
 
 // 分割画像用のプロパティ
-@property UIImage *pic0;
-@property UIImage *pic1;
+@property UIImage *pic0;    // 完成画像
+@property UIImage *pic1;    // 分割画像
 @property UIImage *pic2;
 @property UIImage *pic3;
 @property UIImage *pic4;
@@ -81,6 +81,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *sampleView;
+@property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 
 @end

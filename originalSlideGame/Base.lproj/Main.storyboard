@@ -381,13 +381,19 @@
                                     <rect key="frame" x="78" y="76" width="71" height="31"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
+                            <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="233" y="418" width="64" height="28"/>
+                                    <rect key="frame" x="23" y="416" width="64" height="28"/>
                                 </variation>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPa-b8-GJK">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="23" y="122" width="274" height="274"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -406,6 +412,7 @@
                                 <exclude reference="AMu-s7-FZa"/>
                                 <exclude reference="jSl-BJ-VAF"/>
                                 <exclude reference="VBP-3z-42N"/>
+                                <exclude reference="mPa-b8-GJK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -424,6 +431,7 @@
                                 <include reference="AMu-s7-FZa"/>
                                 <include reference="jSl-BJ-VAF"/>
                                 <include reference="VBP-3z-42N"/>
+                                <include reference="mPa-b8-GJK"/>
                             </mask>
                         </variation>
                     </view>
@@ -439,6 +447,7 @@
                         <outlet property="image8" destination="wcD-Hn-fw8" id="2H2-0d-HAc"/>
                         <outlet property="image9" destination="WcO-Hu-Gdx" id="RBA-1k-OSy"/>
                         <outlet property="mihon9" destination="Jl6-Wj-aY5" id="FyQ-yd-f6b"/>
+                        <outlet property="sampleImageView" destination="mPa-b8-GJK" id="Knn-ul-KXo"/>
                         <outlet property="sampleView" destination="VBP-3z-42N" id="H8i-K3-Rns"/>
                         <outlet property="timerLabel" destination="AMu-s7-FZa" id="34n-wk-BKj"/>
                         <outlet property="view1" destination="YP2-Hy-KSm" id="edZ-v4-HVn"/>
