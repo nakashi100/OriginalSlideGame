@@ -70,7 +70,6 @@
 
 
 // タイマーで使用するプロパティ
-- (IBAction)timerBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property NSTimer *myTimer;  //一定間隔でなにかする為のタイマー
 @property BOOL isStart;      //タイマーが動いているかのフラグ

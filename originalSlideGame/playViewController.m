@@ -31,6 +31,7 @@
         // self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i];
         [self setValue:[UIImage imageWithData:divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
+
     }
     
     // 写真のimageを各viewにセットする
@@ -46,9 +47,9 @@
     }
     
     
-    //タイマーの初期設定
-    self.isStart = NO;
-    self.isFstCalled = NO;
+//    //タイマーの初期設定
+//    self.isStart = NO;
+//    self.isFstCalled = NO;
     
 //    見本画像をセットする
 //    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
@@ -61,7 +62,6 @@
 //    if (self.isFstCalled = NO) {
 //        [self timerStart];
 //    }
-    
 }
 
 
@@ -491,7 +491,6 @@
         // Resultページへモーダルで遷移させる
 //        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         [self presentViewController:resultView animated:YES completion:nil];
-NSLog(@"%@",resultView.result);
     }
 }
 
@@ -523,19 +522,19 @@ NSLog(@"%@",resultView.result);
 
 
 
-- (IBAction)timerBtn:(id)sender {
-    // タイマーを止める
-    if (self.isStart) {
-        [self.myTimer invalidate];
-        self.isStart = !self.isStart;
-    }
-    
-    
-    // quit画面を表示する
+//- (IBAction)timerBtn:(id)sender {
+//    // タイマーを止める
+//    if (self.isStart) {
+//        [self.myTimer invalidate];
+//        self.isStart = !self.isStart;
+//    }
+//    
+//    
+//    // quit画面を表示する
 //    quitViewController *quitView = [self.storyboard instantiateViewControllerWithIdentifier:@"quitView"];
 //    [self presentPopupViewController:quitView animationType:MJPopupViewAnimationSlideTopTop];
-    
-}
+//    
+//}
 
 
 // 完成画像を閉じる処理
@@ -550,6 +549,92 @@ NSLog(@"%@",resultView.result);
         default:
             break;
     }
+}
+
+
+
+/*********************************************************************************
+ ゲームを止めるor続けるポップアップ画面
+ *********************************************************************************/
+
+- (IBAction)testBtn:(id)sender {
+    
+    // タイマーを止める
+    if (self.isStart) {
+        [self.myTimer invalidate];
+        self.isStart = !self.isStart;
+    }
+    
+    // 透明のViewを作成
+    UIView *wholeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    wholeView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
+    wholeView.tag = 104;
+    
+                         
+    // 中央のViewを作成
+    UIView *uiAdd = [[UIView alloc] initWithFrame:CGRectMake(53, 143, 214, 234)];
+    uiAdd.backgroundColor = [UIColor whiteColor];
+    uiAdd.tag = 101;
+    uiAdd.userInteractionEnabled = YES; // タッチイベントを取れるようにする
+    
+    // Continueボタンを作成
+    UIButton *continueBtn = [[UIButton alloc]initWithFrame:CGRectMake(84, 192, 153, 42)];
+    continueBtn.backgroundColor = [UIColor blueColor];
+    continueBtn.tag = 102;
+    continueBtn.userInteractionEnabled = YES;
+    [continueBtn setTitle:@"CONTINUE" forState:UIControlStateNormal ];
+    
+    // Quitボタンを作成
+    UIButton *quitBtn = [[UIButton alloc]initWithFrame:CGRectMake(84, 292, 153 , 42)];
+    quitBtn.backgroundColor = [UIColor blueColor];
+    quitBtn.tag = 103;
+    quitBtn.userInteractionEnabled = YES;
+    [quitBtn setTitle:@"QUIT" forState:UIControlStateNormal ];
+    
+    // ボタンがタップされたときの動作を定義する
+    [continueBtn addTarget:self action:@selector( onTapButton1: ) forControlEvents:UIControlEventTouchUpInside ];
+    [quitBtn addTarget:self action:@selector( onTapButton2: ) forControlEvents:UIControlEventTouchUpInside ];
+    
+    
+    // サブビューに作ったUIViewを追加する
+    [self.view addSubview:uiAdd];
+    [self.view addSubview:wholeView];
+    [self.view addSubview:continueBtn];
+    [self.view addSubview:quitBtn];
+    
+    
+}
+
+
+- ( void )onTapButton1:( id )sender
+{
+    [self timerStart];
+    self.isStart = self.isStart;
+    
+    // viewを画面から削除
+    UIView *uiAdd = [self.view viewWithTag:101];
+    UIView *wholeView = [self.view viewWithTag:104];
+    UIButton *continueBtn = [self.view viewWithTag:102];
+    UIButton *quitBtn = [self.view viewWithTag:103];
+    [uiAdd removeFromSuperview];
+    [wholeView removeFromSuperview];
+    [continueBtn removeFromSuperview];
+    [quitBtn removeFromSuperview];
+}
+
+- ( void )onTapButton2:( id )sender
+{
+    NSLog( @"タップされたばい！" );
+    
+    // viewを画面から削除
+    UIView *uiAdd = [self.view viewWithTag:101];
+    UIView *wholeView = [self.view viewWithTag:104];
+    UIButton *continueBtn = [self.view viewWithTag:102];
+    UIButton *quitBtn = [self.view viewWithTag:103];
+    [uiAdd removeFromSuperview];
+    [wholeView removeFromSuperview];
+    [continueBtn removeFromSuperview];
+    [quitBtn removeFromSuperview];
 }
 
 
@@ -598,35 +683,6 @@ NSLog(@"%@",resultView.result);
 
 
 
-
-
-- (IBAction)testBtn:(id)sender {
-    
-    // 全画面サイズのViewを作成
-    UIView *uiAdd = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 480)];
-    // 確認のために赤くする
-    uiAdd.backgroundColor = [UIColor redColor];
-    // 追加したViewを識別するため（ここも調査不足だけどcloseAddViewのsenderを使えば不要かも
-    uiAdd.tag = 255;
-    // タッチイベントを取れるようにする
-    uiAdd.userInteractionEnabled = YES;
-    // タップジェスチャでcloseAddViewメソッドを実行させる
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeAddView:)];
-    [uiAdd addGestureRecognizer:tapGesture];
-    // サブビューに作ったUIViewを追加する
-    [self.view addSubview:uiAdd];
-}
-
-// タッチジェスチャで実行されるメソッド
--(void)closeAddView:(UITapGestureRecognizer*)sender {
-    // 上に書いてる通り、senderで判別できるかもしれない
-    UIView *uiAdd = [self.view viewWithTag:255];
-    if(uiAdd)
-    {
-        // この方法だと更に子を入れた時とか、このUIViewとかちゃんと解放されるのか…。
-        [uiAdd removeFromSuperview];
-    }
-}
 
 
 @end

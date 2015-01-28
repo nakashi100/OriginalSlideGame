@@ -20,8 +20,6 @@
     self.twitterImage.image = [UIImage imageNamed:@"mihonSample"];
     
     self.resultTime.text = self.result;
-    
-NSLog(@"%@",self.result);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -18,23 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-NSLog(@"テスト1");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
 - (IBAction)continueBtn:(id)sender {
-    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
-    
-NSLog(@"テスト2");
-//    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+//    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
 }
 
 - (IBAction)quitBtn:(id)sender {
