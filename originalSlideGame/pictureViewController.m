@@ -113,7 +113,6 @@
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
     // 画像を分割
     [self divImage:image];
 
@@ -124,10 +123,8 @@
 // 画像を分割して配列に保存するメソッド
 - (NSMutableArray *)divImage:(UIImage *)image
 {
-    
     int DVICOUNT = 3;   // 3×3にする場合
     
-//    NSLog(@"ref::%@",image);
     CGImageRef srcImageRef = [image CGImage];
     
     CGFloat blockWith = image.size.width / DVICOUNT;
@@ -138,8 +135,12 @@
     for (int heightCount=0; heightCount < DVICOUNT; heightCount++) {
         for(int widthCount=0; widthCount < DVICOUNT; widthCount++){
             CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, CGRectMake(widthCount*blockWith, heightCount*blockHeight, blockWith, blockHeight));
-            UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
-            [divImages addObject:trimmedImage];
+            
+            
+            UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef
+                                     scale:[UIScreen mainScreen].scale orientation:image.imageOrientation]; //orientationは画像の向きの情報
+            
+            [divImages addObject:trimmedImage];            
         }
     }
     
@@ -154,17 +155,67 @@
         [divPicData addObject:data];    // divPicData[1]〜[n]には分割画像を格納
     }
     
-//    NSLog(@"個数は%d",[divImageData count]);
     
+    
+/*********************************************************************************
+         写真の表示と保存の向きの問題のため、配列し直す
+ *********************************************************************************/
+    NSMutableArray *divPicData2 = [NSMutableArray array];
+    
+    
+    if (image.imageOrientation == 0) {
+        divPicData2 = divPicData;
+    }
+
+    if(image.imageOrientation == 1){
+        divPicData2[0] = divPicData[0];
+        divPicData2[1] = divPicData[9];
+        divPicData2[2] = divPicData[8];
+        divPicData2[3] = divPicData[7];
+        divPicData2[4] = divPicData[6];
+        divPicData2[5] = divPicData[5];
+        divPicData2[6] = divPicData[4];
+        divPicData2[7] = divPicData[3];
+        divPicData2[8] = divPicData[2];
+        divPicData2[9] = divPicData[1];
+    }
+    
+    if(image.imageOrientation == 2){
+        divPicData2[0] = divPicData[0];
+        divPicData2[1] = divPicData[3];
+        divPicData2[2] = divPicData[6];
+        divPicData2[3] = divPicData[9];
+        divPicData2[4] = divPicData[2];
+        divPicData2[5] = divPicData[5];
+        divPicData2[6] = divPicData[8];
+        divPicData2[7] = divPicData[1];
+        divPicData2[8] = divPicData[4];
+        divPicData2[9] = divPicData[7];
+    }
+    
+    if(image.imageOrientation == 3){
+        divPicData2[0] = divPicData[0];
+        divPicData2[1] = divPicData[7];
+        divPicData2[2] = divPicData[4];
+        divPicData2[3] = divPicData[1];
+        divPicData2[4] = divPicData[8];
+        divPicData2[5] = divPicData[5];
+        divPicData2[6] = divPicData[2];
+        divPicData2[7] = divPicData[9];
+        divPicData2[8] = divPicData[6];
+        divPicData2[9] = divPicData[3];
+    }
     
     // UserDefautで画像のデータを保存
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:divPicData forKey:@"divPicData"];
+    [userDefault setObject:divPicData2 forKey:@"divPicData"];
     [userDefault synchronize];
     
     
     return divImages;
 }
+
+
 
 
 @end

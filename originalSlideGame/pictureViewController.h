@@ -13,5 +13,4 @@
 - (IBAction)createPictureBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
 
-
 @end

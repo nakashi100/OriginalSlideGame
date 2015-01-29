@@ -41,7 +41,6 @@
 }
 
 - (IBAction)title2ViewReturnActionForSegue:(UIStoryboardSegue *)segue{
-    NSLog(@"今夜が山田");
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:YES];
     
@@ -52,7 +51,6 @@
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:YES];
-    return;
 }
 
 @end
