@@ -10,6 +10,7 @@
 
 @interface playViewController : UIViewController
 - (IBAction)playButton:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *playBtn;
 
 @property NSMutableArray *randNums;
 
@@ -83,6 +84,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 - (IBAction)testBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *forHideView;
+@property (weak, nonatomic) IBOutlet UIView *forHideView3;
+@property (weak, nonatomic) IBOutlet UIView *forHideView4;
 
 
 @end

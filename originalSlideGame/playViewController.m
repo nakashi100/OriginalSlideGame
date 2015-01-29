@@ -46,9 +46,9 @@
     }
     
     
-//    //タイマーの初期設定
-//    self.isStart = NO;
-//    self.isFstCalled = NO;
+    //タイマーの初期設定
+    self.isStart = NO;
+    self.isFstCalled = NO;
     
 //    見本画像をセットする
 //    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
@@ -58,9 +58,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    if (self.isFstCalled = NO) {
-//        [self timerStart];
-//    }
 }
 
 
@@ -70,7 +67,6 @@
 
 
 - (IBAction)playButton:(id)sender {
-    
     // image9(tag:19)を削除する
      [[self.view viewWithTag:19] removeFromSuperview];
     
@@ -119,12 +115,22 @@
  
  
     // image1〜8の中の数字を並び替える
-    int pattern = 1; // 実際にはrand関数を使ってpatternをランダムに指定する
+    int pattern = 2; // 実際にはrand関数を使ってpatternをランダムに指定する
     [self puzzlePattern:pattern];
     
     
     // タイマーを起動する
     [self timerStart];
+    
+    
+    // STARTボタンを消す
+    UIView *playBtn = [self.view viewWithTag:40];
+    [playBtn removeFromSuperview];
+    
+    // forHideビューを消して、各種ボタンが表示・タップできるようにする
+    [self.forHideView removeFromSuperview];
+    [self.forHideView3 removeFromSuperview];
+    [self.forHideView4 removeFromSuperview];
     
 }
 
@@ -502,7 +508,7 @@
                                              userInfo:nil
                                               repeats:YES];
     self.isStart = YES;
-    self.isFstCalled = NO;
+    self.isFstCalled = YES;
 }
 
 
@@ -534,6 +540,13 @@
 }
 
 
+// unwindsegueでこの画面に戻すための処理
+- (IBAction)playViewReturnActionForSegue:(UIStoryboardSegue *)segue {
+    NSLog(@"やったよ");
+    
+//    [self playButton:self.playBtn];
+}
+
 
 /*********************************************************************************
  ゲームを止めるor続けるポップアップ画面
@@ -542,7 +555,7 @@
 - (IBAction)testBtn:(id)sender {
     
     // タイマーを止める
-    if (self.isStart) {
+    if ((self.isStart) && (self.isFstCalled)) {
         [self.myTimer invalidate];
         self.isStart = !self.isStart;
     }
@@ -590,14 +603,16 @@
 
 - ( void )onTapButton1:( id )sender
 {
-    [self timerStart];
-    self.isStart = self.isStart;
+    if(self.isFstCalled){
+        [self timerStart];
+        self.isStart = self.isStart;
+    }
     
     // viewを画面から削除
     UIView *uiAdd = [self.view viewWithTag:101];
     UIView *wholeView = [self.view viewWithTag:104];
-    UIButton *continueBtn = [self.view viewWithTag:102];
-    UIButton *quitBtn = [self.view viewWithTag:103];
+    UIView *continueBtn = [self.view viewWithTag:102];
+    UIView *quitBtn = [self.view viewWithTag:103];
     [uiAdd removeFromSuperview];
     [wholeView removeFromSuperview];
     [continueBtn removeFromSuperview];
@@ -610,8 +625,8 @@
     // viewを画面から削除
     UIView *uiAdd = [self.view viewWithTag:101];
     UIView *wholeView = [self.view viewWithTag:104];
-    UIButton *continueBtn = [self.view viewWithTag:102];
-    UIButton *quitBtn = [self.view viewWithTag:103];
+    UIView *continueBtn = [self.view viewWithTag:102];
+    UIView *quitBtn = [self.view viewWithTag:103];
     [uiAdd removeFromSuperview];
     [wholeView removeFromSuperview];
     [continueBtn removeFromSuperview];
@@ -655,7 +670,25 @@
             
             break;
             
-        case 2:
+        case 2: // テスト用なので削除する
+            self.image1.image = self.pic1;
+            self.image2.image = self.pic2;
+            self.image3.image = self.pic3;
+            self.image4.image = self.pic4;
+            self.image5.image = self.pic5;
+            self.image6.image = self.pic6;
+            self.image7.image = self.pic7;
+            self.image8.image = self.pic8;
+            
+            self.viewArray1 = [@[@1,@11,@1]mutableCopy];
+            self.viewArray2 = [@[@1,@12,@2]mutableCopy];
+            self.viewArray3 = [@[@1,@13,@3]mutableCopy];
+            self.viewArray4 = [@[@1,@14,@4]mutableCopy];
+            self.viewArray5 = [@[@1,@15,@5]mutableCopy];
+            self.viewArray6 = [@[@1,@16,@6]mutableCopy];
+            self.viewArray7 = [@[@1,@17,@7]mutableCopy];
+            self.viewArray8 = [@[@1,@18,@8]mutableCopy];
+            self.viewArray9 = [@[@0,@0,@0]mutableCopy];
             
             break;
             

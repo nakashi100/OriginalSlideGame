@@ -7,6 +7,7 @@
 //
 
 #import "resultViewController.h"
+#import "playViewController.h"
 
 @interface resultViewController ()
 
@@ -27,16 +28,8 @@
 }
 
 - (IBAction)retryBtn:(id)sender {
-    // Playページへモーダルで遷移させる
-//    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-//    [self presentViewController:controller animated:YES completion:nil];
-
 }
 
 - (IBAction)goTitleBtn:(id)sender {
-    // Titleページへモーダルで遷移させる
-//    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
-//    [self presentViewController:controller animated:YES completion:nil];
-    
 }
 @end

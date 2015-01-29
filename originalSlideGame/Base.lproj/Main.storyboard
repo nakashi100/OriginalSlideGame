@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MK-7L-d60">
+                            <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7MK-7L-d60">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -356,7 +356,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="140" y="76" width="69" height="31"/>
+                                    <rect key="frame" x="147" y="76" width="82" height="31"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-BJ-VAF">
@@ -365,14 +365,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="78" y="76" width="71" height="31"/>
+                                    <rect key="frame" x="85" y="76" width="71" height="31"/>
                                 </variation>
                             </label>
                             <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view tag="43" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YS8-Kb-0zD">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="-10" y="-11" width="87" height="47"/>
+                                        </variation>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="YS8-Kb-0zD"/>
+                                    </mask>
+                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="23" y="416" width="64" height="28"/>
+                                    <mask key="subviews">
+                                        <include reference="YS8-Kb-0zD"/>
+                                    </mask>
                                 </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mPa-b8-GJK">
@@ -395,6 +412,20 @@
                                     <action selector="testBtn:" destination="NdR-dS-FN1" eventType="touchUpInside" id="0YD-AI-6BH"/>
                                 </connections>
                             </button>
+                            <view tag="41" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqx-zF-13G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="251" y="72" width="46" height="35"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvf-Qi-F5w">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="122" width="400" height="279"/>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -414,6 +445,8 @@
                                 <exclude reference="VBP-3z-42N"/>
                                 <exclude reference="mPa-b8-GJK"/>
                                 <exclude reference="O1C-7t-eh9"/>
+                                <exclude reference="dqx-zF-13G"/>
+                                <exclude reference="mvf-Qi-F5w"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -433,11 +466,16 @@
                                 <include reference="VBP-3z-42N"/>
                                 <include reference="mPa-b8-GJK"/>
                                 <include reference="O1C-7t-eh9"/>
+                                <include reference="dqx-zF-13G"/>
+                                <include reference="mvf-Qi-F5w"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Bdk-I9-mSp"/>
                     <connections>
+                        <outlet property="forHideView" destination="dqx-zF-13G" id="Qpn-Fh-Aw9"/>
+                        <outlet property="forHideView3" destination="YS8-Kb-0zD" id="nxS-yH-THn"/>
+                        <outlet property="forHideView4" destination="mvf-Qi-F5w" id="uZi-9P-YQJ"/>
                         <outlet property="image1" destination="BRK-6c-YDP" id="XMv-ae-vDN"/>
                         <outlet property="image2" destination="mkc-qq-Q5G" id="9R9-nh-YgV"/>
                         <outlet property="image3" destination="3LK-Jq-ugX" id="Q0f-fV-ley"/>
@@ -448,6 +486,7 @@
                         <outlet property="image8" destination="wcD-Hn-fw8" id="2H2-0d-HAc"/>
                         <outlet property="image9" destination="WcO-Hu-Gdx" id="RBA-1k-OSy"/>
                         <outlet property="mihon9" destination="Jl6-Wj-aY5" id="FyQ-yd-f6b"/>
+                        <outlet property="playBtn" destination="7MK-7L-d60" id="g4a-DC-vjN"/>
                         <outlet property="sampleImageView" destination="mPa-b8-GJK" id="Knn-ul-KXo"/>
                         <outlet property="sampleView" destination="VBP-3z-42N" id="H8i-K3-Rns"/>
                         <outlet property="timerLabel" destination="AMu-s7-FZa" id="34n-wk-BKj"/>
@@ -635,6 +674,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="retryBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="HFc-N5-bko"/>
+                                    <segue destination="t9e-iB-gXU" kind="unwind" unwindAction="title2ViewReturnActionForSegue:" id="y3K-OQ-tRd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -990,6 +1030,9 @@
                                         <include reference="WmZ-KA-seX"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="YOd-Nb-r9v" kind="push" id="eSM-vA-Wyw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
