@@ -39,4 +39,14 @@
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     NSLog(@"UserDefaultリセットしたよー!");
 }
+
+
+// unwindsegueでこの画面に戻すための処理
+- (IBAction)titleViewReturnActionForSegue:(UIStoryboardSegue *)segue
+{
+    
+    //    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 @end

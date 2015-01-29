@@ -460,30 +460,13 @@
                         <outlet property="view7" destination="5Ab-Ay-ntH" id="D0k-pN-PTZ"/>
                         <outlet property="view8" destination="CBX-WX-9ap" id="HVv-jL-XrH"/>
                         <outlet property="view9" destination="vfG-Qg-9I0" id="ELa-Jv-pwE"/>
+                        <segue destination="NDg-8T-fcn" kind="unwind" identifier="titleViewReturn" unwindAction="titleViewReturnActionForSegue:" id="RJm-EH-SLN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaA-0y-xBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NDg-8T-fcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1312.5" y="274"/>
-        </scene>
-        <!--Quit View Controller-->
-        <scene sceneID="7gC-ga-Gk9">
-            <objects>
-                <viewController storyboardIdentifier="quitView" id="UE6-EU-maX" customClass="quitViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="BcE-OP-dR7"/>
-                        <viewControllerLayoutGuide type="bottom" id="fh5-Od-Aub"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wzR-zu-WiU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="200" height="300"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3nx-ZG-yBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2181" y="-436"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pzJ-Ss-cYB">
@@ -619,6 +602,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="goTitleBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="PBk-r7-0re"/>
+                                    <segue destination="t9e-iB-gXU" kind="unwind" identifier="" unwindAction="titleViewReturnActionForSegue:" id="tpl-um-YHc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Mx-o7l">
@@ -1006,9 +990,6 @@
                                         <include reference="WmZ-KA-seX"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="YOd-Nb-r9v" kind="push" id="b6z-qE-O7x"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1150,6 +1131,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbQ-WY-Cjc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="t9e-iB-gXU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="369" y="525"/>
         </scene>

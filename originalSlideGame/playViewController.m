@@ -8,8 +8,7 @@
 
 #import "playViewController.h"
 #import "resultViewController.h"
-#import "quitViewController.h"
-#import "UIViewController+MJPopupViewController.h"
+#import "titleViewController.h"
 
 
 @interface playViewController ()
@@ -489,10 +488,10 @@
         resultView.result = self.playTime;
         
         // Resultページへモーダルで遷移させる
-//        UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         [self presentViewController:resultView animated:YES completion:nil];
     }
 }
+
 
 
 // タイマー機能メソッド
@@ -507,7 +506,6 @@
 }
 
 
-
 - (void)timer{
     self.timerCount = self.timerCount + 0.01f; // 0.01秒ずつ足してゆく
     self.second = fmodf(self.timerCount, 10000); //00.00←ここのための処理。timerCount % 60(余剰)をsecondに入れたいが、float(double)では%が使えないのでfmodf(0,0)というのを使用
@@ -519,22 +517,6 @@
     
 // 過去のベストタイムと比較して、最高タイムだったら配列に格納して使ってもよいかも
 }
-
-
-
-//- (IBAction)timerBtn:(id)sender {
-//    // タイマーを止める
-//    if (self.isStart) {
-//        [self.myTimer invalidate];
-//        self.isStart = !self.isStart;
-//    }
-//    
-//    
-//    // quit画面を表示する
-//    quitViewController *quitView = [self.storyboard instantiateViewControllerWithIdentifier:@"quitView"];
-//    [self presentPopupViewController:quitView animationType:MJPopupViewAnimationSlideTopTop];
-//    
-//}
 
 
 // 完成画像を閉じる処理
@@ -624,7 +606,6 @@
 
 - ( void )onTapButton2:( id )sender
 {
-    NSLog( @"タップされたばい！" );
     
     // viewを画面から削除
     UIView *uiAdd = [self.view viewWithTag:101];
@@ -635,6 +616,11 @@
     [wholeView removeFromSuperview];
     [continueBtn removeFromSuperview];
     [quitBtn removeFromSuperview];
+    
+    
+    // タイトル画面に戻る
+    [self performSegueWithIdentifier:@"titleViewReturn" sender:self];
+    
 }
 
 
@@ -678,8 +664,6 @@
     }
     
 }
-
-
 
 
 

@@ -37,5 +37,6 @@
     // Titleページへモーダルで遷移させる
 //    UIViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
 //    [self presentViewController:controller animated:YES completion:nil];
+    
 }
 @end
