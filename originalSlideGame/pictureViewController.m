@@ -107,14 +107,93 @@
     //    }
     
     
+    
+    
+//////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  //////////////////////
+    
+    
+    
+    // 取得した画像の縦サイズ、横サイズを取得する
+    int imageW = image.size.width;
+    int imageH = image.size.height;
+    
+    
+NSLog(@"■横は%d",imageW);
+NSLog(@"■縦は%d",imageH);
+    
+
+    // リサイズする倍率を作成する
+    float scale;
+    if(imageH > imageW){
+        scale = 320.0f/imageW;
+    }else{
+        scale = 320.0f/imageH;
+    }
+
+NSLog(@"■倍率は%f",scale);
+    
+    // リサイズ後のサイズ
+    CGSize size = CGSizeMake(imageW * scale, imageH * scale);
+    
+    
+    // グラフィックコンテキストへの描画
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetInterpolationQuality(context, kCGInterpolationDefault); //画像リサイズの補完方法を指定
+    [image drawInRect:CGRectMake(0, 0,size.width, size.height)]; //drawInRectは指定した矩形にフィットするようにスケーリングして画像全体を描画する
+    UIImage* resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+NSLog(@"■横は%f",resultImage.size.width);
+NSLog(@"■縦は%f",resultImage.size.height);
+    
+///////////////////////////////////////////////////////////////
+    
+    
+    
+
+    /////////// 画像のトリミング ///////////
+//    // 切り抜き元となる画像を用意する。
+//    int imageMijikai;
+//    
+//    if (imageH > imageW) {
+//        imageMijikai = imageW;
+//    } else{
+//        imageMijikai = imageH;
+//    }
+//    
+//    
+//    // 切り抜く位置を指定するCGRectを作成する。今回は、画像の中心部分を短いほうの辺で切り取る
+//    // なお簡略化のため、imageW,imageHともに320以上と仮定
+//    int posX = (imageW - imageMijikai) / 2;
+//    int posY = (imageH - imageMijikai) / 2;
+//    CGRect trimArea = CGRectMake(posX, posY, imageMijikai, imageMijikai);
+//    
+//    
+//    
+//    // CoreGraphicsの機能を用いて、切り抜いた画像を作成する
+//    CGImageRef srcImageRef = [image CGImage];
+//    CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, trimArea);
+//    UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // 取得した画像を画面上へ表示
-    self.displayPictureView.image = image;
+    self.displayPictureView.image = resultImage;
     
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // 画像を分割
-    [self divImage:image];
+    [self divImage:resultImage];
+    
 
 }
 

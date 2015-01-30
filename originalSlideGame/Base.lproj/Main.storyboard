@@ -801,12 +801,6 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-153" y="59" width="475" height="316"/>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="CREATE">
@@ -831,6 +825,12 @@
                                     <segue destination="VrV-J5-gG3" kind="push" id="9tf-Ka-77y"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="26" y="102" width="274" height="274"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -842,9 +842,9 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="FAT-kU-v6F"/>
-                                <exclude reference="kBZ-E9-DBX"/>
                                 <exclude reference="J0f-pw-dKJ"/>
                                 <exclude reference="cR9-XZ-aAI"/>
+                                <exclude reference="kBZ-E9-DBX"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="VU2-xo-FQL"/>
@@ -854,9 +854,9 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="FAT-kU-v6F"/>
-                                <include reference="kBZ-E9-DBX"/>
                                 <include reference="J0f-pw-dKJ"/>
                                 <include reference="cR9-XZ-aAI"/>
+                                <include reference="kBZ-E9-DBX"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="VU2-xo-FQL"/>
