@@ -109,19 +109,12 @@
     
     
     
-//////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  //////////////////////
-    
-    
+    //////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  //////////////////////
     
     // 取得した画像の縦サイズ、横サイズを取得する
     int imageW = image.size.width;
     int imageH = image.size.height;
     
-    
-NSLog(@"■横は%d",imageW);
-NSLog(@"■縦は%d",imageH);
-    
-
     // リサイズする倍率を作成する
     float scale;
     if(imageH > imageW){
@@ -129,12 +122,9 @@ NSLog(@"■縦は%d",imageH);
     }else{
         scale = 320.0f/imageH;
     }
-
-NSLog(@"■倍率は%f",scale);
     
     // リサイズ後のサイズ
     CGSize size = CGSizeMake(imageW * scale, imageH * scale);
-    
     
     // グラフィックコンテキストへの描画
     UIGraphicsBeginImageContext(size);
@@ -144,57 +134,41 @@ NSLog(@"■倍率は%f",scale);
     UIImage* resultImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-NSLog(@"■横は%f",resultImage.size.width);
-NSLog(@"■縦は%f",resultImage.size.height);
     
-///////////////////////////////////////////////////////////////
+    ////////////////////////    画像のトリミング    /////////////////////////////
     
+    // 切り抜き元となる画像を用意する
+    int imageMijikai;
     
-    
-
-    /////////// 画像のトリミング ///////////
-//    // 切り抜き元となる画像を用意する。
-//    int imageMijikai;
-//    
-//    if (imageH > imageW) {
-//        imageMijikai = imageW;
-//    } else{
-//        imageMijikai = imageH;
-//    }
-//    
-//    
-//    // 切り抜く位置を指定するCGRectを作成する。今回は、画像の中心部分を短いほうの辺で切り取る
-//    // なお簡略化のため、imageW,imageHともに320以上と仮定
-//    int posX = (imageW - imageMijikai) / 2;
-//    int posY = (imageH - imageMijikai) / 2;
-//    CGRect trimArea = CGRectMake(posX, posY, imageMijikai, imageMijikai);
-//    
-//    
-//    
-//    // CoreGraphicsの機能を用いて、切り抜いた画像を作成する
-//    CGImageRef srcImageRef = [image CGImage];
-//    CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, trimArea);
-//    UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
+    if (resultImage.size.height > resultImage.size.width) {
+        imageMijikai = resultImage.size.width;
+    } else{
+        imageMijikai = resultImage.size.height;
+    }
     
     
+    // 切り抜く位置を指定するCGRectを作成する
+    // 今回は、画像の中心部分を短いほうの辺で切り取る(なお簡略化のため、imageW,imageHともに320以上と仮定)
+    int posX = (resultImage.size.width - imageMijikai) / 2;
+    int posY = (resultImage.size.height - imageMijikai) / 2;
+    CGRect trimArea = CGRectMake(posX, posY, imageMijikai, imageMijikai);
+    
+    // CoreGraphicsの機能を用いて、切り抜いた画像を作成する
+    CGImageRef srcImageRef = [resultImage CGImage];
+    CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, trimArea);
+    UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
     
     
-    
-    
-    
-    
-    
+    /////////////////////////////////////////////////////////////////////////
     
     // 取得した画像を画面上へ表示
-    self.displayPictureView.image = resultImage;
+    self.displayPictureView.image = trimmedImage;
     
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
     
     // 画像を分割
-    [self divImage:resultImage];
-    
-
+    [self divImage:trimmedImage];
 }
 
 
