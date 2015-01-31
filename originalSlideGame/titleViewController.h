@@ -15,4 +15,6 @@
 
 - (IBAction)useDefaultReset:(id)sender;
 
+@property BOOL createdFlag;
+
 @end

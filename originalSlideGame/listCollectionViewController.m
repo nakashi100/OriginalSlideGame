@@ -75,12 +75,41 @@ static NSString * const reuseIdentifier = @"Cell";
     if (indexPath.row == self.count) {
         cell.sampleLabel.text = @"Let's create!";
         
-        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-        [self.navigationController pushViewController:playView animated:YES];
+        
+///////////////   検証用  /////////////////////////////////////////////
+        // タイトル画面に戻る
+//        cell.sampleLabel.tag = 999;
+//        [self.navigationController popToRootViewControllerAnimated:NO];
+//        
+//        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
+//        [self.navigationController pushViewController:pictureView animated:YES];
+//////////////////////////////////////////////////////////////////////
     }
     
     return cell;
 }
+
+
+
+
+///////////////   検証用  /////////////////////////////////////////////
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [touches anyObject];
+//        NSLog(@"タッチしたビューは、%@", touch.view);
+//
+//    switch (touch.view.tag) {
+//        case 999:
+//            [self.navigationController popToRootViewControllerAnimated:NO];
+//            
+//            pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
+//            [self.navigationController pushViewController:pictureView animated:YES];
+//            
+//            break;
+//    }
+//}
+//////////////////////////////////////////////////////////////////////
+
 
 
 // セグエする際にデータを渡す
@@ -96,6 +125,8 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 
+
+
 // unwindsegueでこの画面に戻すための処理
 - (IBAction)listViewReturnActionForSegue:(UIStoryboardSegue *)segue{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
@@ -108,6 +139,7 @@ static NSString * const reuseIdentifier = @"Cell";
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:YES];
 }
+
 
 
 #pragma mark <UICollectionViewDelegate>

@@ -76,7 +76,7 @@
                                 <connections>
                                     <outlet property="sampleLabel" destination="8xf-Kl-Ro0" id="yNl-7W-qSG"/>
                                     <outlet property="samplePicView" destination="wlt-db-YYe" id="77k-PW-p16"/>
-                                    <segue destination="NdR-dS-FN1" kind="push" id="eAs-K3-ozD"/>
+                                    <segue destination="NdR-dS-FN1" kind="push" id="2IQ-1G-eiG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -839,7 +839,7 @@
         <!--Picture View Controller-->
         <scene sceneID="ool-32-HH9">
             <objects>
-                <viewController id="YOd-Nb-r9v" customClass="pictureViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pictureView" id="YOd-Nb-r9v" customClass="pictureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D1r-gY-1tt"/>
                         <viewControllerLayoutGuide type="bottom" id="l8j-3p-8Yn"/>

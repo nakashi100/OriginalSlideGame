@@ -21,21 +21,27 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-    
+
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlayingGame"];
+
     
-    NSLog(@"配列の個数は%d",[divPicDataFinal count]);
-    NSLog(@"nowPlayingは%d",[nowPlaying count]);
+///////////// 検証用(あとで消す //////////////////////
+NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlaying"];
     
-//    BOOL createdFlag = [userDefault boolForKey:@"createdFlag"];
-//    if(!createdFlag){
-//        NSLog(@"フラグあり");
-//    listCollectionViewController *con = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
-//    [self.navigationController pushViewController:con animated:YES];
-//    }
+NSLog(@"配列の個数は%d",[divPicDataFinal count]);
+NSLog(@"nowPlayingは%d",[nowPlaying count]);
+//////////////////////////////////////////////////
+    
+    self.createdFlag = [userDefault boolForKey:@"createdFlag"];
+
+    // createdFlagがYESということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
+    if (self.createdFlag) {
+        [self golistCollectionView];
+        [self goPlayView];
+        self.createdFlag = NO;
+        [userDefault setBool:self.createdFlag forKey:@"createdFlag"];
+    }
     
 }
 
@@ -59,17 +65,18 @@
 }
 
 - (IBAction)title2ViewReturnActionForSegue:(UIStoryboardSegue *)segue{
-
 }
 
+// play画面に遷移する
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-    [self.navigationController pushViewController:playView animated:YES];
+    [self.navigationController pushViewController:playView animated:NO];
 }
 
+// list画面に遷移する
 - (void)golistCollectionView{
     listCollectionViewController *listCollectionView = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
-    [self.navigationController pushViewController:listCollectionView animated:YES];
+    [self.navigationController pushViewController:listCollectionView animated:NO];
 }
 
 @end

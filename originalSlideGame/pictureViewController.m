@@ -7,8 +7,7 @@
 //
 
 #import "pictureViewController.h"
-#import "listCollectionViewController.h"
-#import "playViewController.h"
+#import "titleViewController.h"
 
 @interface pictureViewController ()
 
@@ -299,14 +298,15 @@
     [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
     
     [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
-    [userDefault setObject:self.divPicDataFinal forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
+    [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
+    BOOL createdFlag = YES;
+    [userDefault setBool:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
+    
     [userDefault synchronize];
     
     // タイトル画面に戻る
     [self.navigationController popToRootViewControllerAnimated:NO];
     
-//    listCollectionViewController *con = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
-//    [self.navigationController pushViewController:con animated:NO];
-    
 }
+
 @end
