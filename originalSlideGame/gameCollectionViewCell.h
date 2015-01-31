@@ -10,5 +10,6 @@
 
 @interface gameCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *sampleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *samplePicView;
 
 @end

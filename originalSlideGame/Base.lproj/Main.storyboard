@@ -29,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="djx-DI-F5g">
-                            <size key="itemSize" width="136" height="136"/>
+                            <size key="itemSize" width="131" height="163"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -39,7 +39,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="131" height="163"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xf-Kl-Ro0">
@@ -49,24 +49,33 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="16" y="22" width="105" height="91"/>
+                                                <rect key="frame" x="13" y="122" width="105" height="29"/>
                                             </variation>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wlt-db-YYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="14" y="13" width="102" height="100"/>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="8xf-Kl-Ro0"/>
+                                        <exclude reference="wlt-db-YYe"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="8xf-Kl-Ro0"/>
+                                        <include reference="wlt-db-YYe"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outlet property="sampleLabel" destination="8xf-Kl-Ro0" id="yNl-7W-qSG"/>
+                                    <outlet property="samplePicView" destination="wlt-db-YYe" id="77k-PW-p16"/>
                                     <segue destination="T0q-aZ-GNv" kind="push" id="ga5-CK-jdg"/>
                                 </connections>
                             </collectionViewCell>

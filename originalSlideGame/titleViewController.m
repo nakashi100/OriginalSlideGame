@@ -17,10 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+    NSLog(@"配列の個数は%d",[divPicDataFinal count]);
     
 }
 

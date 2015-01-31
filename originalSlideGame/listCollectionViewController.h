@@ -10,4 +10,7 @@
 
 @interface listCollectionViewController : UICollectionViewController
 
+@property NSArray *divPicDataFinal;
+@property int count; // divPicDataFinal配列の個数
+
 @end

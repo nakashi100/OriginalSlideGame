@@ -27,7 +27,11 @@ static NSString * const reuseIdentifier = @"Cell";
     // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+    self.count = [self.divPicDataFinal count];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,15 +46,28 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    
+    return (self.count+1);  // 最後のセルにはcreateを促すようなものを入れる
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
-    // Configure the cell
-    NSString *sampleText = [NSString stringWithFormat:@"%ld番目のセル", indexPath.row];
+    if (indexPath.row < self.count){
+    NSString *sampleText = [NSString stringWithFormat:@"No.%ld", indexPath.row];
     cell.sampleLabel.text = sampleText;
+    
+    NSArray *picData = self.divPicDataFinal[indexPath.row];
+    UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
+    cell.samplePicView.image = pic0;
+    }
+    
+    
+    // 最後のセルには「create original game」的なものを入れ、ゲーム作成画面に飛ばす
+    if (indexPath.row == self.count) {
+        cell.sampleLabel.text = @"Let's create!";
+    }
+    
     
     return cell;
 }
