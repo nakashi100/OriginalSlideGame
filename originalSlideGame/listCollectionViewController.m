@@ -62,69 +62,49 @@ static NSString * const reuseIdentifier = @"Cell";
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
     if (indexPath.row < self.count){
-    NSString *sampleText = [NSString stringWithFormat:@"No.%ld", indexPath.row];
-    cell.sampleLabel.text = sampleText;
+        NSString *sampleText = [NSString stringWithFormat:@"No.%ld", indexPath.row];
+        cell.sampleLabel.text = sampleText;
     
-    NSArray *picData = self.divPicDataFinal[indexPath.row];
-    UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
-    cell.samplePicView.image = pic0;
+        NSArray *picData = self.divPicDataFinal[indexPath.row];
+        UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
+        cell.samplePicView.image = pic0;
     }
     
-    
-    // 最後のセルには「create original game」的なものを入れ、ゲーム作成画面に飛ばす
     if (indexPath.row == self.count) {
-        cell.sampleLabel.text = @"Let's create!";
-        
-        
-///////////////   検証用  /////////////////////////////////////////////
-        // タイトル画面に戻る
-//        cell.sampleLabel.tag = 999;
-//        [self.navigationController popToRootViewControllerAnimated:NO];
-//        
-//        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
-//        [self.navigationController pushViewController:pictureView animated:YES];
-//////////////////////////////////////////////////////////////////////
+        cell.sampleLabel.text = @"Let's create!";  // 最後のセルには「create original game」的なものを入れ、ゲーム作成画面に飛ばす
     }
     
     return cell;
 }
 
 
-
-
-///////////////   検証用  /////////////////////////////////////////////
-//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [touches anyObject];
-//        NSLog(@"タッチしたビューは、%@", touch.view);
-//
-//    switch (touch.view.tag) {
-//        case 999:
-//            [self.navigationController popToRootViewControllerAnimated:NO];
-//            
-//            pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
-//            [self.navigationController pushViewController:pictureView animated:YES];
-//            
-//            break;
-//    }
-//}
-//////////////////////////////////////////////////////////////////////
-
-
-
 // セグエする際にデータを渡す
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSArray *paths = [self.collectionView indexPathsForSelectedItems];
-    NSIndexPath * path = [paths objectAtIndex:0];
-    
-    playViewController *playView = [segue destinationViewController];
-    playView.pathNo =path.row;
-    
-    playView.divPicturesData = self.divPicDataFinal[path.row];
-    
+//    NSArray *paths = [self.collectionView indexPathsForSelectedItems];
+//    NSIndexPath * path = [paths objectAtIndex:0];
+//    
+//    playViewController *playView = [segue destinationViewController];
+//    playView.pathNo =path.row;
+//    
+//    playView.divPicturesData = self.divPicDataFinal[path.row];
 }
 
 
+// セルがタップされたときの処理(遷移先と値渡し)
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row < self.count) {
+        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+        playView.pathNo =indexPath.row;  // 値渡し
+        playView.divPicturesData = self.divPicDataFinal[indexPath.row];  // 値渡し
+        [self.navigationController pushViewController:playView animated:YES]; // プレイ画面に遷移
+    }
+    
+    if (indexPath.row == self.count) {
+        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
+        [self.navigationController pushViewController:pictureView animated:NO]; // ゲーム作成画面に遷移
+    }
+}
 
 
 // unwindsegueでこの画面に戻すための処理

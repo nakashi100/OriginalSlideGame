@@ -76,7 +76,6 @@
                                 <connections>
                                     <outlet property="sampleLabel" destination="8xf-Kl-Ro0" id="yNl-7W-qSG"/>
                                     <outlet property="samplePicView" destination="wlt-db-YYe" id="77k-PW-p16"/>
-                                    <segue destination="NdR-dS-FN1" kind="push" id="2IQ-1G-eiG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
