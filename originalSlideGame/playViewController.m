@@ -25,6 +25,11 @@
     NSArray *divPicturesData = [userDefault arrayForKey:@"divPicData"];
     
     
+//    NSArray *divPicturesData = [userDefault arrayForKey:@"divPicDataFinal"];
+//    NSLog(@"%d",[divPicturesData count]);
+//    NSLog(@"%d",[divPicturesData[0] count]);
+    
+    
     // 写真のデータをdata型からimage型に変換する
     for (int i=0; i<10; i++) {
         // self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し

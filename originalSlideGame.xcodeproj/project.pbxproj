@@ -19,6 +19,10 @@
 		C4A9D5001A736D0A00DA4AEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A9D4FF1A736D0A00DA4AEA /* Images.xcassets */; };
 		C4A9D5031A736D0A00DA4AEA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */; };
 		C4A9D50F1A736D0A00DA4AEA /* originalSlideGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D50E1A736D0A00DA4AEA /* originalSlideGameTests.m */; };
+		C4BE68321A7BA5F400815D1D /* listCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE68311A7BA5F400815D1D /* listCollectionViewController.m */; };
+		C4BE68351A7BA73600815D1D /* gameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */; };
+		C4BE68381A7BAA9100815D1D /* sampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE68371A7BAA9100815D1D /* sampleViewController.m */; };
+		C4BE683B1A7C85D700815D1D /* confirmPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */; };
 		C4F332811A771C1700374362 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F332801A771C1700374362 /* resultViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,14 @@
 		C4A9D5081A736D0A00DA4AEA /* originalSlideGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = originalSlideGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A9D50D1A736D0A00DA4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4A9D50E1A736D0A00DA4AEA /* originalSlideGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = originalSlideGameTests.m; sourceTree = "<group>"; };
+		C4BE68301A7BA5F400815D1D /* listCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = listCollectionViewController.h; sourceTree = "<group>"; };
+		C4BE68311A7BA5F400815D1D /* listCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listCollectionViewController.m; sourceTree = "<group>"; };
+		C4BE68331A7BA73500815D1D /* gameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameCollectionViewCell.h; sourceTree = "<group>"; };
+		C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameCollectionViewCell.m; sourceTree = "<group>"; };
+		C4BE68361A7BAA9100815D1D /* sampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sampleViewController.h; sourceTree = "<group>"; };
+		C4BE68371A7BAA9100815D1D /* sampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sampleViewController.m; sourceTree = "<group>"; };
+		C4BE68391A7C85D700815D1D /* confirmPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmPicViewController.h; sourceTree = "<group>"; };
+		C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmPicViewController.m; sourceTree = "<group>"; };
 		C4F3327F1A771C1700374362 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		C4F332801A771C1700374362 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +124,14 @@
 				C456DC9A1A766522005E25B0 /* confirmViewController.m */,
 				C4F3327F1A771C1700374362 /* resultViewController.h */,
 				C4F332801A771C1700374362 /* resultViewController.m */,
+				C4BE68301A7BA5F400815D1D /* listCollectionViewController.h */,
+				C4BE68311A7BA5F400815D1D /* listCollectionViewController.m */,
+				C4BE68331A7BA73500815D1D /* gameCollectionViewCell.h */,
+				C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */,
+				C4BE68361A7BAA9100815D1D /* sampleViewController.h */,
+				C4BE68371A7BAA9100815D1D /* sampleViewController.m */,
+				C4BE68391A7C85D700815D1D /* confirmPicViewController.h */,
+				C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */,
 				C4A9D4FF1A736D0A00DA4AEA /* Images.xcassets */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
 				C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */,
@@ -246,11 +266,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BE68381A7BAA9100815D1D /* sampleViewController.m in Sources */,
 				C456DC951A76325F005E25B0 /* titleViewController.m in Sources */,
+				C4BE683B1A7C85D700815D1D /* confirmPicViewController.m in Sources */,
 				C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */,
+				C4BE68321A7BA5F400815D1D /* listCollectionViewController.m in Sources */,
 				C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */,
 				C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */,
 				C456DC981A763303005E25B0 /* pictureViewController.m in Sources */,
+				C4BE68351A7BA73600815D1D /* gameCollectionViewCell.m in Sources */,
 				C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */,
 				C4A9D4F21A736D0900DA4AEA /* main.m in Sources */,
 				C4F332811A771C1700374362 /* resultViewController.m in Sources */,

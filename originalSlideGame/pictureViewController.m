@@ -16,7 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.finishBtn2.hidden = YES;
+    self.remakeBtn2.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +28,8 @@
 
 
 - (IBAction)createPictureBtn:(id)sender {
+    
+//NSLog(@"%@",sender);
     
     UIActionSheet *pictureActionSeet = [[UIActionSheet alloc]initWithTitle:@"Select"
                                                                   delegate:self cancelButtonTitle:@"Cancel"
@@ -109,7 +113,7 @@
     
     
     
-    //////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  //////////////////////
+    //////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  ///////////////
     
     // 取得した画像の縦サイズ、横サイズを取得する
     int imageW = image.size.width;
@@ -169,6 +173,12 @@
     
     // 画像を分割
     [self divImage:trimmedImage];
+    
+    // 初期ボタンやviewを非表示にし、新たなボタンを表示する
+    [self.createPictureBtn2 removeFromSuperview];
+    [self.explainLabel removeFromSuperview];
+    self.finishBtn2.hidden = NO;
+    self.remakeBtn2.hidden = NO;
 }
 
 
@@ -213,57 +223,57 @@
 /*********************************************************************************
          写真の表示と保存の向きの問題のため、配列し直す
  *********************************************************************************/
-    NSMutableArray *divPicData2 = [NSMutableArray array];
+    self.divPicData2 = [NSMutableArray array];
     
     
     if (image.imageOrientation == 0) {
-        divPicData2 = divPicData;
+        self.divPicData2 = divPicData;
     }
 
     if(image.imageOrientation == 1){
-        divPicData2[0] = divPicData[0];
-        divPicData2[1] = divPicData[9];
-        divPicData2[2] = divPicData[8];
-        divPicData2[3] = divPicData[7];
-        divPicData2[4] = divPicData[6];
-        divPicData2[5] = divPicData[5];
-        divPicData2[6] = divPicData[4];
-        divPicData2[7] = divPicData[3];
-        divPicData2[8] = divPicData[2];
-        divPicData2[9] = divPicData[1];
+        self.self.divPicData2[0] = divPicData[0];
+        self.divPicData2[1] = divPicData[9];
+        self.divPicData2[2] = divPicData[8];
+        self.divPicData2[3] = divPicData[7];
+        self.divPicData2[4] = divPicData[6];
+        self.divPicData2[5] = divPicData[5];
+        self.divPicData2[6] = divPicData[4];
+        self.divPicData2[7] = divPicData[3];
+        self.divPicData2[8] = divPicData[2];
+        self.divPicData2[9] = divPicData[1];
     }
     
     if(image.imageOrientation == 2){
-        divPicData2[0] = divPicData[0];
-        divPicData2[1] = divPicData[3];
-        divPicData2[2] = divPicData[6];
-        divPicData2[3] = divPicData[9];
-        divPicData2[4] = divPicData[2];
-        divPicData2[5] = divPicData[5];
-        divPicData2[6] = divPicData[8];
-        divPicData2[7] = divPicData[1];
-        divPicData2[8] = divPicData[4];
-        divPicData2[9] = divPicData[7];
+        self.divPicData2[0] = divPicData[0];
+        self.divPicData2[1] = divPicData[3];
+        self.divPicData2[2] = divPicData[6];
+        self.divPicData2[3] = divPicData[9];
+        self.divPicData2[4] = divPicData[2];
+        self.divPicData2[5] = divPicData[5];
+        self.divPicData2[6] = divPicData[8];
+        self.divPicData2[7] = divPicData[1];
+        self.divPicData2[8] = divPicData[4];
+        self.divPicData2[9] = divPicData[7];
     }
     
     if(image.imageOrientation == 3){
-        divPicData2[0] = divPicData[0];
-        divPicData2[1] = divPicData[7];
-        divPicData2[2] = divPicData[4];
-        divPicData2[3] = divPicData[1];
-        divPicData2[4] = divPicData[8];
-        divPicData2[5] = divPicData[5];
-        divPicData2[6] = divPicData[2];
-        divPicData2[7] = divPicData[9];
-        divPicData2[8] = divPicData[6];
-        divPicData2[9] = divPicData[3];
+        self.divPicData2[0] = divPicData[0];
+        self.divPicData2[1] = divPicData[7];
+        self.divPicData2[2] = divPicData[4];
+        self.divPicData2[3] = divPicData[1];
+        self.divPicData2[4] = divPicData[8];
+        self.divPicData2[5] = divPicData[5];
+        self.divPicData2[6] = divPicData[2];
+        self.divPicData2[7] = divPicData[9];
+        self.divPicData2[8] = divPicData[6];
+        self.divPicData2[9] = divPicData[3];
     }
     
-    // UserDefautで画像のデータを保存
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:divPicData2 forKey:@"divPicData"];
-    [userDefault synchronize];
     
+//     UserDefautで画像のデータを保存
+//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//    [userDefault setObject:self.divPicData2 forKey:@"divPicData"];
+//    [userDefault synchronize];
     
     return divImages;
 }
@@ -271,4 +281,25 @@
 
 
 
+- (IBAction)remakeBtn:(id)sender {
+    [self createPictureBtn:@"creatPictureBtn"];
+}
+
+
+- (IBAction)finishBtn:(id)sender{
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+    // UserDefautで保存したゲームリスト配列を呼び出したいが、空の場合は空のリストを生成する(これをしないとError)
+    if ([userDefault arrayForKey:@"divPicDataFinal"] == nil) {
+        NSArray *sampleArray = [NSArray array];
+        [userDefault setObject:sampleArray forKey:@"divPicDataFinal"];
+    }
+    
+    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+    NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; //追加できるようArrayをMutableArrayに変換
+    [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
+    
+    [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultで保存し直す
+    [userDefault synchronize];
+}
 @end
