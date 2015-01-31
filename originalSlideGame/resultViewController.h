@@ -15,6 +15,8 @@
 - (IBAction)goTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *resultTime;
 
-@property NSString *result;
+@property NSString *result; // タイムを引継ぐ
+
+@property NSArray *divPicturesData; // プレイ中のゲーム配列を引継ぐ
 
 @end

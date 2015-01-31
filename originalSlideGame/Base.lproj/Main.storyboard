@@ -24,7 +24,7 @@
         <!--List Collection View Controller-->
         <scene sceneID="n3g-sC-vCt">
             <objects>
-                <collectionViewController id="bNq-6t-ZxJ" customClass="listCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="listCollectionView" id="bNq-6t-ZxJ" customClass="listCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="C58-ig-J1F">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
                                 <connections>
                                     <outlet property="sampleLabel" destination="8xf-Kl-Ro0" id="yNl-7W-qSG"/>
                                     <outlet property="samplePicView" destination="wlt-db-YYe" id="77k-PW-p16"/>
-                                    <segue destination="T0q-aZ-GNv" kind="push" id="ga5-CK-jdg"/>
+                                    <segue destination="NdR-dS-FN1" kind="push" id="eAs-K3-ozD"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -88,52 +88,9 @@
                     <navigationItem key="navigationItem" id="jzI-Ui-1Sy"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxi-kv-El2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6zF-Jb-AcG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1312.5" y="-534"/>
-        </scene>
-        <!--Sample View Controller-->
-        <scene sceneID="MwV-Ft-xwA">
-            <objects>
-                <viewController id="T0q-aZ-GNv" customClass="sampleViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xnK-x5-zPp"/>
-                        <viewControllerLayoutGuide type="bottom" id="oCD-g1-Bvm"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FTn-u4-4ab">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyE-IC-fcz">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="35" y="140" width="219" height="75"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="pyE-IC-fcz"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="pyE-IC-fcz"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" id="afk-AE-QTc"/>
-                    <connections>
-                        <outlet property="sampleLabel" destination="pyE-IC-fcz" id="h8S-cM-kdv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d4c-E8-gBA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2181" y="-534"/>
+            <point key="canvasLocation" x="1195.5" y="280"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="gqH-ip-qHs">
@@ -619,7 +576,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaA-0y-xBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NDg-8T-fcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1312.5" y="274"/>
+            <point key="canvasLocation" x="1903.5" y="280"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pzJ-Ss-cYB">
@@ -788,7 +745,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="retryBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="HFc-N5-bko"/>
-                                    <segue destination="t9e-iB-gXU" kind="unwind" unwindAction="title2ViewReturnActionForSegue:" id="y3K-OQ-tRd"/>
+                                    <segue destination="6zF-Jb-AcG" kind="unwind" unwindAction="listViewReturnActionForSegue:" id="dRI-XL-rFI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -877,7 +834,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bq-gE-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2181" y="274"/>
+            <point key="canvasLocation" x="2667" y="280"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="ool-32-HH9">
@@ -957,7 +914,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="finishBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="AqR-xf-AkV"/>
-                                    <segue destination="VrV-J5-gG3" kind="push" id="bGC-Z8-mOJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1247,7 +1203,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="NdR-dS-FN1" kind="push" id="mfG-x8-h23"/>
+                                    <segue destination="bNq-6t-ZxJ" kind="push" id="6hc-Fv-u8u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPc-Up-ULF">
@@ -1302,21 +1258,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ca3-dZ-Ccn">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="LIST">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="237" y="232" width="71" height="70"/>
-                                </variation>
-                                <connections>
-                                    <action selector="listBtn:" destination="Mpc-bT-tvy" eventType="touchUpInside" id="9Vz-Wb-RKD"/>
-                                    <segue destination="bNq-6t-ZxJ" kind="push" id="Qnw-Co-B8e"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1341,7 +1282,6 @@
                                 <exclude reference="qa6-HW-obW"/>
                                 <exclude reference="iPc-Up-ULF"/>
                                 <exclude reference="UKX-j9-O0A"/>
-                                <exclude reference="Ca3-dZ-Ccn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="6p7-Je-lS5"/>
@@ -1360,7 +1300,6 @@
                                 <include reference="qa6-HW-obW"/>
                                 <include reference="iPc-Up-ULF"/>
                                 <include reference="UKX-j9-O0A"/>
-                                <include reference="Ca3-dZ-Ccn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="6p7-Je-lS5"/>

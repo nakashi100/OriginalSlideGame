@@ -8,7 +8,8 @@
 
 #import "listCollectionViewController.h"
 #import "gameCollectionViewCell.h"
-#import "sampleViewController.h"
+#import "playViewController.h"
+#import "pictureViewController.h"
 
 @interface listCollectionViewController ()
 
@@ -21,17 +22,24 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
+//    // Uncomment the following line to preserve selection between presentations
+//    // self.clearsSelectionOnViewWillAppear = NO;
+//    
+//    // Register cell classes
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    
+//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+//    self.count = [self.divPicDataFinal count];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
     self.count = [self.divPicDataFinal count];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -66,21 +74,40 @@ static NSString * const reuseIdentifier = @"Cell";
     // 最後のセルには「create original game」的なものを入れ、ゲーム作成画面に飛ばす
     if (indexPath.row == self.count) {
         cell.sampleLabel.text = @"Let's create!";
+        
+        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+        [self.navigationController pushViewController:playView animated:YES];
     }
-    
     
     return cell;
 }
 
 
+// セグエする際にデータを渡す
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     NSArray *paths = [self.collectionView indexPathsForSelectedItems];
     NSIndexPath * path = [paths objectAtIndex:0];
     
-    sampleViewController *sampleView = [segue destinationViewController];
-    sampleView.pathNo = path.row;
+    playViewController *playView = [segue destinationViewController];
+    playView.pathNo =path.row;
+    
+    playView.divPicturesData = self.divPicDataFinal[path.row];
+    
 }
 
+
+// unwindsegueでこの画面に戻すための処理
+- (IBAction)listViewReturnActionForSegue:(UIStoryboardSegue *)segue{
+    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+    [self.navigationController pushViewController:playView animated:YES];
+    
+    [self goPlayView];
+}
+
+- (void)goPlayView{
+    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+    [self.navigationController pushViewController:playView animated:YES];
+}
 
 
 #pragma mark <UICollectionViewDelegate>

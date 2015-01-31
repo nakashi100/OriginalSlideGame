@@ -8,6 +8,7 @@
 
 #import "titleViewController.h"
 #import "playViewController.h"
+#import "listCollectionViewController.h"
 
 @interface titleViewController ()
 
@@ -16,7 +17,7 @@
 @implementation titleViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad];    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -24,7 +25,17 @@
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+    NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlayingGame"];
+    
     NSLog(@"配列の個数は%d",[divPicDataFinal count]);
+    NSLog(@"nowPlayingは%d",[nowPlaying count]);
+    
+//    BOOL createdFlag = [userDefault boolForKey:@"createdFlag"];
+//    if(!createdFlag){
+//        NSLog(@"フラグあり");
+//    listCollectionViewController *con = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
+//    [self.navigationController pushViewController:con animated:YES];
+//    }
     
 }
 
@@ -48,16 +59,17 @@
 }
 
 - (IBAction)title2ViewReturnActionForSegue:(UIStoryboardSegue *)segue{
-    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-    [self.navigationController pushViewController:playView animated:YES];
-    
-    
-    [self goPlayView];
+
 }
 
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:YES];
+}
+
+- (void)golistCollectionView{
+    listCollectionViewController *listCollectionView = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
+    [self.navigationController pushViewController:listCollectionView animated:YES];
 }
 
 @end

@@ -21,6 +21,7 @@
     self.twitterImage.image = [UIImage imageNamed:@"mihonSample"];
     
     self.resultTime.text = self.result;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +29,10 @@
 }
 
 - (IBAction)retryBtn:(id)sender {
+    // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:self.divPicturesData forKey:@"nowPlaying"];
+    [userDefault synchronize];
 }
 
 - (IBAction)goTitleBtn:(id)sender {

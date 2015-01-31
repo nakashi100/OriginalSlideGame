@@ -20,21 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // UserDefaultで保存した写真を呼び出す
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *divPicturesData = [userDefault arrayForKey:@"divPicData"];
-    
-    
-//    NSArray *divPicturesData = [userDefault arrayForKey:@"divPicDataFinal"];
-//    NSLog(@"%d",[divPicturesData count]);
-//    NSLog(@"%d",[divPicturesData[0] count]);
+    // ゲームリスト画面以外から来た場合(self.divPicturesDataが空の場合)は、forKey:nowPlayingでゲーム配列をセットする(result時か作成時に保存している)
+    if(!self.divPicturesData){
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        self.divPicturesData = [userDefault arrayForKey:@"nowPlaying"];
+    }
     
     
     // 写真のデータをdata型からimage型に変換する
     for (int i=0; i<10; i++) {
-        // self.pic0 = [UIImage imageWithData:divPicturesData[0]]; //やりたい処理はこれの繰り返し
+        // self.pic0 = [UIImage imageWithData:self.divPicturesData[0]]; //やりたい処理はこれの繰り返し
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i];
-        [self setValue:[UIImage imageWithData:divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
+        [self setValue:[UIImage imageWithData:self.divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
 
     }
     
@@ -493,10 +490,11 @@
         
         
 
-        // タイマーを止めて、タイムを次のページへ引継ぐ
+        // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
         [self.myTimer invalidate];
         resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         resultView.result = self.playTime;
+        resultView.divPicturesData = self.divPicturesData;
         
         // Resultページへモーダルで遷移させる
         [self presentViewController:resultView animated:YES completion:nil];
@@ -694,8 +692,6 @@
     }
     
 }
-
-
 
 
 

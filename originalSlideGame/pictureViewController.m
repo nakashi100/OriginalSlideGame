@@ -7,6 +7,8 @@
 //
 
 #import "pictureViewController.h"
+#import "listCollectionViewController.h"
+#import "playViewController.h"
 
 @interface pictureViewController ()
 
@@ -271,10 +273,7 @@
     
     
 //     UserDefautで画像のデータを保存
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    [userDefault setObject:self.divPicData2 forKey:@"divPicData"];
-//    [userDefault synchronize];
-    
+
     return divImages;
 }
 
@@ -296,10 +295,18 @@
     }
     
     self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; //追加できるようArrayをMutableArrayに変換
+    NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; // 追加できるようArrayをMutableArrayに変換
     [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
     
-    [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultで保存し直す
+    [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
+    [userDefault setObject:self.divPicDataFinal forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
     [userDefault synchronize];
+    
+    // タイトル画面に戻る
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    
+//    listCollectionViewController *con = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
+//    [self.navigationController pushViewController:con animated:NO];
+    
 }
 @end
