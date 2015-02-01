@@ -17,7 +17,17 @@
 @implementation titleViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *divPicDataCheck = [userDefault arrayForKey:@"divPicDataFinal"];
+    
+    if(!divPicDataCheck){
+        [self defaultGame1]; // デフォルトゲームを作成
+    }
+    
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -25,11 +35,11 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
 ///////////// 検証用(あとで消す //////////////////////
-NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlaying"];
-    
-NSLog(@"配列の個数は%d",[divPicDataFinal count]);
-NSLog(@"nowPlayingは%d",[nowPlaying count]);
+//NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+//NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlaying"];
+//    
+//NSLog(@"配列の個数は%d",[divPicDataFinal count]);
+//NSLog(@"nowPlayingは%d",[nowPlaying count]);
 //////////////////////////////////////////////////
     
     // createdFlagがYESということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
@@ -80,6 +90,30 @@ NSLog(@"nowPlayingは%d",[nowPlaying count]);
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:NO];
+}
+
+
+// デフォルトのゲーム配列作成
+- (void)defaultGame1{
+
+    // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
+    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
+    NSMutableArray *divPicDataFinal = [NSMutableArray array]; // ゲーム配列リスト
+    
+    for (int i=0; i<10; i++) {
+        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
+        UIImage *picImage = [UIImage imageNamed:picText];
+
+        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
+        [divPicData addObject:picData];
+    }
+    
+    [divPicDataFinal addObject:divPicData];
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
+    [userDefault synchronize];
+    
 }
 
 

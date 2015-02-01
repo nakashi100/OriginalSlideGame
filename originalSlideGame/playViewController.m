@@ -62,6 +62,12 @@
     // ナビゲーションバーに削除ボタンを設置
     self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(alert)];
     self.navigationItem.rightBarButtonItem = self.trashBtn;
+    
+    // デフォルトゲームは削除できないようにnavigationの削除ボタンを非表示&無効にする
+    if(self.pathNo == 0){
+        [self.trashBtn setEnabled:NO];
+        self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
+    }
 }
 
 

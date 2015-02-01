@@ -52,16 +52,12 @@ static NSString * const reuseIdentifier = @"Cell";
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
     if (indexPath.row < self.count){
-        NSString *sampleText = [NSString stringWithFormat:@"No.%ld", indexPath.row];
-        cell.sampleLabel.text = sampleText;
-    
         NSArray *picData = self.divPicDataFinal[indexPath.row];
         UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
         cell.samplePicView.image = pic0;
     }
     
     if (indexPath.row == self.count) {
-        cell.sampleLabel.text = nil;  // 最後のセルには「create original puzzule」的なものを入れ、ゲーム作成画面に飛ばす
         cell.samplePicView.image = [UIImage imageNamed:@"add_sample"];
     }
     
