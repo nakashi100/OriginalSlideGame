@@ -15,6 +15,7 @@
 
 - (IBAction)useDefaultReset:(id)sender;
 
-@property BOOL createdFlag;
+@property BOOL createdFlag; // ゲーム作成後のリダイレクト判定用
+@property BOOL deletedFlag; // ゲーム削除後のリダイレクト判定用
 
 @end

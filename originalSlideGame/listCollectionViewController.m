@@ -21,19 +21,11 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//    // Uncomment the following line to preserve selection between presentations
-//    // self.clearsSelectionOnViewWillAppear = NO;
-//    
-//    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-//    
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-//    self.count = [self.divPicDataFinal count];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    self.title = @"PUZZLE LIST";
+    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -44,8 +36,6 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
@@ -152,5 +142,6 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
 
 @end

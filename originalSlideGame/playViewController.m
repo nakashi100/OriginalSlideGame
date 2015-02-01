@@ -32,7 +32,6 @@
         // self.pic0 = [UIImage imageWithData:self.divPicturesData[0]]; //やりたい処理はこれの繰り返し
         NSString *picNum = [NSString stringWithFormat:@"pic%d", i];
         [self setValue:[UIImage imageWithData:self.divPicturesData[i]] forKey:picNum]; // このクラス(self)のプロパティにvalueをセットする
-
     }
     
     // 写真のimageを各viewにセットする
@@ -58,8 +57,11 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated
-{
+- (void)viewWillAppear:(BOOL)animated{
+    
+    // ナビゲーションバーに削除ボタンを設置
+    self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(alert)];
+    self.navigationItem.rightBarButtonItem = self.trashBtn;
 }
 
 
@@ -69,6 +71,12 @@
 
 
 - (IBAction)playButton:(id)sender {
+    
+    // navigationの削除ボタンを非表示&無効にする
+    [self.trashBtn setEnabled:NO];
+    self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
+    
+    
     // image9(tag:19)を削除する
      [[self.view viewWithTag:19] removeFromSuperview];
     
@@ -438,25 +446,15 @@
             
         //--------------------------------------------------------------------------
         
-        // 完成画像を表示する
+        // 完成画像(見本)を表示する
         case 30:
             self.sampleImageView.image = self.pic0;
             break;
 
         
-        
-        default:
-            
-            break;
-    }
-    
-    
-    switch (touch.view.tag) {
-            
         default:
             break;
     }
-
     
     [self judge];
 }
@@ -528,7 +526,7 @@
 }
 
 
-// 完成画像を閉じる処理
+// 完成画像(見本)を閉じる処理
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     
@@ -543,8 +541,58 @@
 }
 
 
+
+
 /*********************************************************************************
- ゲームを止めるor続けるポップアップ画面
+                ゲームの削除処理
+ *********************************************************************************/
+
+- (void)alert{
+    // アラートビューを作成
+    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Delete this puzzle"
+                          message:@"Do you want to delete this puzzle game?"
+                          delegate:self
+                          cancelButtonTitle:@"NO"
+                          otherButtonTitles:@"DELETE", nil];
+
+    [alert show];  // アラートビューを表示
+}
+
+// デリゲート処理
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 1: // 1番目が押されたとき
+            [self deleteGame];
+            break;
+            
+        default: // キャンセルが押されたとき
+            break;
+    }
+}
+
+- (void)deleteGame {
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+    NSMutableArray *divPicDataFinalnew = [divPicDataFinal mutableCopy];
+    [divPicDataFinalnew removeObjectAtIndex:self.pathNo];
+    [userDefault setObject:divPicDataFinalnew forKey:@"divPicDataFinal"];
+    
+    BOOL deletedFlag = YES;
+    [userDefault setBool:deletedFlag forKey:@"deletedFlag"]; // ここからの遷移だと明確にするため
+
+    [userDefault synchronize];
+    
+    [self.navigationController popToRootViewControllerAnimated:NO]; // タイトル画面に戻る
+
+//        [self.navigationController popViewControllerAnimated:YES];
+
+}
+
+
+/*********************************************************************************
+                ゲームを止めるor続けるポップアップ画面
  *********************************************************************************/
 
 - (IBAction)testBtn:(id)sender {
@@ -628,7 +676,7 @@
     [quitBtn removeFromSuperview];
     
     
-    // タイトル画面に戻る
+    // タイトル画面に戻る(unwindsegue manual)
     [self performSegueWithIdentifier:@"titleViewReturn" sender:self];
     
 }

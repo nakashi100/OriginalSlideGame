@@ -21,9 +21,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-
+    
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-
     
 ///////////// 検証用(あとで消す //////////////////////
 NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
@@ -33,14 +32,21 @@ NSLog(@"配列の個数は%d",[divPicDataFinal count]);
 NSLog(@"nowPlayingは%d",[nowPlaying count]);
 //////////////////////////////////////////////////
     
-    self.createdFlag = [userDefault boolForKey:@"createdFlag"];
-
     // createdFlagがYESということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
+    self.createdFlag = [userDefault boolForKey:@"createdFlag"];
     if (self.createdFlag) {
         [self golistCollectionView];
         [self goPlayView];
         self.createdFlag = NO;
         [userDefault setBool:self.createdFlag forKey:@"createdFlag"];
+    }
+    
+    // ゲーム削除の場合のリダイレクト
+    self.deletedFlag = [userDefault boolForKey:@"deletedFlag"];
+    if (self.deletedFlag) {
+        [self golistCollectionView];
+        self.deletedFlag = NO;
+        [userDefault setBool:self.createdFlag forKey:@"deletedFlag"];
     }
     
 }
@@ -56,15 +62,18 @@ NSLog(@"nowPlayingは%d",[nowPlaying count]);
     NSLog(@"UserDefaultリセットしたよー!");
 }
 
-- (IBAction)listBtn:(id)sender {
-}
 
 
 // unwindsegueでこの画面に戻すための処理
 - (IBAction)titleViewReturnActionForSegue:(UIStoryboardSegue *)segue {
 }
 
-- (IBAction)title2ViewReturnActionForSegue:(UIStoryboardSegue *)segue{
+
+
+// list画面に遷移する
+- (void)golistCollectionView{
+    listCollectionViewController *listCollectionView = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
+    [self.navigationController pushViewController:listCollectionView animated:NO];
 }
 
 // play画面に遷移する
@@ -73,10 +82,6 @@ NSLog(@"nowPlayingは%d",[nowPlaying count]);
     [self.navigationController pushViewController:playView animated:NO];
 }
 
-// list画面に遷移する
-- (void)golistCollectionView{
-    listCollectionViewController *listCollectionView = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
-    [self.navigationController pushViewController:listCollectionView animated:NO];
-}
+
 
 @end

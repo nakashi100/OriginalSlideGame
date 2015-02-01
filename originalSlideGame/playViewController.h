@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface playViewController : UIViewController
+@interface playViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
+@property UIBarButtonItem *trashBtn;
 
 @property NSMutableArray *randNums;
 

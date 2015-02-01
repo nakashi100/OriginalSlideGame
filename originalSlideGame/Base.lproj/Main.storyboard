@@ -89,7 +89,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxi-kv-El2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="6zF-Jb-AcG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1195.5" y="280"/>
+            <point key="canvasLocation" x="1195.5" y="200"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="gqH-ip-qHs">
@@ -541,7 +541,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="Bdk-I9-mSp"/>
                     <connections>
                         <outlet property="forHideView" destination="dqx-zF-13G" id="Qpn-Fh-Aw9"/>
                         <outlet property="forHideView3" destination="YS8-Kb-0zD" id="nxS-yH-THn"/>
@@ -575,7 +574,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UaA-0y-xBG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NDg-8T-fcn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1903.5" y="280"/>
+            <point key="canvasLocation" x="1939.5" y="200"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="pzJ-Ss-cYB">
@@ -833,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Bq-gE-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2667" y="280"/>
+            <point key="canvasLocation" x="2667" y="200"/>
         </scene>
         <!--Picture View Controller-->
         <scene sceneID="ool-32-HH9">
@@ -847,7 +846,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using favorite photographs, Let's make games only for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2C-RM-7ln">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using favorite photographs, Let's make puzzles only for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2C-RM-7ln">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -961,7 +960,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urm-M3-tFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1312.5" y="1004"/>
+            <point key="canvasLocation" x="1195.5" y="962"/>
         </scene>
         <!--Confirm Pic View Controller-->
         <scene sceneID="xJU-bD-9vG">
@@ -1014,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQZ-TC-BOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="1560"/>
+            <point key="canvasLocation" x="2001" y="1360"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="0K4-ei-Xk4">
@@ -1135,7 +1134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ui-Zr-vJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2667" y="1012"/>
+            <point key="canvasLocation" x="2667" y="1216"/>
         </scene>
         <!--Title View Controller-->
         <scene sceneID="G6z-Ra-VPB">
