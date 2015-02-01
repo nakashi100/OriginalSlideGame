@@ -24,7 +24,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    self.title = @"PUZZLE LIST";
+    self.title = @"LIST";
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -61,7 +61,8 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     
     if (indexPath.row == self.count) {
-        cell.sampleLabel.text = @"Let's create!";  // 最後のセルには「create original game」的なものを入れ、ゲーム作成画面に飛ばす
+        cell.sampleLabel.text = nil;  // 最後のセルには「create original puzzule」的なものを入れ、ゲーム作成画面に飛ばす
+        cell.samplePicView.image = [UIImage imageNamed:@"add_sample"];
     }
     
     return cell;

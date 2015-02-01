@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface listCollectionViewController : UICollectionViewController
+@interface listCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property NSArray *divPicDataFinal;
 @property int count; // divPicDataFinal配列の個数
