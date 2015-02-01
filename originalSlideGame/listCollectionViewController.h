@@ -12,5 +12,6 @@
 
 @property NSArray *divPicDataFinal;
 @property int count; // divPicDataFinal配列の個数
+@property UIBarButtonItem *addBtn; // 追加ボタン
 
 @end

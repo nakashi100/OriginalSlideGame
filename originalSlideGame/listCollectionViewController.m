@@ -31,6 +31,11 @@ static NSString * const reuseIdentifier = @"Cell";
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
     self.count = [self.divPicDataFinal count];
+    
+    
+    // ナビゲーションバーに削除ボタンを設置
+    self.addBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGame)];
+    self.navigationItem.rightBarButtonItem = self.addBtn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,21 +50,21 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return (self.count+1);  // 最後のセルにはcreateを促すようなものを入れる
+    return self.count;  // 最後のセルにはcreateを促すようなものを入れる
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
-    if (indexPath.row < self.count){
+//    if (indexPath.row < self.count){
         NSArray *picData = self.divPicDataFinal[indexPath.row];
         UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
         cell.samplePicView.image = pic0;
-    }
-    
-    if (indexPath.row == self.count) {
-        cell.samplePicView.image = [UIImage imageNamed:@"add_sample"];
-    }
+//    }
+//    
+//    if (indexPath.row == self.count) {
+//        cell.samplePicView.image = [UIImage imageNamed:@"add_sample"];
+//    }
     
     return cell;
 }
@@ -80,17 +85,17 @@ static NSString * const reuseIdentifier = @"Cell";
 // セルがタップされたときの処理(遷移先と値渡し)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row < self.count) {
+//    if (indexPath.row < self.count) {
         playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
         playView.pathNo =indexPath.row;  // 値渡し
         playView.divPicturesData = self.divPicDataFinal[indexPath.row];  // 値渡し
         [self.navigationController pushViewController:playView animated:YES]; // プレイ画面に遷移
-    }
-    
-    if (indexPath.row == self.count) {
-        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
-        [self.navigationController pushViewController:pictureView animated:NO]; // ゲーム作成画面に遷移
-    }
+//    }
+//    
+//    if (indexPath.row == self.count) {
+//        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
+//        [self.navigationController pushViewController:pictureView animated:NO]; // ゲーム作成画面に遷移
+//    }
 }
 
 
@@ -105,6 +110,14 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:YES];
+}
+
+
+
+// addボタンが押されたらゲーム作成画面に遷移
+- (void)addGame{
+    pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
+    [self.navigationController pushViewController:pictureView animated:YES];
 }
 
 

@@ -11,7 +11,7 @@
 @interface playViewController : UIViewController <UIAlertViewDelegate>
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
-@property UIBarButtonItem *trashBtn;
+@property UIBarButtonItem *trashBtn; // 削除ボタン
 
 @property NSMutableArray *randNums;
 
