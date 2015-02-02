@@ -97,56 +97,55 @@
 - (void)defaultGame1{
 
     // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
-    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
     NSMutableArray *divPicDataFinal = [NSMutableArray array]; // ゲーム配列リスト
     
+    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
+    NSString *picText;
+    UIImage *picImage;
+    NSData *picData;
+    
     for (int i=0; i<10; i++) {
-        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
-        UIImage *picImage = [UIImage imageNamed:picText];
+        picText = [NSString stringWithFormat:@"sample%d",i];
+        picImage = [UIImage imageNamed:picText];
 
-        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
+        picData = UIImageJPEGRepresentation(picImage, 1.0);
         [divPicData addObject:picData];
     }
     
     [divPicDataFinal addObject:divPicData]; // 3×3を追加
     
+    
+    
+    NSMutableArray *divPicData2 = [NSMutableArray array]; // ゲーム配列
+    NSString *picText2;
+    UIImage *picImage2;
+    NSData *picData2;
+    
     for (int i=0; i<17; i++) {
-        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
-        UIImage *picImage = [UIImage imageNamed:picText];
+        picText2 = [NSString stringWithFormat:@"sample%d",i];
+        picImage2 = [UIImage imageNamed:picText2];
         
-        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
-        [divPicData addObject:picData];
+        picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
+        [divPicData2 addObject:picData2];
     }
     
-    [divPicDataFinal addObject:divPicData]; // 4×4を追加
+    picImage2 = [UIImage imageNamed:@"sample00"];
+    picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
+    [divPicData2 replaceObjectAtIndex:0 withObject:picData2]; // 4*4の完成画像と差し替える
+    
+    [divPicDataFinal addObject:divPicData2]; // 4×4を追加
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
     [userDefault synchronize];
+    
+    NSLog(@"%lu",[divPicDataFinal count]);
+    NSArray *a = divPicDataFinal[0];
+    NSArray *b = divPicDataFinal[1];
+    NSLog(@"%d",[a count]);
+    NSLog(@"%d",[b count]);
     
 }
 
-// デフォルトのゲーム配列作成(4×4)
-- (void)defaultGame2{
-    
-    // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
-    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
-    NSMutableArray *divPicDataFinal = [NSMutableArray array]; // ゲーム配列リスト
-    
-    for (int i=0; i<17; i++) {
-        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
-        UIImage *picImage = [UIImage imageNamed:picText];
-        
-        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
-        [divPicData addObject:picData];
-    }
-    
-    [divPicDataFinal addObject:divPicData];
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
-    [userDefault synchronize];
-    
-}
 
 @end
