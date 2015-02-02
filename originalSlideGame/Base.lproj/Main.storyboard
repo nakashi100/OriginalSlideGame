@@ -1112,7 +1112,7 @@
         <!--Hard Play View Controller-->
         <scene sceneID="nxN-S8-ui6">
             <objects>
-                <viewController storyboardIdentifier="hard`layView" id="6f7-3o-PhV" customClass="hardPlayViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hardPlayView" id="6f7-3o-PhV" customClass="hardPlayViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CkQ-1M-7Ai"/>
                         <viewControllerLayoutGuide type="bottom" id="A1h-fP-DZu"/>

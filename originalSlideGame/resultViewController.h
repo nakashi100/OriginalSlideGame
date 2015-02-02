@@ -18,5 +18,6 @@
 @property NSString *result; // タイムを引継ぐ
 
 @property NSArray *divPicturesData; // プレイ中のゲーム配列を引継ぐ
+@property int playingArrayCount; // プレイ中のゲーム配列の個数(10コor17コ)※リダイレクト先を変えるため
 
 @end

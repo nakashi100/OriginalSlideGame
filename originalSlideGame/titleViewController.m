@@ -26,8 +26,6 @@
         [self defaultGame1]; // デフォルトゲームを作成
     }
     
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -138,12 +136,6 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
     [userDefault synchronize];
-    
-    NSLog(@"%lu",[divPicDataFinal count]);
-    NSArray *a = divPicDataFinal[0];
-    NSArray *b = divPicDataFinal[1];
-    NSLog(@"%d",[a count]);
-    NSLog(@"%d",[b count]);
     
 }
 

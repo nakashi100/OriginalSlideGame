@@ -17,10 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     self.twitterImage.image = [UIImage imageNamed:@"mihonSample"];
-    
     self.resultTime.text = self.result;
+    
+    self.playingArrayCount = [self.divPicturesData count];
+    
+    // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:self.divPicturesData forKey:@"nowPlaying"];
+    [userDefault setInteger:self.playingArrayCount forKey:@"playingArrayCount"];
+    [userDefault synchronize];
     
 }
 
@@ -29,10 +38,8 @@
 }
 
 - (IBAction)retryBtn:(id)sender {
-    // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:self.divPicturesData forKey:@"nowPlaying"];
-    [userDefault synchronize];
+    
+
 }
 
 - (IBAction)goTitleBtn:(id)sender {

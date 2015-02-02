@@ -7,6 +7,9 @@
 //
 
 #import "hardPlayViewController.h"
+#import "resultViewController.h"
+#import "titleViewController.h"
+
 
 @interface hardPlayViewController ()
 
@@ -16,29 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    ////// 実際はタイトル画面で初期ゲームを作成し、list画面からデータを引継ぐ ///////////////
-    // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
-    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
-    
-    for (int i=0; i<17; i++) {
-        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
-        UIImage *picImage = [UIImage imageNamed:picText];
-        
-        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
-        [divPicData addObject:picData];
-    }
-    
-    
-    self.divPicturesData = divPicData;
-    
-    //    NSLog(@"配列は%dコ",[self.divPicturesData count]);
-    //     NSLog(@"配列は%@",self.divPicturesData[16]);
-    ////////////////////////////////////
-
-    
-    
     
     
     // ゲームリスト画面以外から来た場合(self.divPicturesDataが空の場合)は、forKey:nowPlayingでゲーム配列をセットする(result時か作成時に保存している)
@@ -85,7 +65,7 @@
     self.navigationItem.rightBarButtonItem = self.trashBtn;
     
     // デフォルトゲームは削除できないようにnavigationの削除ボタンを非表示&無効にする
-    if(self.pathNo == 0){
+    if(self.pathNo == 1){
         [self.trashBtn setEnabled:NO];
         self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
     }
@@ -702,7 +682,7 @@
             //--------------------------------------------------------------------------
             
             // 完成画像(見本)を表示する
-        case 30:
+        case 100:
             self.sampleImageView.image = self.pic0;
             break;
             
@@ -743,14 +723,14 @@
         
         NSLog(@"完成");
         
-//        // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
-//        [self.myTimer invalidate];
-//        resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
-//        resultView.result = self.playTime;
-//        resultView.divPicturesData = self.divPicturesData;
+        // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
+        [self.myTimer invalidate];
+        resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
+        resultView.result = self.playTime;
+        resultView.divPicturesData = self.divPicturesData;
         
-//        // Resultページへモーダルで遷移させる
-//        [self presentViewController:resultView animated:YES completion:nil];
+        // Resultページへモーダルで遷移させる
+        [self presentViewController:resultView animated:YES completion:nil];
     }
 }
 

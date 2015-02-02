@@ -10,6 +10,7 @@
 #import "gameCollectionViewCell.h"
 #import "playViewController.h"
 #import "pictureViewController.h"
+#import "hardPlayViewController.h"
 
 @interface listCollectionViewController ()
 
@@ -33,7 +34,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.count = [self.divPicDataFinal count];
     
     
-    // ナビゲーションバーに削除ボタンを設置
+    // ナビゲーションバーに追加ボタンを設置
     self.addBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGame)];
     self.navigationItem.rightBarButtonItem = self.addBtn;
 }
@@ -85,26 +86,42 @@ static NSString * const reuseIdentifier = @"Cell";
 // セルがタップされたときの処理(遷移先と値渡し)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (indexPath.row < self.count) {
-        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+
+    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+    hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+    NSArray *thisGameArray  = self.divPicDataFinal[indexPath.row]; // playViewかhardPlayViewに遷移するかを判定
+    int arrayCount = [thisGameArray count];
+    
+    if (arrayCount == 10) {
         playView.pathNo =indexPath.row;  // 値渡し
         playView.divPicturesData = self.divPicDataFinal[indexPath.row];  // 値渡し
         [self.navigationController pushViewController:playView animated:YES]; // プレイ画面に遷移
-//    }
-//    
-//    if (indexPath.row == self.count) {
-//        pictureViewController *pictureView = [self.storyboard instantiateViewControllerWithIdentifier:@"pictureView"];
-//        [self.navigationController pushViewController:pictureView animated:NO]; // ゲーム作成画面に遷移
-//    }
+    }else if(arrayCount == 17){
+        hardPlayView.pathNo =indexPath.row;
+        hardPlayView.divPicturesData = self.divPicDataFinal[indexPath.row];
+        [self.navigationController pushViewController:hardPlayView animated:YES];
+    }
+    
 }
-
 
 // unwindsegueでこの画面に戻すための処理
 - (IBAction)listViewReturnActionForSegue:(UIStoryboardSegue *)segue{
-    playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-    [self.navigationController pushViewController:playView animated:YES];
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    int playingArrayCount = [userDefault integerForKey:@"playingArrayCount"];
     
-    [self goPlayView];
+    NSLog(@"引継がれたのは%d",playingArrayCount);
+    if (playingArrayCount == 10) {
+        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+        [self.navigationController pushViewController:playView animated:YES];
+        
+        [self goPlayView];
+        
+    }else if(playingArrayCount == 17){
+        hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+        [self.navigationController pushViewController:hardPlayView animated:YES];
+        
+        [self goHardPlayView];
+    }
 }
 
 - (void)goPlayView{
@@ -112,6 +129,10 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.navigationController pushViewController:playView animated:YES];
 }
 
+- (void)goHardPlayView{
+    hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+    [self.navigationController pushViewController:hardPlayView animated:YES];
+}
 
 
 // addボタンが押されたらゲーム作成画面に遷移
