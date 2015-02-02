@@ -108,7 +108,17 @@
         [divPicData addObject:picData];
     }
     
-    [divPicDataFinal addObject:divPicData];
+    [divPicDataFinal addObject:divPicData]; // 3×3を追加
+    
+    for (int i=0; i<17; i++) {
+        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
+        UIImage *picImage = [UIImage imageNamed:picText];
+        
+        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
+        [divPicData addObject:picData];
+    }
+    
+    [divPicDataFinal addObject:divPicData]; // 4×4を追加
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
@@ -116,6 +126,27 @@
     
 }
 
-
+// デフォルトのゲーム配列作成(4×4)
+- (void)defaultGame2{
+    
+    // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
+    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
+    NSMutableArray *divPicDataFinal = [NSMutableArray array]; // ゲーム配列リスト
+    
+    for (int i=0; i<17; i++) {
+        NSString *picText = [NSString stringWithFormat:@"sample%d",i];
+        UIImage *picImage = [UIImage imageNamed:picText];
+        
+        NSData *picData = UIImageJPEGRepresentation(picImage, 1.0);
+        [divPicData addObject:picData];
+    }
+    
+    [divPicDataFinal addObject:divPicData];
+    
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
+    [userDefault synchronize];
+    
+}
 
 @end

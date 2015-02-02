@@ -159,7 +159,7 @@
     
     
     // image1〜8の中の数字を並び替える
-    int pattern = 2; // 実際にはrand関数を使ってpatternをランダムに指定する
+    int pattern = 1; // 実際にはrand関数を使ってpatternをランダムに指定する
     [self puzzlePattern:pattern];
     
     
@@ -200,19 +200,19 @@
             
             if([self.viewArray2[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray1[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray1[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray2 = [@[self.viewArray1[0],self.viewArray1[1],self.viewArray1[2]]mutableCopy];
                 self.viewArray1 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray4[0] intValue] == 0){
+            if([self.viewArray5[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray1[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray1[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray4 = [@[self.viewArray1[0],self.viewArray1[1],self.viewArray1[2]]mutableCopy];
+                self.viewArray5 = [@[self.viewArray1[0],self.viewArray1[1],self.viewArray1[2]]mutableCopy];
                 self.viewArray1 = [@[@0,@0,@0]mutableCopy];
             }
             
@@ -222,7 +222,7 @@
             
             if([self.viewArray1[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray2[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray2[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray1 = [@[self.viewArray2[0],self.viewArray2[1],self.viewArray2[2]]mutableCopy];
@@ -231,19 +231,19 @@
             
             if([self.viewArray3[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray2[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray2[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray3 = [@[self.viewArray2[0],self.viewArray2[1],self.viewArray2[2]]mutableCopy];
                 self.viewArray2 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray5[0] intValue] == 0){
+            if([self.viewArray6[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray2[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray2[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray5 = [@[self.viewArray2[0],self.viewArray2[1],self.viewArray2[2]]mutableCopy];
+                self.viewArray6 = [@[self.viewArray2[0],self.viewArray2[1],self.viewArray2[2]]mutableCopy];
                 self.viewArray2 = [@[@0,@0,@0]mutableCopy];
             }
             
@@ -253,19 +253,28 @@
             
             if([self.viewArray2[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray3[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray3[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray2 = [@[self.viewArray3[0],self.viewArray3[1],self.viewArray3[2]]mutableCopy];
                 self.viewArray3 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray6[0] intValue] == 0){
+            if([self.viewArray4[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray3[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray3[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
-                self.viewArray6 = [@[self.viewArray3[0],self.viewArray3[1],self.viewArray3[2]]mutableCopy];
+                self.viewArray4 = [@[self.viewArray3[0],self.viewArray3[1],self.viewArray3[2]]mutableCopy];
+                self.viewArray3 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray7[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray3[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray7 = [@[self.viewArray3[0],self.viewArray3[1],self.viewArray3[2]]mutableCopy];
                 self.viewArray3 = [@[@0,@0,@0]mutableCopy];
             }
             
@@ -273,30 +282,21 @@
             //--------------------------------------------------------------------------
         case 4:
             
-            if([self.viewArray1[0] intValue] == 0){
+            if([self.viewArray3[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray4[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray4[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
-                self.viewArray1 = [@[self.viewArray4[0],self.viewArray4[1],self.viewArray4[2]]mutableCopy];
+                self.viewArray3 = [@[self.viewArray4[0],self.viewArray4[1],self.viewArray4[2]]mutableCopy];
                 self.viewArray4 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray5[0] intValue] == 0){
+            if([self.viewArray8[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray4[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray4[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray5 = [@[self.viewArray4[0],self.viewArray4[1],self.viewArray4[2]]mutableCopy];
-                self.viewArray4 = [@[@0,@0,@0]mutableCopy];
-            }
-            
-            if([self.viewArray7[0] intValue] == 0){
-                // タグを動かす
-                [self slide:[self.viewArray4[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
-                
-                // 配列の中身を入れ替える
-                self.viewArray7 = [@[self.viewArray4[0],self.viewArray4[1],self.viewArray4[2]]mutableCopy];
+                self.viewArray8 = [@[self.viewArray4[0],self.viewArray4[1],self.viewArray4[2]]mutableCopy];
                 self.viewArray4 = [@[@0,@0,@0]mutableCopy];
             }
             
@@ -304,70 +304,71 @@
             //--------------------------------------------------------------------------
         case 5:
             
-            if([self.viewArray2[0] intValue] == 0){
+            if([self.viewArray1[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray5[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray5[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray2 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
-                self.viewArray5 = [@[@0,@0,@0]mutableCopy];
-            }
-            
-            if([self.viewArray4[0] intValue] == 0){
-                // タグを動かす
-                [self slide:[self.viewArray5[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
-                
-                // 配列の中身を入れ替える
-                self.viewArray4 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
+                self.viewArray1 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
                 self.viewArray5 = [@[@0,@0,@0]mutableCopy];
             }
             
             if([self.viewArray6[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray5[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray5[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray6 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
                 self.viewArray5 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray8[0] intValue] == 0){
+            if([self.viewArray9[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray5[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray5[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray8 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
+                self.viewArray9 = [@[self.viewArray5[0],self.viewArray5[1],self.viewArray5[2]]mutableCopy];
                 self.viewArray5 = [@[@0,@0,@0]mutableCopy];
             }
+            
             
             break;
             //--------------------------------------------------------------------------
         case 6:
             
-            if([self.viewArray3[0] intValue] == 0){
+            if([self.viewArray2[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray6[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray6[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray3 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
+                self.viewArray2 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
                 self.viewArray6 = [@[@0,@0,@0]mutableCopy];
             }
             
             if([self.viewArray5[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray6[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray6[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray5 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
                 self.viewArray6 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray9[0] intValue] == 0){
+            if([self.viewArray7[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray6[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray6[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
-                self.viewArray9 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
+                self.viewArray7 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
+                self.viewArray6 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray10[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray6[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray10 = [@[self.viewArray6[0],self.viewArray6[1],self.viewArray6[2]]mutableCopy];
                 self.viewArray6 = [@[@0,@0,@0]mutableCopy];
             }
             
@@ -375,42 +376,59 @@
             //--------------------------------------------------------------------------
         case 7:
             
-            if([self.viewArray4[0] intValue] == 0){
+            if([self.viewArray3[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray7[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray7[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray4 = [@[self.viewArray7[0],self.viewArray7[1],self.viewArray7[2]]mutableCopy];
+                self.viewArray3 = [@[self.viewArray7[0],self.viewArray7[1],self.viewArray7[2]]mutableCopy];
+                self.viewArray7 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray6[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray7[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray6 = [@[self.viewArray7[0],self.viewArray7[1],self.viewArray7[2]]mutableCopy];
                 self.viewArray7 = [@[@0,@0,@0]mutableCopy];
             }
             
             if([self.viewArray8[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray7[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray7[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray8 = [@[self.viewArray7[0],self.viewArray7[1],self.viewArray7[2]]mutableCopy];
                 self.viewArray7 = [@[@0,@0,@0]mutableCopy];
             }
             
-            break;
+            if([self.viewArray11[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray7[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray11 = [@[self.viewArray7[0],self.viewArray7[1],self.viewArray7[2]]mutableCopy];
+                self.viewArray7 = [@[@0,@0,@0]mutableCopy];
+            }
             
+            break;
             //--------------------------------------------------------------------------
         case 8:
             
-            if([self.viewArray5[0] intValue] == 0){
+            if([self.viewArray4[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray8[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray8[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray5 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
+                self.viewArray4 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
                 self.viewArray8 = [@[@0,@0,@0]mutableCopy];
                 
             }
             
             if([self.viewArray7[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray8[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray8[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
                 self.viewArray7 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
@@ -418,41 +436,268 @@
                 
             }
             
-            if([self.viewArray9[0] intValue] == 0){
+            if([self.viewArray12[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray8[1] intValue] xzahyo:(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray8[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray9 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
+                self.viewArray12 = [@[self.viewArray8[0],self.viewArray8[1],self.viewArray8[2]]mutableCopy];
                 self.viewArray8 = [@[@0,@0,@0]mutableCopy];
             }
             
             break;
-            
-            
             //--------------------------------------------------------------------------
         case 9:
             
-            if([self.viewArray6[0] intValue] == 0){
+            if([self.viewArray5[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray9[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+2)];
+                [self slide:[self.viewArray9[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
                 
                 // 配列の中身を入れ替える
-                self.viewArray6 = [@[self.viewArray9[0],self.viewArray9[1],self.viewArray9[2]]mutableCopy];
+                self.viewArray5 = [@[self.viewArray9[0],self.viewArray9[1],self.viewArray9[2]]mutableCopy];
                 self.viewArray9 = [@[@0,@0,@0]mutableCopy];
             }
             
-            if([self.viewArray8[0] intValue] == 0){
+            if([self.viewArray10[0] intValue] == 0){
                 // タグを動かす
-                [self slide:[self.viewArray9[1] intValue] xzahyo:-(self.image1.frame.size.width+2) yzahyo:0];
+                [self slide:[self.viewArray9[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
                 
                 // 配列の中身を入れ替える
-                self.viewArray8 = [@[self.viewArray9[0],self.viewArray9[1],self.viewArray9[2]]mutableCopy];
+                self.viewArray10 = [@[self.viewArray9[0],self.viewArray9[1],self.viewArray9[2]]mutableCopy];
+                self.viewArray9 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray13[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray9[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray13 = [@[self.viewArray9[0],self.viewArray9[1],self.viewArray9[2]]mutableCopy];
                 self.viewArray9 = [@[@0,@0,@0]mutableCopy];
             }
             
             break;
+            //--------------------------------------------------------------------------
+        case 10:
             
+            if([self.viewArray6[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray10[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray6 = [@[self.viewArray10[0],self.viewArray10[1],self.viewArray10[2]]mutableCopy];
+                self.viewArray10 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray9[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray10[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray9 = [@[self.viewArray10[0],self.viewArray10[1],self.viewArray10[2]]mutableCopy];
+                self.viewArray10 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray11[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray10[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray11 = [@[self.viewArray10[0],self.viewArray10[1],self.viewArray10[2]]mutableCopy];
+                self.viewArray10 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray14[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray10[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray14 = [@[self.viewArray10[0],self.viewArray10[1],self.viewArray10[2]]mutableCopy];
+                self.viewArray10 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            break;
+            //--------------------------------------------------------------------------
+        case 11:
+            
+            if([self.viewArray7[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray11[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray7 = [@[self.viewArray11[0],self.viewArray11[1],self.viewArray11[2]]mutableCopy];
+                self.viewArray11 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray10[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray11[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray10 = [@[self.viewArray11[0],self.viewArray11[1],self.viewArray11[2]]mutableCopy];
+                self.viewArray11 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray12[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray11[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray12 = [@[self.viewArray11[0],self.viewArray11[1],self.viewArray11[2]]mutableCopy];
+                self.viewArray11 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray15[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray11[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray15 = [@[self.viewArray11[0],self.viewArray11[1],self.viewArray11[2]]mutableCopy];
+                self.viewArray11 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            break;
+            //--------------------------------------------------------------------------
+        case 12:
+            
+            if([self.viewArray8[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray12[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray8 = [@[self.viewArray12[0],self.viewArray12[1],self.viewArray12[2]]mutableCopy];
+                self.viewArray12 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray11[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray12[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray11 = [@[self.viewArray12[0],self.viewArray12[1],self.viewArray12[2]]mutableCopy];
+                self.viewArray12 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray16[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray12[1] intValue] xzahyo:0 yzahyo:(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray16 = [@[self.viewArray12[0],self.viewArray12[1],self.viewArray12[2]]mutableCopy];
+                self.viewArray12 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            
+            break;
+            //--------------------------------------------------------------------------
+        case 13:
+            
+            if([self.viewArray9[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray13[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray9 = [@[self.viewArray13[0],self.viewArray13[1],self.viewArray13[2]]mutableCopy];
+                self.viewArray13 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray14[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray13[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray14 = [@[self.viewArray13[0],self.viewArray13[1],self.viewArray13[2]]mutableCopy];
+                self.viewArray13 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            
+            break;
+            //--------------------------------------------------------------------------
+        case 14:
+            
+            if([self.viewArray10[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray14[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray10 = [@[self.viewArray14[0],self.viewArray14[1],self.viewArray14[2]]mutableCopy];
+                self.viewArray14 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray13[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray14[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray13 = [@[self.viewArray14[0],self.viewArray14[1],self.viewArray14[2]]mutableCopy];
+                self.viewArray14 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray15[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray14[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray15 = [@[self.viewArray14[0],self.viewArray14[1],self.viewArray14[2]]mutableCopy];
+                self.viewArray14 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+             break;
+            //--------------------------------------------------------------------------
+        case 15:  //完成
+            if([self.viewArray11[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray15[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray11 = [@[self.viewArray15[0],self.viewArray15[1],self.viewArray15[2]]mutableCopy];
+                self.viewArray15 = [@[@0,@0,@0]mutableCopy];
+                
+            }
+            
+            if([self.viewArray14[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray15[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray14 = [@[self.viewArray15[0],self.viewArray15[1],self.viewArray15[2]]mutableCopy];
+                self.viewArray15 = [@[@0,@0,@0]mutableCopy];
+                
+            }
+            
+            if([self.viewArray16[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray15[1] intValue] xzahyo:(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray16 = [@[self.viewArray15[0],self.viewArray15[1],self.viewArray15[2]]mutableCopy];
+                self.viewArray15 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            
+            break;
+            //--------------------------------------------------------------------------
+        case 16:
+            
+            if([self.viewArray12[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray16[1] intValue] xzahyo:0 yzahyo:-(self.image1.frame.size.width+1)];
+                
+                // 配列の中身を入れ替える
+                self.viewArray12 = [@[self.viewArray16[0],self.viewArray16[1],self.viewArray16[2]]mutableCopy];
+                self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            if([self.viewArray15[0] intValue] == 0){
+                // タグを動かす
+                [self slide:[self.viewArray16[1] intValue] xzahyo:-(self.image1.frame.size.width+1) yzahyo:0];
+                
+                // 配列の中身を入れ替える
+                self.viewArray15 = [@[self.viewArray16[0],self.viewArray16[1],self.viewArray16[2]]mutableCopy];
+                self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            }
+            
+            break;
             
             //--------------------------------------------------------------------------
             
@@ -494,9 +739,9 @@
 
 // パズル完成後の処理
 - (void)judge {
-    if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8)){
+    if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8) && ([self.viewArray9[2]intValue] == 9) && ([self.viewArray10[2]intValue] == 10) && ([self.viewArray11[2]intValue] == 11) && ([self.viewArray12[2]intValue] == 12) && ([self.viewArray13[2]intValue] == 13) && ([self.viewArray14[2]intValue] == 14) && ([self.viewArray15[2]intValue] == 15)){
         
-        
+        NSLog(@"完成");
         
 //        // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
 //        [self.myTimer invalidate];
@@ -541,7 +786,7 @@
     UITouch *touch = [touches anyObject];
     
     switch (touch.view.tag) {
-        case 30:
+        case 100:
             self.sampleImageView.image = nil;
             break;
             
@@ -710,30 +955,30 @@
             self.image6.image = self.pic6;
             self.image7.image = self.pic7;
             self.image8.image = self.pic8;
-            self.image8.image = self.pic9;
-            self.image8.image = self.pic10;
-            self.image8.image = self.pic11;
-            self.image8.image = self.pic12;
-            self.image8.image = self.pic13;
-            self.image8.image = self.pic14;
-            self.image8.image = self.pic15;
-            self.image8.image = self.pic16;
+            self.image9.image = self.pic9;
+            self.image10.image = self.pic10;
+            self.image11.image = self.pic11;
+            self.image12.image = self.pic12;
+            self.image13.image = self.pic13;
+            self.image14.image = self.pic14;
+            self.image15.image = self.pic15;
+            self.image16.image = self.pic16;
             
-            self.viewArray1 = [@[@1,@11,@1]mutableCopy];
-            self.viewArray2 = [@[@1,@12,@2]mutableCopy];
-            self.viewArray3 = [@[@1,@13,@3]mutableCopy];
-            self.viewArray4 = [@[@1,@14,@4]mutableCopy];
-            self.viewArray5 = [@[@1,@15,@5]mutableCopy];
-            self.viewArray6 = [@[@1,@16,@6]mutableCopy];
-            self.viewArray7 = [@[@1,@17,@7]mutableCopy];
-            self.viewArray8 = [@[@1,@18,@8]mutableCopy];
-            self.viewArray9 = [@[@1,@19,@9]mutableCopy];
-            self.viewArray10 = [@[@1,@20,@10]mutableCopy];
-            self.viewArray11 = [@[@1,@21,@11]mutableCopy];
-            self.viewArray12 = [@[@1,@22,@12]mutableCopy];
-            self.viewArray13 = [@[@1,@23,@13]mutableCopy];
-            self.viewArray14 = [@[@1,@24,@14]mutableCopy];
-            self.viewArray15 = [@[@1,@25,@15]mutableCopy];
+            self.viewArray1 = [@[@1,@21,@1]mutableCopy]; //@空欄かどうか,@imageにつけたタグ,@実数
+            self.viewArray2 = [@[@1,@22,@2]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@3]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@4]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@5]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@6]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@7]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@8]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@9]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@10]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@11]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@12]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@13]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@14]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@15]mutableCopy];
             self.viewArray16 = [@[@0,@0,@0]mutableCopy];  //view16が最初に空になるので配列には{0,0,0}を入れておく
             
             break;
