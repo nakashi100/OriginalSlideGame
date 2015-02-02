@@ -68,6 +68,9 @@
         [self.trashBtn setEnabled:NO];
         self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
     }
+    self.testBtn2.hidden = YES;
+    self.sampleView.hidden = YES;
+    
 }
 
 
@@ -81,6 +84,10 @@
     // navigationの削除ボタンを非表示&無効にする
     [self.trashBtn setEnabled:NO];
     self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
+    
+    // ボタンを非表示→表示に切り替える
+    self.testBtn2.hidden = NO;
+    self.sampleView.hidden = NO;
     
     
     // image9(tag:19)を削除する
@@ -144,8 +151,6 @@
     [playBtn removeFromSuperview];
     
     // forHideビューを消して、各種ボタンが表示・タップできるようにする
-    [self.forHideView removeFromSuperview];
-    [self.forHideView3 removeFromSuperview];
     [self.forHideView4 removeFromSuperview];
     
 }

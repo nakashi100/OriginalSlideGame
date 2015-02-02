@@ -10,7 +10,6 @@
 		C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4250B791A7375A9005B5F27 /* playViewController.m */; };
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
-		C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC9A1A766522005E25B0 /* confirmViewController.m */; };
 		C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47865BC1A790E480090350E /* QuartzCore.framework */; };
 		C4A9D4F21A736D0900DA4AEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F11A736D0900DA4AEA /* main.m */; };
 		C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F41A736D0900DA4AEA /* AppDelegate.m */; };
@@ -20,7 +19,6 @@
 		C4A9D50F1A736D0A00DA4AEA /* originalSlideGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D50E1A736D0A00DA4AEA /* originalSlideGameTests.m */; };
 		C4BE68321A7BA5F400815D1D /* listCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE68311A7BA5F400815D1D /* listCollectionViewController.m */; };
 		C4BE68351A7BA73600815D1D /* gameCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */; };
-		C4BE683B1A7C85D700815D1D /* confirmPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */; };
 		C4D5C6BD1A7E372A000C36F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4D5C6BC1A7E372A000C36F5 /* Images.xcassets */; };
 		C4F332811A771C1700374362 /* resultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F332801A771C1700374362 /* resultViewController.m */; };
 /* End PBXBuildFile section */
@@ -42,8 +40,6 @@
 		C456DC941A76325F005E25B0 /* titleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = titleViewController.m; sourceTree = "<group>"; };
 		C456DC961A763303005E25B0 /* pictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pictureViewController.h; sourceTree = "<group>"; };
 		C456DC971A763303005E25B0 /* pictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureViewController.m; sourceTree = "<group>"; };
-		C456DC991A766522005E25B0 /* confirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmViewController.h; sourceTree = "<group>"; };
-		C456DC9A1A766522005E25B0 /* confirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmViewController.m; sourceTree = "<group>"; };
 		C47865BC1A790E480090350E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C4A9D4EC1A736D0900DA4AEA /* originalSlideGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalSlideGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A9D4F01A736D0900DA4AEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,8 +56,6 @@
 		C4BE68311A7BA5F400815D1D /* listCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = listCollectionViewController.m; sourceTree = "<group>"; };
 		C4BE68331A7BA73500815D1D /* gameCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameCollectionViewCell.h; sourceTree = "<group>"; };
 		C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameCollectionViewCell.m; sourceTree = "<group>"; };
-		C4BE68391A7C85D700815D1D /* confirmPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = confirmPicViewController.h; sourceTree = "<group>"; };
-		C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = confirmPicViewController.m; sourceTree = "<group>"; };
 		C4D5C6BC1A7E372A000C36F5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		C4F3327F1A771C1700374362 /* resultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resultViewController.h; sourceTree = "<group>"; };
 		C4F332801A771C1700374362 /* resultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resultViewController.m; sourceTree = "<group>"; };
@@ -119,14 +113,10 @@
 				C4250B791A7375A9005B5F27 /* playViewController.m */,
 				C456DC961A763303005E25B0 /* pictureViewController.h */,
 				C456DC971A763303005E25B0 /* pictureViewController.m */,
-				C456DC991A766522005E25B0 /* confirmViewController.h */,
-				C456DC9A1A766522005E25B0 /* confirmViewController.m */,
 				C4F3327F1A771C1700374362 /* resultViewController.h */,
 				C4F332801A771C1700374362 /* resultViewController.m */,
 				C4BE68331A7BA73500815D1D /* gameCollectionViewCell.h */,
 				C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */,
-				C4BE68391A7C85D700815D1D /* confirmPicViewController.h */,
-				C4BE683A1A7C85D700815D1D /* confirmPicViewController.m */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
 				C4D5C6BC1A7E372A000C36F5 /* Images.xcassets */,
 				C4A9D4F61A736D0900DA4AEA /* originalSlideGame.xcdatamodeld */,
@@ -262,10 +252,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C456DC951A76325F005E25B0 /* titleViewController.m in Sources */,
-				C4BE683B1A7C85D700815D1D /* confirmPicViewController.m in Sources */,
 				C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */,
 				C4BE68321A7BA5F400815D1D /* listCollectionViewController.m in Sources */,
-				C456DC9B1A766522005E25B0 /* confirmViewController.m in Sources */,
 				C4A9D4F51A736D0900DA4AEA /* AppDelegate.m in Sources */,
 				C456DC981A763303005E25B0 /* pictureViewController.m in Sources */,
 				C4BE68351A7BA73600815D1D /* gameCollectionViewCell.m in Sources */,

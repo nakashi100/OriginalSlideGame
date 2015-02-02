@@ -88,9 +88,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 - (IBAction)testBtn:(id)sender; // ゲームを中断するためのボタン
+@property (weak, nonatomic) IBOutlet UIButton *testBtn2;
 
-@property (weak, nonatomic) IBOutlet UIView *forHideView;
-@property (weak, nonatomic) IBOutlet UIView *forHideView3;
 @property (weak, nonatomic) IBOutlet UIView *forHideView4;
 
 
