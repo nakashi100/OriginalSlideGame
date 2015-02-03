@@ -37,6 +37,18 @@ static NSString * const reuseIdentifier = @"Cell";
     // ナビゲーションバーに追加ボタンを設置
     self.addBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGame)];
     self.navigationItem.rightBarButtonItem = self.addBtn;
+
+    
+    // リトライした場合のリダイレクト先の判定
+    if (self.playingArrayCount) {
+        if (self.playingArrayCount == 10) {
+            self.playingArrayCount = 0;
+            [self goPlayView];
+        }else if(self.playingArrayCount == 17){
+            self.playingArrayCount = 0;
+            [self goHardPlayView];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,31 +118,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 // unwindsegueでこの画面に戻すための処理
 - (IBAction)listViewReturnActionForSegue:(UIStoryboardSegue *)segue{
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    int playingArrayCount = [userDefault integerForKey:@"playingArrayCount"];
-    
-    if (playingArrayCount == 10) {
-        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-        [self.navigationController pushViewController:playView animated:YES];
-        
-        [self goPlayView];
-        
-    }else if(playingArrayCount == 17){
-        hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-        [self.navigationController pushViewController:hardPlayView animated:YES];
-        
-        [self goHardPlayView];
-    }
 }
 
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-    [self.navigationController pushViewController:playView animated:YES];
+    [self.navigationController pushViewController:playView animated:NO];
 }
 
 - (void)goHardPlayView{
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-    [self.navigationController pushViewController:hardPlayView animated:YES];
+    [self.navigationController pushViewController:hardPlayView animated:NO];
 }
 
 

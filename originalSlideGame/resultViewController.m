@@ -8,6 +8,7 @@
 
 #import "resultViewController.h"
 #import "playViewController.h"
+#import "listCollectionViewController.h"
 
 @interface resultViewController ()
 
@@ -28,7 +29,6 @@
     // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault setObject:self.divPicturesData forKey:@"nowPlaying"];
-    [userDefault setInteger:self.playingArrayCount forKey:@"playingArrayCount"];
     [userDefault synchronize];
     
 }
@@ -37,11 +37,19 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)retryBtn:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // retryBtnが押されたときだけ実行するようにsenderにtagをつけて条件処理する
+    if ([sender tag] == 2) {
+         listCollectionViewController *listCollectionView = [segue destinationViewController];
+        listCollectionView.playingArrayCount = self.playingArrayCount;
+    }
     
+}
 
+- (IBAction)retryBtn:(id)sender {
 }
 
 - (IBAction)goTitleBtn:(id)sender {
+    
 }
 @end

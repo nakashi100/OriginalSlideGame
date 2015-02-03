@@ -12,8 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
 - (IBAction)retryBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *retryBtn2;
 - (IBAction)goTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *resultTime;
+
 
 @property NSString *result; // タイムを引継ぐ
 

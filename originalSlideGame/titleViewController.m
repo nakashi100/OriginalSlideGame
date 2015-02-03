@@ -33,26 +33,16 @@
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
-///////////// 検証用(あとで消す //////////////////////
-//NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-//NSArray *nowPlaying = [userDefault arrayForKey:@"nowPlaying"];
-//    
-//NSLog(@"配列の個数は%d",[divPicDataFinal count]);
-//NSLog(@"nowPlayingは%d",[nowPlaying count]);
-//////////////////////////////////////////////////
     
-    // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
-    self.createdFlag = [userDefault integerForKey:@"createdFlag"];
+    // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagは0にする。
     if (self.createdFlag == 1) {  //3×3の場合
         [self golistCollectionView];
         [self goPlayView];
-        self.createdFlag = NO;
-        [userDefault setInteger:self.createdFlag forKey:@"createdFlag"];
+        self.createdFlag = 0;
     }else if(self.createdFlag == 2) {  //4×4の場合
         [self golistCollectionView];
         [self goHardPlayView];
-        self.createdFlag = NO;
-        [userDefault setInteger:self.createdFlag forKey:@"createdFlag"];
+        self.createdFlag = 0;
     }
     
     // ゲーム削除の場合のリダイレクト

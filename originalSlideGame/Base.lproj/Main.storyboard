@@ -671,10 +671,10 @@
                                 </variation>
                                 <connections>
                                     <action selector="goTitleBtn:" destination="ceH-a5-PbE" eventType="touchUpInside" id="PBk-r7-0re"/>
-                                    <segue destination="t9e-iB-gXU" kind="unwind" identifier="" unwindAction="titleViewReturnActionForSegue:" id="tpl-um-YHc"/>
+                                    <segue destination="t9e-iB-gXU" kind="unwind" unwindAction="titleViewReturnActionForSegue:" id="dHS-Oe-tdo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Mx-o7l">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" restorationIdentifier="retry" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iO5-Mx-o7l">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.20226178680000001" green="0.29624482870000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -788,6 +788,7 @@
                     </view>
                     <connections>
                         <outlet property="resultTime" destination="mdD-bm-cJp" id="vrh-c4-f6k"/>
+                        <outlet property="retryBtn2" destination="iO5-Mx-o7l" id="6q8-OY-RLQ"/>
                         <outlet property="twitterImage" destination="9Ov-bq-8Nn" id="1Pc-Ki-KD1"/>
                     </connections>
                 </viewController>

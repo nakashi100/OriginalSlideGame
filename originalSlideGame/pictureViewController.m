@@ -343,13 +343,14 @@
     
         [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
         [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
-
-        int createdFlag = 1;  //3×3のplayViewに遷移させる
-        [userDefault setInteger:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
     
         [userDefault synchronize];
     
+    
         // タイトル画面に戻る
+        titleViewController *titleViewController = [self.navigationController viewControllers][0];
+        titleViewController.createdFlag = 1;
+    
         [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
@@ -371,12 +372,12 @@
     [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
     
     
-    int createdFlag = 2;  // 4×4のplayviewに遷移
-    [userDefault setInteger:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
-    
     [userDefault synchronize];
     
     // タイトル画面に戻る
+    titleViewController *titleViewController = [self.navigationController viewControllers][0];
+    titleViewController.createdFlag = 2;
+    
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 
