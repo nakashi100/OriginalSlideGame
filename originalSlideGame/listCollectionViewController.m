@@ -109,7 +109,6 @@ static NSString * const reuseIdentifier = @"Cell";
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     int playingArrayCount = [userDefault integerForKey:@"playingArrayCount"];
     
-    NSLog(@"引継がれたのは%d",playingArrayCount);
     if (playingArrayCount == 10) {
         playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
         [self.navigationController pushViewController:playView animated:YES];

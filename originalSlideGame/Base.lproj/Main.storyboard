@@ -1159,7 +1159,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="119" width="74" height="74"/>
+                                    <rect key="frame" x="10" y="117" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="xiG-cE-evB"/>
                                         <include reference="3SK-gb-8V0"/>
@@ -1192,7 +1192,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="85" y="119" width="74" height="74"/>
+                                    <rect key="frame" x="85" y="117" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="4tz-Iy-zFw"/>
                                         <include reference="Okd-Rf-pOh"/>
@@ -1225,7 +1225,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="119" width="74" height="74"/>
+                                    <rect key="frame" x="160" y="117" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="VtH-dX-15P"/>
                                         <include reference="UN8-Qm-Hcp"/>
@@ -1258,7 +1258,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="235" y="119" width="74" height="74"/>
+                                    <rect key="frame" x="235" y="117" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="Ctx-eR-zmn"/>
                                         <include reference="6Hh-qS-OuP"/>
@@ -1291,7 +1291,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="194" width="74" height="74"/>
+                                    <rect key="frame" x="10" y="192" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="gQR-bp-oxg"/>
                                         <include reference="PEZ-AF-GSf"/>
@@ -1324,7 +1324,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="85" y="194" width="74" height="74"/>
+                                    <rect key="frame" x="85" y="192" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="HNY-LN-WLN"/>
                                         <include reference="ARS-OC-Bgv"/>
@@ -1357,7 +1357,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="194" width="74" height="74"/>
+                                    <rect key="frame" x="160" y="192" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="jmj-2X-og4"/>
                                         <include reference="C9P-ss-Jg7"/>
@@ -1390,7 +1390,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="235" y="194" width="74" height="74"/>
+                                    <rect key="frame" x="235" y="192" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="dCZ-yg-NZI"/>
                                         <include reference="oGw-97-cTo"/>
@@ -1430,7 +1430,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="269" width="74" height="74"/>
+                                    <rect key="frame" x="10" y="267" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="AVH-12-FKs"/>
                                         <include reference="XaN-s1-gwy"/>
@@ -1464,7 +1464,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="85" y="269" width="74" height="74"/>
+                                    <rect key="frame" x="85" y="267" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="9WI-GM-J2Y"/>
                                         <include reference="hld-rL-P8m"/>
@@ -1497,7 +1497,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="269" width="74" height="74"/>
+                                    <rect key="frame" x="160" y="267" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="PSV-pB-mD5"/>
                                         <include reference="IiW-Y2-GAV"/>
@@ -1530,7 +1530,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="235" y="269" width="74" height="74"/>
+                                    <rect key="frame" x="235" y="267" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="UKD-ek-TP5"/>
                                         <include reference="0Ps-Bp-sVG"/>
@@ -1563,7 +1563,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="344" width="74" height="74"/>
+                                    <rect key="frame" x="10" y="342" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="27F-2M-aoE"/>
                                         <include reference="K2G-GM-TKu"/>
@@ -1596,7 +1596,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="85" y="344" width="74" height="74"/>
+                                    <rect key="frame" x="85" y="342" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="CdX-PE-0LF"/>
                                         <include reference="uAA-mj-uZP"/>
@@ -1629,7 +1629,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="160" y="344" width="74" height="74"/>
+                                    <rect key="frame" x="160" y="342" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="GBj-Ky-j6A"/>
                                         <include reference="KWq-J4-bV3"/>
@@ -1662,7 +1662,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="235" y="344" width="74" height="74"/>
+                                    <rect key="frame" x="235" y="342" width="74" height="74"/>
                                     <mask key="subviews">
                                         <include reference="S9S-27-HJq"/>
                                         <include reference="n3w-RN-d0G"/>
@@ -1672,7 +1672,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9nT-Eu-VfF">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="10" y="119" width="299" height="299"/>
+                                    <rect key="frame" x="10" y="117" width="299" height="299"/>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0G-7x-Orp">
@@ -1718,7 +1718,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="119" width="401" height="301"/>
+                                    <rect key="frame" x="0.0" y="117" width="401" height="301"/>
                                 </variation>
                             </view>
                         </subviews>

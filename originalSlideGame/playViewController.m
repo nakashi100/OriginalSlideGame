@@ -474,7 +474,7 @@
 
 // スライドを動かすメソッド (tag番号とx座標とy座標を指定する)
 - (IBAction)slide:(int)test xzahyo:(int)xzahyo yzahyo:(int)yzahyo{
-    [UIView animateWithDuration:0.1f
+    [UIView animateWithDuration:0.08f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{

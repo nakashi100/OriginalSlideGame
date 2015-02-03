@@ -9,6 +9,7 @@
 #import "titleViewController.h"
 #import "playViewController.h"
 #import "listCollectionViewController.h"
+#import "hardPlayViewController.h"
 
 @interface titleViewController ()
 
@@ -40,13 +41,18 @@
 //NSLog(@"nowPlayingは%d",[nowPlaying count]);
 //////////////////////////////////////////////////
     
-    // createdFlagがYESということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
-    self.createdFlag = [userDefault boolForKey:@"createdFlag"];
-    if (self.createdFlag) {
+    // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagはNOにする。
+    self.createdFlag = [userDefault integerForKey:@"createdFlag"];
+    if (self.createdFlag == 1) {  //3×3の場合
         [self golistCollectionView];
         [self goPlayView];
         self.createdFlag = NO;
-        [userDefault setBool:self.createdFlag forKey:@"createdFlag"];
+        [userDefault setInteger:self.createdFlag forKey:@"createdFlag"];
+    }else if(self.createdFlag == 2) {  //4×4の場合
+        [self golistCollectionView];
+        [self goHardPlayView];
+        self.createdFlag = NO;
+        [userDefault setInteger:self.createdFlag forKey:@"createdFlag"];
     }
     
     // ゲーム削除の場合のリダイレクト
@@ -88,6 +94,12 @@
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     [self.navigationController pushViewController:playView animated:NO];
+}
+
+// hardPlay画面に遷移する
+- (void)goHardPlayView{
+    hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+    [self.navigationController pushViewController:hardPlayView animated:NO];
 }
 
 

@@ -161,19 +161,17 @@
     // CoreGraphicsの機能を用いて、切り抜いた画像を作成する
     CGImageRef srcImageRef = [resultImage CGImage];
     CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, trimArea);
-    UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
+    self.trimmedImage = [UIImage imageWithCGImage:trimmedImageRef];
     
     
     /////////////////////////////////////////////////////////////////////////
     
     // 取得した画像を画面上へ表示
-    self.displayPictureView.image = trimmedImage;
+    self.displayPictureView.image = self.trimmedImage;
     
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    // 画像を分割
-    [self divImage:trimmedImage];
     
     // 初期ボタンやviewを非表示にし、新たなボタンを表示する
     [self.createPictureBtn2 removeFromSuperview];
@@ -187,26 +185,25 @@
 // 画像を分割して配列に保存するメソッド
 - (NSMutableArray *)divImage:(UIImage *)image
 {
-    int DVICOUNT = 3;   // 3×3にする場合
     
     CGImageRef srcImageRef = [image CGImage];
     
-    CGFloat blockWith = image.size.width / DVICOUNT;
-    CGFloat blockHeight = image.size.height / DVICOUNT;
+    CGFloat blockWith = image.size.width / self.DVICOUNT;
+    CGFloat blockHeight = image.size.height / self.DVICOUNT;
     
     NSMutableArray *divImages = [[NSMutableArray alloc] init];
     
-    for (int heightCount=0; heightCount < DVICOUNT; heightCount++) {
-        for(int widthCount=0; widthCount < DVICOUNT; widthCount++){
+    for (int heightCount=0; heightCount < self.DVICOUNT; heightCount++) {
+        for(int widthCount=0; widthCount < self.DVICOUNT; widthCount++){
             CGImageRef trimmedImageRef = CGImageCreateWithImageInRect(srcImageRef, CGRectMake(widthCount*blockWith, heightCount*blockHeight, blockWith, blockHeight));
             
             
-            UIImage *trimmedImage = [UIImage imageWithCGImage:trimmedImageRef
+            self.trimmedImage = [UIImage imageWithCGImage:trimmedImageRef
                                      scale:[UIScreen mainScreen].scale orientation:image.imageOrientation]; //orientationは画像の向きの情報
-            
-            [divImages addObject:trimmedImage];            
+            [divImages addObject:self.trimmedImage];
         }
     }
+    
     
     
     // UserDefaultsで引継ぐためにimageをdata型に変換して配列に格納し直す
@@ -285,6 +282,79 @@
 
 
 - (IBAction)finishBtn:(id)sender{
+    
+    
+    [self alert];
+    
+}
+
+
+
+
+////////////////////////
+- (void)alert{
+    // アラートビューを作成
+    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Choose game level!"
+                          message:@"You can make the game of two kinds of levels. Please choose a favorite level."
+                          delegate:self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"NORMAL (3 × 3)", @"HARD (4 × 4)", nil];
+    
+    [alert show];  // アラートビューを表示
+}
+
+
+// デリゲート処理
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 1: // 1番目が押されたとき
+            self.DVICOUNT = 3;
+            // 画像を分割
+            [self divImage:self.trimmedImage];
+            [self hozonPuzzleGame1];
+            break;
+        
+        case 2:
+            self.DVICOUNT = 4;
+            // 画像を分割
+            [self divImage:self.trimmedImage];
+            [self hozonPuzzleGame2];
+            break;
+            
+        default: // キャンセルが押されたとき
+            break;
+    }
+}
+
+-(void)hozonPuzzleGame1{
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    
+        // UserDefautで保存したゲームリスト配列を呼び出したいが、空の場合は空のリストを生成する(これをしないとError)
+        if ([userDefault arrayForKey:@"divPicDataFinal"] == nil) {
+            NSArray *sampleArray = [NSArray array];
+            [userDefault setObject:sampleArray forKey:@"divPicDataFinal"];
+        }
+    
+        self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
+        NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; // 追加できるようArrayをMutableArrayに変換
+        [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
+    
+        [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
+        [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
+
+        int createdFlag = 1;  //3×3のplayViewに遷移させる
+        [userDefault setInteger:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
+    
+        [userDefault synchronize];
+    
+        // タイトル画面に戻る
+        [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+
+-(void)hozonPuzzleGame2{
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
     // UserDefautで保存したゲームリスト配列を呼び出したいが、空の場合は空のリストを生成する(これをしないとError)
@@ -299,14 +369,16 @@
     
     [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
     [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
-    BOOL createdFlag = YES;
-    [userDefault setBool:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
+    
+    
+    int createdFlag = 2;  // 4×4のplayviewに遷移
+    [userDefault setInteger:createdFlag forKey:@"createdFlag"]; // ここからの遷移だと明確にするため
     
     [userDefault synchronize];
     
     // タイトル画面に戻る
     [self.navigationController popToRootViewControllerAnimated:NO];
-    
 }
+
 
 @end

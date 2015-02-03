@@ -698,7 +698,7 @@
 
 // スライドを動かすメソッド (tag番号とx座標とy座標を指定する)
 - (IBAction)slide:(int)test xzahyo:(int)xzahyo yzahyo:(int)yzahyo{
-    [UIView animateWithDuration:0.1f
+    [UIView animateWithDuration:0.08f
                           delay:0.0f
                         options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
@@ -721,7 +721,6 @@
 - (void)judge {
     if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8) && ([self.viewArray9[2]intValue] == 9) && ([self.viewArray10[2]intValue] == 10) && ([self.viewArray11[2]intValue] == 11) && ([self.viewArray12[2]intValue] == 12) && ([self.viewArray13[2]intValue] == 13) && ([self.viewArray14[2]intValue] == 14) && ([self.viewArray15[2]intValue] == 15)){
         
-        NSLog(@"完成");
         
         // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
         [self.myTimer invalidate];
