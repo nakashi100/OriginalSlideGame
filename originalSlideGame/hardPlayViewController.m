@@ -69,6 +69,19 @@
     self.testBtn2.hidden = YES;
     self.sampleView.hidden = YES;
     
+    
+    ///////// ベストタイムの更新(resultページからリダイレクトできた場合にもベストタイムを参照できるようにする) ///////////
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
+    int countArray = [hardFinalList[self.pathNo] count];
+    
+    if (countArray == 18) {
+        NSString *bestTime = [NSString stringWithFormat:@"(BEST: %6.2f)",[hardFinalList[self.pathNo][17] floatValue]];
+        self.bestTimeLabel.text = bestTime;
+    }else if(countArray == 17){
+        self.bestTimeLabel.text = nil;
+    }
+    
 }
 
 

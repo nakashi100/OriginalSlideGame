@@ -71,6 +71,18 @@
     self.testBtn2.hidden = YES;
     self.sampleView.hidden = YES;
     
+    
+    ///////// ベストタイムの更新(resultページからリダイレクトできた場合にもベストタイムを参照できるようにする) ///////////
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSArray *normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
+    int countArray = [normalFinalList[self.pathNo] count];
+    
+    if (countArray == 11) {
+        NSString *bestTime = [NSString stringWithFormat:@"(BEST: %6.2f)",[normalFinalList[self.pathNo][10] floatValue]];
+        self.bestTimeLabel.text = bestTime;
+    }else if(countArray == 10){
+        self.bestTimeLabel.text = nil;
+    }
 }
 
 
@@ -498,16 +510,20 @@
     if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8)){
         
         
-
+NSLog(@"a");
         // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
         [self.myTimer invalidate];
         resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         resultView.result = self.playTime;
         resultView.divPicturesData = self.divPicturesData;
+        resultView.pathNo = self.pathNo;
         
         // Resultページへモーダルで遷移させる
         [self presentViewController:resultView animated:YES completion:nil];
+    NSLog(@"b");
     }
+
+    NSLog(@"c");
 }
 
 

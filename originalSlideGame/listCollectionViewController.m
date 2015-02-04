@@ -40,21 +40,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
     
     // リトライした場合のリダイレクト先の判定
-    if (self.playingArrayCount) {
-        if (self.playingArrayCount == 10) {
+    if (self.playingArrayCount > 2) {
+        if (self.playingArrayCount == 10 || self.playingArrayCount == 11) { // タイム保存されているため18
             self.playingArrayCount = 0;
             [self goPlayView];
-        }else if(self.playingArrayCount == 17){
+        }else if(self.playingArrayCount == 17 || self.playingArrayCount == 18){
             self.playingArrayCount = 0;
             [self goHardPlayView];
         }
     }
-    
-    
-    
-    
-NSLog(@"%d",(int)[self.normalFinalList count]);
-NSLog(@"%d",(int)[self.hardFinalList count]);
+
     
 
 }

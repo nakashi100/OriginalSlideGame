@@ -22,4 +22,6 @@
 @property NSArray *normalFinalList; // 3×3のパズルだけを格納したリスト配列
 @property NSArray *hardFinalList;
 
+@property int pathNo; // リダイレクトされた際に受け取る
+
 @end

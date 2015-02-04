@@ -92,5 +92,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *forHideView4;
 
+@property (weak, nonatomic) IBOutlet UILabel *bestTimeLabel;
 
 @end
