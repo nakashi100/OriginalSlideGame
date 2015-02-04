@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C400450D1A81B3CE0084F8FF /* headerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */; };
 		C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4250B791A7375A9005B5F27 /* playViewController.m */; };
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C400450B1A81B3CE0084F8FF /* headerCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCollectionReusableView.h; sourceTree = "<group>"; };
+		C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCollectionReusableView.m; sourceTree = "<group>"; };
 		C4250B781A7375A9005B5F27 /* playViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playViewController.h; sourceTree = "<group>"; };
 		C4250B791A7375A9005B5F27 /* playViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playViewController.m; sourceTree = "<group>"; };
 		C456DC931A76325F005E25B0 /* titleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleViewController.h; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				C4F332801A771C1700374362 /* resultViewController.m */,
 				C4BE68331A7BA73500815D1D /* gameCollectionViewCell.h */,
 				C4BE68341A7BA73600815D1D /* gameCollectionViewCell.m */,
+				C400450B1A81B3CE0084F8FF /* headerCollectionReusableView.h */,
+				C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */,
 				C4598A6B1A7F91D300AEBBC9 /* hardPlayViewController.h */,
 				C4598A6C1A7F91D300AEBBC9 /* hardPlayViewController.m */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
@@ -265,6 +270,7 @@
 				C4A9D4F81A736D0A00DA4AEA /* originalSlideGame.xcdatamodeld in Sources */,
 				C4A9D4F21A736D0900DA4AEA /* main.m in Sources */,
 				C4F332811A771C1700374362 /* resultViewController.m in Sources */,
+				C400450D1A81B3CE0084F8FF /* headerCollectionReusableView.m in Sources */,
 				C4598A6D1A7F91D300AEBBC9 /* hardPlayViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

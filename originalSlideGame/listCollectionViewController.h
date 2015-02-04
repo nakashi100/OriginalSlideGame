@@ -16,4 +16,9 @@
 
 @property int playingArrayCount;
 
+
+
+@property NSMutableArray *normalGameList; // 3×3のパズルだけを格納したリスト配列
+@property NSMutableArray *hardGameList;
+
 @end

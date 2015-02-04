@@ -11,6 +11,7 @@
 #import "playViewController.h"
 #import "pictureViewController.h"
 #import "hardPlayViewController.h"
+#import "headerCollectionReusableView.h"
 
 @interface listCollectionViewController ()
 
@@ -31,7 +32,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    self.count = [self.divPicDataFinal count];
+    self.count = (int)[self.divPicDataFinal count];
     
     
     // ナビゲーションバーに追加ボタンを設置
@@ -49,6 +50,30 @@ static NSString * const reuseIdentifier = @"Cell";
             [self goHardPlayView];
         }
     }
+    
+    
+    
+    // normalパズルリストとhardパズルリストをそれぞれ作る(セクションで振り分ける際に使用)
+    self.normalGameList = [NSMutableArray array];
+    self.hardGameList = [NSMutableArray array];
+    
+    for (int i = 0; i < self.count; i++) {
+        NSArray *sampleArray = self.divPicDataFinal[i];
+        int arrayCount = (int)[sampleArray count];
+        if(arrayCount == 10){
+            [self.normalGameList addObject:self.divPicDataFinal[i]];
+        }
+        if (arrayCount == 17) {
+            [self.hardGameList addObject:self.divPicDataFinal[i]];
+        }
+    }
+
+    
+NSLog(@"%d",(int)[self.divPicDataFinal count]);
+NSLog(@"%d",(int)[self.normalGameList count]);
+NSLog(@"%d",(int)[self.hardGameList count]);
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,30 +82,81 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     
-    return 1;
+    return 2;
 }
+
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return self.count;  // 最後のセルにはcreateを促すようなものを入れる
+    int count = 0;
+    if(section == 0){
+        count= (int)[self.normalGameList count]; // 3*3の個数
+    }
+    if (section == 1) {
+        count= (int)[self.hardGameList count]; // 4*4の個数
+    }
+    return count;
 }
+
+
+// ヘッダーを作成する
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        headerCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        
+        if (indexPath.section == 0) {
+            headerView.headerLabel.text = @"NORMAL (3×3)";
+            headerView.backgroundColor = [UIColor colorWithRed:0.118 green:0.565 blue:1.0 alpha:1.0];
+        } else {
+            headerView.headerLabel.text = @"HARD (4×4)";
+            headerView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+;
+        }
+        return headerView;
+    }
+    
+    return nil;
+    
+}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
-//    if (indexPath.row < self.count){
-        NSArray *picData = self.divPicDataFinal[indexPath.row];
-        UIImage *pic0 = [UIImage imageWithData:picData[0]];  // 写真のデータをdataからimageに変換
-        cell.samplePicView.image = pic0;
-//    }
-//    
-//    if (indexPath.row == self.count) {
-//        cell.samplePicView.image = [UIImage imageNamed:@"add_sample"];
-//    }
+    
+    NSArray *normalGameData;
+    UIImage *normalGamePic;
+    NSArray *hardGameData;
+    UIImage *hardGamePic;
+    
+
+    if (indexPath.section == 0) {
+        normalGameData = self.normalGameList[indexPath.row];  // 3×3のゲーム配列の1つ目を取得
+        normalGamePic = [UIImage imageWithData:normalGameData[0]];  // 写真のデータをdataからimageに変換
+    } else if (indexPath.section == 1) {
+        hardGameData = self.hardGameList[indexPath.row];
+        hardGamePic = [UIImage imageWithData:hardGameData[0]];
+    }
+    
+    switch (indexPath.section) {
+        case 0:
+            cell.samplePicView.image = normalGamePic; // 3×3のセクション
+            break;
+            
+        case 1:
+            cell.samplePicView.image = hardGamePic; // 4*4のセクション
+            break;
+            
+        default:
+            break;
+    }
     
     return cell;
 }
+
 
 
 // セグエする際にデータを渡す
