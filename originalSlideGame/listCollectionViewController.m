@@ -31,9 +31,8 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    self.count = (int)[self.divPicDataFinal count];
-    
+    self.normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
+    self.hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
     
     // ナビゲーションバーに追加ボタンを設置
     self.addBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGame)];
@@ -53,25 +52,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     
     
-    // normalパズルリストとhardパズルリストをそれぞれ作る(セクションで振り分ける際に使用)
-    self.normalGameList = [NSMutableArray array];
-    self.hardGameList = [NSMutableArray array];
     
-    for (int i = 0; i < self.count; i++) {
-        NSArray *sampleArray = self.divPicDataFinal[i];
-        int arrayCount = (int)[sampleArray count];
-        if(arrayCount == 10){
-            [self.normalGameList addObject:self.divPicDataFinal[i]];
-        }
-        if (arrayCount == 17) {
-            [self.hardGameList addObject:self.divPicDataFinal[i]];
-        }
-    }
-
-    
-NSLog(@"%d",(int)[self.divPicDataFinal count]);
-NSLog(@"%d",(int)[self.normalGameList count]);
-NSLog(@"%d",(int)[self.hardGameList count]);
+NSLog(@"%d",(int)[self.normalFinalList count]);
+NSLog(@"%d",(int)[self.hardFinalList count]);
     
 
 }
@@ -91,10 +74,10 @@ NSLog(@"%d",(int)[self.hardGameList count]);
     
     int count = 0;
     if(section == 0){
-        count= (int)[self.normalGameList count]; // 3*3の個数
+        count= (int)[self.normalFinalList count]; // 3*3の個数
     }
     if (section == 1) {
-        count= (int)[self.hardGameList count]; // 4*4の個数
+        count= (int)[self.hardFinalList count]; // 4*4の個数
     }
     return count;
 }
@@ -134,10 +117,10 @@ NSLog(@"%d",(int)[self.hardGameList count]);
     
 
     if (indexPath.section == 0) {
-        normalGameData = self.normalGameList[indexPath.row];  // 3×3のゲーム配列の1つ目を取得
+        normalGameData = self.normalFinalList[indexPath.row];  // 3×3のゲーム配列の1つ目を取得
         normalGamePic = [UIImage imageWithData:normalGameData[0]];  // 写真のデータをdataからimageに変換
     } else if (indexPath.section == 1) {
-        hardGameData = self.hardGameList[indexPath.row];
+        hardGameData = self.hardFinalList[indexPath.row];
         hardGamePic = [UIImage imageWithData:hardGameData[0]];
     }
     
@@ -177,18 +160,18 @@ NSLog(@"%d",(int)[self.hardGameList count]);
 
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-    NSArray *thisGameArray  = self.divPicDataFinal[indexPath.row]; // playViewかhardPlayViewに遷移するかを判定
-    int arrayCount = [thisGameArray count];
     
-    if (arrayCount == 10) {
-        playView.pathNo =indexPath.row;  // 値渡し
-        playView.divPicturesData = self.divPicDataFinal[indexPath.row];  // 値渡し
+    
+    if (indexPath.section == 0) {
+        playView.pathNo = indexPath.row;  // 値渡し
+        playView.divPicturesData = self.normalFinalList[indexPath.row];  // 値渡し
         [self.navigationController pushViewController:playView animated:YES]; // プレイ画面に遷移
-    }else if(arrayCount == 17){
-        hardPlayView.pathNo =indexPath.row;
-        hardPlayView.divPicturesData = self.divPicDataFinal[indexPath.row];
+    } else if (indexPath.section == 1) {
+        hardPlayView.pathNo = indexPath.row;
+        hardPlayView.divPicturesData = self.hardFinalList[indexPath.row];
         [self.navigationController pushViewController:hardPlayView animated:YES];
     }
+    
     
 }
 

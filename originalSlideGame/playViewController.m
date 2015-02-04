@@ -585,18 +585,18 @@
 
 - (void)deleteGame {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    NSMutableArray *divPicDataFinalnew = [divPicDataFinal mutableCopy];
-    [divPicDataFinalnew removeObjectAtIndex:self.pathNo];
-    [userDefault setObject:divPicDataFinalnew forKey:@"divPicDataFinal"];
     
-    BOOL deletedFlag = YES;
-    [userDefault setBool:deletedFlag forKey:@"deletedFlag"]; // ここからの遷移だと明確にするため
+    NSArray *normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
+    NSMutableArray *normalFinalListnew = [normalFinalList mutableCopy];
+    [normalFinalListnew removeObjectAtIndex:self.pathNo];
+    [userDefault setObject:normalFinalListnew forKey:@"normalFinalList"];
+        
 
-    [userDefault synchronize];
+    titleViewController *titleViewController = [self.navigationController viewControllers][0];
+//    titleViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
+    titleViewController.deletedFlag = YES;
     
     [self.navigationController popToRootViewControllerAnimated:NO]; // タイトル画面に戻る
-
 //        [self.navigationController popViewControllerAnimated:YES];
 
 }

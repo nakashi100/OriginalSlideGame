@@ -21,18 +21,16 @@
     [super viewDidLoad];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *divPicDataCheck = [userDefault arrayForKey:@"divPicDataFinal"];
+    NSArray *normalGame = [userDefault arrayForKey:@"normalFinalList"];
     
-    if(!divPicDataCheck){
-        [self defaultGame1]; // デフォルトゲームを作成
+    if(!normalGame){
+        [self defaultGame]; // デフォルトゲームを作成
+//        NSLog(@"こんにちは");
     }
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    
     
     // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagは0にする。
     if (self.createdFlag == 1) {  //3×3の場合
@@ -46,11 +44,9 @@
     }
     
     // ゲーム削除の場合のリダイレクト
-    self.deletedFlag = [userDefault boolForKey:@"deletedFlag"];
     if (self.deletedFlag) {
         [self golistCollectionView];
         self.deletedFlag = NO;
-        [userDefault setBool:self.createdFlag forKey:@"deletedFlag"];
     }
     
 }
@@ -94,10 +90,9 @@
 
 
 // デフォルトのゲーム配列作成
-- (void)defaultGame1{
+- (void)defaultGame{
 
     // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
-    NSMutableArray *divPicDataFinal = [NSMutableArray array]; // ゲーム配列リスト
     
     NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
     NSString *picText;
@@ -111,9 +106,8 @@
         picData = UIImageJPEGRepresentation(picImage, 1.0);
         [divPicData addObject:picData];
     }
-    
-    [divPicDataFinal addObject:divPicData]; // 3×3を追加
-    
+    NSMutableArray *normalFinalList = [NSMutableArray array];
+    [normalFinalList addObject:divPicData];
     
     
     NSMutableArray *divPicData2 = [NSMutableArray array]; // ゲーム配列
@@ -128,15 +122,18 @@
         picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
         [divPicData2 addObject:picData2];
     }
+    NSMutableArray *hardFinalList = [NSMutableArray array];
+    [hardFinalList addObject:divPicData2];
+    
     
     picImage2 = [UIImage imageNamed:@"sample00"];
     picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
     [divPicData2 replaceObjectAtIndex:0 withObject:picData2]; // 4*4の完成画像と差し替える
     
-    [divPicDataFinal addObject:divPicData2]; // 4×4を追加
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:divPicDataFinal forKey:@"divPicDataFinal"];
+    [userDefault setObject:normalFinalList forKey:@"normalFinalList"];
+    [userDefault setObject:hardFinalList forKey:@"hardFinalList"];
     [userDefault synchronize];
     
 }

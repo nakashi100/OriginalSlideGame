@@ -268,7 +268,6 @@
     }
     
     
-//     UserDefautで画像のデータを保存
 
     return divImages;
 }
@@ -332,16 +331,16 @@
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
         // UserDefautで保存したゲームリスト配列を呼び出したいが、空の場合は空のリストを生成する(これをしないとError)
-        if ([userDefault arrayForKey:@"divPicDataFinal"] == nil) {
+        if ([userDefault arrayForKey:@"normalFinalList"] == nil) {
             NSArray *sampleArray = [NSArray array];
-            [userDefault setObject:sampleArray forKey:@"divPicDataFinal"];
+            [userDefault setObject:sampleArray forKey:@"normalFinalList"];
         }
     
-        self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-        NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; // 追加できるようArrayをMutableArrayに変換
-        [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
+        self.normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
+        NSMutableArray *normalListFinal2 = [self.normalFinalList mutableCopy]; // 追加できるようArrayをMutableArrayに変換
+        [normalListFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
     
-        [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
+        [userDefault setObject:normalListFinal2 forKey:@"normalFinalList"]; // UserDefaultでゲームリストを保存し直す
         [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
     
         [userDefault synchronize];
@@ -359,16 +358,16 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
     // UserDefautで保存したゲームリスト配列を呼び出したいが、空の場合は空のリストを生成する(これをしないとError)
-    if ([userDefault arrayForKey:@"divPicDataFinal"] == nil) {
+    if ([userDefault arrayForKey:@"hardFinalList"] == nil) {
         NSArray *sampleArray = [NSArray array];
-        [userDefault setObject:sampleArray forKey:@"divPicDataFinal"];
+        [userDefault setObject:sampleArray forKey:@"hardFinalList"];
     }
     
-    self.divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    NSMutableArray *divPicDataFinal2 = [self.divPicDataFinal mutableCopy]; // 追加できるようArrayをMutableArrayに変換
-    [divPicDataFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
+    self.hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
+    NSMutableArray *hardListFinal2 = [self.hardFinalList mutableCopy]; // 追加できるようArrayをMutableArrayに変換
+    [hardListFinal2 addObject:self.divPicData2]; // ゲームリスト配列の最後に今回作成したものを追加
     
-    [userDefault setObject:divPicDataFinal2 forKey:@"divPicDataFinal"]; // UserDefaultでゲームリストを保存し直す
+    [userDefault setObject:hardListFinal2 forKey:@"hardFinalList"]; // UserDefaultでゲームリストを保存し直す
     [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
     
     

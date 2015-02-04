@@ -52,9 +52,6 @@
     self.isStart = NO;
     self.isFstCalled = NO;
     
-    //    見本画像をセットする
-    //    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
-    
 }
 
 
@@ -65,7 +62,7 @@
     self.navigationItem.rightBarButtonItem = self.trashBtn;
     
     // デフォルトゲームは削除できないようにnavigationの削除ボタンを非表示&無効にする
-    if(self.pathNo == 1){
+    if(self.pathNo == 0){
         [self.trashBtn setEnabled:NO];
         self.trashBtn.tintColor = [UIColor colorWithWhite:0 alpha:0];
     }
@@ -93,49 +90,6 @@
     
     // image16(tag:36)を削除する
     [[self.view viewWithTag:36] removeFromSuperview];
-    
-    
-    /**********************************************************************************
-     // image1〜8の中の数字(sample1〜9)を並び替える
-     [self createRndArray];
-     
-     //    NSString *randPic1 = [NSString stringWithFormat:@"sample%@", self.randNums[0]];
-     //    NSString *randPic2 = [NSString stringWithFormat:@"sample%@", self.randNums[1]];
-     //    NSString *randPic3 = [NSString stringWithFormat:@"sample%@", self.randNums[2]];
-     //    NSString *randPic4 = [NSString stringWithFormat:@"sample%@", self.randNums[3]];
-     //    NSString *randPic5 = [NSString stringWithFormat:@"sample%@", self.randNums[4]];
-     //    NSString *randPic6 = [NSString stringWithFormat:@"sample%@", self.randNums[5]];
-     //    NSString *randPic7 = [NSString stringWithFormat:@"sample%@", self.randNums[6]];
-     //    NSString *randPic8 = [NSString stringWithFormat:@"sample%@", self.randNums[7]];
-     //
-     //    self.image1.image = [UIImage imageNamed:randPic1];
-     //    self.image2.image = [UIImage imageNamed:randPic2];
-     //    self.image3.image = [UIImage imageNamed:randPic3];
-     //    self.image4.image = [UIImage imageNamed:randPic4];
-     //    self.image5.image = [UIImage imageNamed:randPic5];
-     //    self.image6.image = [UIImage imageNamed:randPic6];
-     //    self.image7.image = [UIImage imageNamed:randPic7];
-     //    self.image8.image = [UIImage imageNamed:randPic8];
-     
-     
-     // スライドしたときの処理で使用する配列を作成する
-     // array[0]はスライド空判定(0が空・1が空でない)、array[1]はimageがもつtagの番号、array[2]はtagの値(パズル完成の判定に用いる))
-     self.viewArray1 = [@[@1,@11,self.randNums[0]]mutableCopy];
-     self.viewArray2 = [@[@1,@12,self.randNums[1]]mutableCopy];
-     self.viewArray3 = [@[@1,@13,self.randNums[2]]mutableCopy];
-     self.viewArray4 = [@[@1,@14,self.randNums[3]]mutableCopy];
-     self.viewArray5 = [@[@1,@15,self.randNums[4]]mutableCopy];
-     self.viewArray6 = [@[@1,@16,self.randNums[5]]mutableCopy];
-     self.viewArray7 = [@[@1,@17,self.randNums[6]]mutableCopy];
-     self.viewArray8 = [@[@1,@18,self.randNums[7]]mutableCopy];
-     self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
-     
-     //うまくできない
-     //    for (int i=1; i<10; i++) {
-     //        NSString *testArray = [NSString stringWithFormat:@"viewArray%d",i];
-     //        NSLog(@"%@",testArray);
-     //    }
-     **********************************************************************************/
     
     
     // image1〜8の中の数字を並び替える
@@ -808,19 +762,18 @@
 
 - (void)deleteGame {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSArray *divPicDataFinal = [userDefault arrayForKey:@"divPicDataFinal"];
-    NSMutableArray *divPicDataFinalnew = [divPicDataFinal mutableCopy];
-    [divPicDataFinalnew removeObjectAtIndex:self.pathNo];
-    [userDefault setObject:divPicDataFinalnew forKey:@"divPicDataFinal"];
     
-    BOOL deletedFlag = YES;
-    [userDefault setBool:deletedFlag forKey:@"deletedFlag"]; // ここからの遷移だと明確にするため
+    NSArray *hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
+    NSMutableArray *hardFinalListnew = [hardFinalList mutableCopy];
+    [hardFinalListnew removeObjectAtIndex:self.pathNo];
+    [userDefault setObject:hardFinalListnew forKey:@"hardFinalList"];
     
-    [userDefault synchronize];
     
+    titleViewController *titleViewController = [self.navigationController viewControllers][0];
+    //    titleViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
+    titleViewController.deletedFlag = YES;
+
     [self.navigationController popToRootViewControllerAnimated:NO]; // タイトル画面に戻る
-    
-    //        [self.navigationController popViewControllerAnimated:YES];
     
 }
 

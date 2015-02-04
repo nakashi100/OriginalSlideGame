@@ -10,15 +10,16 @@
 
 @interface listCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property NSArray *divPicDataFinal;
-@property int count; // divPicDataFinal配列の個数
+
+
+//@property int count; // divPicDataFinal配列の個数
 @property UIBarButtonItem *addBtn; // 追加ボタン
 
 @property int playingArrayCount;
 
 
 
-@property NSMutableArray *normalGameList; // 3×3のパズルだけを格納したリスト配列
-@property NSMutableArray *hardGameList;
+@property NSArray *normalFinalList; // 3×3のパズルだけを格納したリスト配列
+@property NSArray *hardFinalList;
 
 @end
