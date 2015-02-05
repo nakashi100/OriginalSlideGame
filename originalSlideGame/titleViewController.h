@@ -18,4 +18,6 @@
 @property int createdFlag; // ゲーム作成後のリダイレクト判定用 1 or 2
 @property BOOL deletedFlag; // ゲーム削除後のリダイレクト判定用
 
+@property int pathNo; // ゲーム作成後にpathNoを受け取る
+
 @end

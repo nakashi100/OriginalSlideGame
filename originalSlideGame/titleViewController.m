@@ -31,13 +31,18 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+NSLog(@"title%d",self.pathNo);
     
     // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagは0にする。
     if (self.createdFlag == 1) {  //3×3の場合
+//        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+//        playView.pathNo = self.pathNo;
         [self golistCollectionView];
         [self goPlayView];
         self.createdFlag = 0;
     }else if(self.createdFlag == 2) {  //4×4の場合
+//        hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+//        hardPlayView.pathNo = self.pathNo;
         [self golistCollectionView];
         [self goHardPlayView];
         self.createdFlag = 0;
@@ -79,12 +84,14 @@
 // play画面に遷移する
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+    playView.pathNo = self.pathNo;
     [self.navigationController pushViewController:playView animated:NO];
 }
 
 // hardPlay画面に遷移する
 - (void)goHardPlayView{
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+    hardPlayView.pathNo = self.pathNo;
     [self.navigationController pushViewController:hardPlayView animated:NO];
 }
 

@@ -56,6 +56,7 @@
 
 
 - (void)viewWillAppear:(BOOL)animated{
+    NSLog(@"%d",self.pathNo);
     
     // ナビゲーションバーに削除ボタンを設置
     self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(alert)];
@@ -106,7 +107,8 @@
     
     
     // image1〜8の中の数字を並び替える
-    int pattern = 1; // 実際にはrand関数を使ってpatternをランダムに指定する
+    int pattern = [self createRndArray];
+    //    int pattern = 9; // テスト用
     [self puzzlePattern:pattern];
     
     
@@ -124,6 +126,29 @@
 }
 
 
+
+//重複しない乱数を発生させるメソッド(1〜8)
+-(int)createRndArray{
+    
+    //配列を初期化
+    self.randNums = [NSMutableArray array];
+    //要素になる数字
+    NSInteger num;
+    
+    //要素を満たすまで繰り返す
+    while (self.randNums.count < 8) {
+        //乱数
+        num = arc4random() % 8 + 1;
+        
+        //要素を検索
+        NSUInteger index = [self.randNums indexOfObject:@(num)];
+        
+        if(index == NSNotFound){
+            [self.randNums addObject:@(num)];
+        }
+    }
+    return [self.randNums[0] intValue];
+}
 
 
 
@@ -694,6 +719,8 @@
         resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         resultView.result = self.playTime;
         resultView.divPicturesData = self.divPicturesData;
+        resultView.pathNo = self.pathNo;
+        NSLog(@"%d",self.pathNo);
         
         // Resultページへモーダルで遷移させる
         [self presentViewController:resultView animated:YES completion:nil];
@@ -891,7 +918,303 @@
 -(void)puzzlePattern:(int )num {
     
     switch (num) {
-        case 1: // テスト用なので削除する
+        case 1: // クリア済
+            self.image1.image = self.pic13;
+            self.image2.image = self.pic11;
+            self.image3.image = self.pic9;
+            self.image4.image = self.pic10;
+            self.image5.image = self.pic14;
+            self.image6.image = self.pic8;
+            self.image7.image = self.pic5;
+            self.image8.image = self.pic3;
+            self.image9.image = self.pic1;
+            self.image10.image = self.pic6;
+            self.image11.image = self.pic2;
+            self.image12.image = self.pic7;
+            self.image13.image = self.pic12;
+            self.image14.image = self.pic4;
+            self.image15.image = self.pic15;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@13]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@11]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@9]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@10]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@14]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@8]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@5]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@3]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@1]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@6]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@2]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@7]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@12]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@4]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@15]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 2: // クリア済
+            self.image1.image = self.pic3;
+            self.image2.image = self.pic12;
+            self.image3.image = self.pic2;
+            self.image4.image = self.pic11;
+            self.image5.image = self.pic1;
+            self.image6.image = self.pic7;
+            self.image7.image = self.pic14;
+            self.image8.image = self.pic9;
+            self.image9.image = self.pic13;
+            self.image10.image = self.pic4;
+            self.image11.image = self.pic8;
+            self.image12.image = self.pic15;
+            self.image13.image = self.pic5;
+            self.image14.image = self.pic10;
+            self.image15.image = self.pic6;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@3]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@12]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@2]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@11]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@1]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@7]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@14]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@9]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@13]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@4]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@8]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@15]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@5]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@10]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@6]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 3: // クリア済
+            self.image1.image = self.pic15;
+            self.image2.image = self.pic2;
+            self.image3.image = self.pic7;
+            self.image4.image = self.pic14;
+            self.image5.image = self.pic10;
+            self.image6.image = self.pic5;
+            self.image7.image = self.pic11;
+            self.image8.image = self.pic6;
+            self.image9.image = self.pic8;
+            self.image10.image = self.pic9;
+            self.image11.image = self.pic4;
+            self.image12.image = self.pic13;
+            self.image13.image = self.pic12;
+            self.image14.image = self.pic3;
+            self.image15.image = self.pic1;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@15]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@2]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@7]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@14]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@10]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@5]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@11]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@6]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@8]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@9]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@4]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@13]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@12]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@3]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@1]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+        
+        case 4:
+            self.image1.image = self.pic15;
+            self.image2.image = self.pic5;
+            self.image3.image = self.pic2;
+            self.image4.image = self.pic6;
+            self.image5.image = self.pic11;
+            self.image6.image = self.pic7;
+            self.image7.image = self.pic9;
+            self.image8.image = self.pic4;
+            self.image9.image = self.pic14;
+            self.image10.image = self.pic10;
+            self.image11.image = self.pic8;
+            self.image12.image = self.pic12;
+            self.image13.image = self.pic1;
+            self.image14.image = self.pic13;
+            self.image15.image = self.pic3;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@15]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@5]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@2]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@6]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@11]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@7]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@9]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@4]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@14]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@10]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@8]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@12]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@1]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@13]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@3]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 5:
+            self.image1.image = self.pic12;
+            self.image2.image = self.pic7;
+            self.image3.image = self.pic1;
+            self.image4.image = self.pic8;
+            self.image5.image = self.pic9;
+            self.image6.image = self.pic4;
+            self.image7.image = self.pic10;
+            self.image8.image = self.pic14;
+            self.image9.image = self.pic11;
+            self.image10.image = self.pic2;
+            self.image11.image = self.pic6;
+            self.image12.image = self.pic5;
+            self.image13.image = self.pic3;
+            self.image14.image = self.pic13;
+            self.image15.image = self.pic15;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@12]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@7]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@1]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@8]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@9]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@4]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@10]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@14]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@11]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@2]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@6]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@5]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@3]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@13]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@15]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 6:
+            self.image1.image = self.pic6;
+            self.image2.image = self.pic11;
+            self.image3.image = self.pic5;
+            self.image4.image = self.pic12;
+            self.image5.image = self.pic15;
+            self.image6.image = self.pic4;
+            self.image7.image = self.pic2;
+            self.image8.image = self.pic10;
+            self.image9.image = self.pic1;
+            self.image10.image = self.pic8;
+            self.image11.image = self.pic3;
+            self.image12.image = self.pic14;
+            self.image13.image = self.pic9;
+            self.image14.image = self.pic13;
+            self.image15.image = self.pic7;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@6]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@11]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@5]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@12]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@15]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@4]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@2]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@10]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@1]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@8]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@3]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@14]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@9]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@13]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@7]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 7:
+            self.image1.image = self.pic14;
+            self.image2.image = self.pic15;
+            self.image3.image = self.pic2;
+            self.image4.image = self.pic12;
+            self.image5.image = self.pic5;
+            self.image6.image = self.pic3;
+            self.image7.image = self.pic10;
+            self.image8.image = self.pic9;
+            self.image9.image = self.pic6;
+            self.image10.image = self.pic8;
+            self.image11.image = self.pic4;
+            self.image12.image = self.pic13;
+            self.image13.image = self.pic11;
+            self.image14.image = self.pic7;
+            self.image15.image = self.pic1;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@14]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@15]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@2]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@12]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@5]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@3]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@10]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@9]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@6]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@8]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@4]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@13]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@11]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@7]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@1]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 8:
+            self.image1.image = self.pic4;
+            self.image2.image = self.pic15;
+            self.image3.image = self.pic8;
+            self.image4.image = self.pic7;
+            self.image5.image = self.pic1;
+            self.image6.image = self.pic9;
+            self.image7.image = self.pic14;
+            self.image8.image = self.pic2;
+            self.image9.image = self.pic13;
+            self.image10.image = self.pic6;
+            self.image11.image = self.pic11;
+            self.image12.image = self.pic3;
+            self.image13.image = self.pic5;
+            self.image14.image = self.pic10;
+            self.image15.image = self.pic12;
+            self.image16.image = self.pic16;
+            
+            self.viewArray1 = [@[@1,@21,@4]mutableCopy];
+            self.viewArray2 = [@[@1,@22,@15]mutableCopy];
+            self.viewArray3 = [@[@1,@23,@8]mutableCopy];
+            self.viewArray4 = [@[@1,@24,@7]mutableCopy];
+            self.viewArray5 = [@[@1,@25,@1]mutableCopy];
+            self.viewArray6 = [@[@1,@26,@9]mutableCopy];
+            self.viewArray7 = [@[@1,@27,@14]mutableCopy];
+            self.viewArray8 = [@[@1,@28,@2]mutableCopy];
+            self.viewArray9 = [@[@1,@29,@13]mutableCopy];
+            self.viewArray10 = [@[@1,@30,@6]mutableCopy];
+            self.viewArray11 = [@[@1,@31,@11]mutableCopy];
+            self.viewArray12 = [@[@1,@32,@3]mutableCopy];
+            self.viewArray13 = [@[@1,@33,@5]mutableCopy];
+            self.viewArray14 = [@[@1,@34,@10]mutableCopy];
+            self.viewArray15 = [@[@1,@35,@12]mutableCopy];
+            self.viewArray16 = [@[@0,@0,@0]mutableCopy];
+            
+            break;
+            
+        case 9: // テスト用
             self.image1.image = self.pic1;
             self.image2.image = self.pic2;
             self.image3.image = self.pic3;

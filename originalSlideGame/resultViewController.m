@@ -21,6 +21,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+NSLog(@"result%d",self.pathNo);
     self.twitterImage.image = [UIImage imageNamed:@"mihonSample"];
     self.resultTime.text = self.result;
     
@@ -41,17 +42,17 @@
         
         [thisGameArrayMutable addObject:self.result]; // 配列の最後にタイムを追加する
         
-NSLog(@"%d",[thisGameArrayMutable count]);
+//NSLog(@"%d",[thisGameArrayMutable count]);
         
         normalFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
         
-NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
+//NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
         
         
         [userDefault setObject:normalFinalListMutable forKey:@"normalFinalList"]; // 保存し直す
         
         
-NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
+//NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
   
         // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
         [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
@@ -123,15 +124,16 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
         
         
         if ([self.divPicturesData[17] floatValue] > self.result.floatValue ) {
+ NSLog(@"てすと1");
             [thisGameArrayMutable replaceObjectAtIndex:17 withObject:self.result]; // 記録更新
             
             hardFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
             
             [userDefault setObject:hardFinalListMutable forKey:@"hardFinalList"];
-            NSLog(@"3×3記録更新！タイムは%@",hardFinalListMutable[0][17]);
+//            NSLog(@"3×3記録更新！タイムは%@",hardFinalListMutable[0][17]);
         }else if([self.divPicturesData[17] floatValue] < self.result.floatValue){
-            
-            NSLog(@"3×3記録更新ならず。過去のベストは%@", hardFinalListMutable[0][17]);
+ NSLog(@"てすと2");
+//            NSLog(@"3×3記録更新ならず。過去のベストは%@", hardFinalListMutable[0][17]);
             // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
             [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
         }

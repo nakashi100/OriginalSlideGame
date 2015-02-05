@@ -26,6 +26,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+NSLog(@"list%d",self.pathNo);
     self.title = @"LIST";
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -43,8 +44,12 @@ static NSString * const reuseIdentifier = @"Cell";
     if (self.playingArrayCount > 2) {
         if (self.playingArrayCount == 10 || self.playingArrayCount == 11) { // タイム保存されているため18
             self.playingArrayCount = 0;
+//            playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+//            playView.pathNo = self.pathNo;
             [self goPlayView];
         }else if(self.playingArrayCount == 17 || self.playingArrayCount == 18){
+//            hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+//            hardPlayView.pathNo = self.pathNo;
             self.playingArrayCount = 0;
             [self goHardPlayView];
         }
@@ -176,11 +181,13 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+    playView.pathNo = self.pathNo;
     [self.navigationController pushViewController:playView animated:NO];
 }
 
 - (void)goHardPlayView{
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+    hardPlayView.pathNo = self.pathNo;
     [self.navigationController pushViewController:hardPlayView animated:NO];
 }
 

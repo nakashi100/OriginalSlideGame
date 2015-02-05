@@ -349,8 +349,11 @@
         // タイトル画面に戻る
         titleViewController *titleViewController = [self.navigationController viewControllers][0];
         titleViewController.createdFlag = 1;
+        titleViewController.pathNo = ([normalListFinal2 count]-1);
     
         [self.navigationController popToRootViewControllerAnimated:NO];
+    
+    NSLog(@"けんしょう%d",[normalListFinal2 count]);
 }
 
 
@@ -376,6 +379,7 @@
     // タイトル画面に戻る
     titleViewController *titleViewController = [self.navigationController viewControllers][0];
     titleViewController.createdFlag = 2;
+    titleViewController.pathNo = ([hardListFinal2 count] -1);
     
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
