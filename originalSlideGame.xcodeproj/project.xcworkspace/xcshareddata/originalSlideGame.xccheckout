@@ -14,6 +14,8 @@
 		<string>https://github.com/nakashi100/OriginalSlideGame.git</string>
 		<key>550D6FB9D673019433D130AB7048D5FF23279B3D</key>
 		<string>https://github.com/nakashi100/OriginalSlideGame.git</string>
+		<key>7E3BF325ACA24920B64880B6AEE703826780C2BC</key>
+		<string>https://github.com/yackle/CLImageEditor.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>originalSlideGame.xcodeproj</string>
@@ -23,6 +25,8 @@
 		<string>../..</string>
 		<key>550D6FB9D673019433D130AB7048D5FF23279B3D</key>
 		<string>../../..</string>
+		<key>7E3BF325ACA24920B64880B6AEE703826780C2BC</key>
+		<string>../../../../../../Desktop/CLImageEditor</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nakashi100/OriginalSlideGame.git</string>
@@ -39,6 +43,14 @@
 			<string>550D6FB9D673019433D130AB7048D5FF23279B3D</string>
 			<key>IDESourceControlWCCName</key>
 			<string></string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7E3BF325ACA24920B64880B6AEE703826780C2BC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CLImageEditor</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>

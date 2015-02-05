@@ -68,6 +68,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Header" id="Aa9-G8-kSh" customClass="headerCollectionReusableView">
+                            <rect key="frame" x="0.0" y="64" width="600" height="32"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvF-qw-jWg">
@@ -877,6 +878,19 @@
                                     <rect key="frame" x="26" y="102" width="274" height="274"/>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Uc-KRp">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="EDIT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="120" y="390" width="75" height="40"/>
+                                </variation>
+                                <connections>
+                                    <action selector="editBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="Vgi-D9-pQO"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="creatPictureBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -897,7 +911,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="31" y="391" width="76" height="40"/>
+                                    <rect key="frame" x="31" y="391" width="75" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="remakeBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="VsC-70-ipJ"/>
@@ -910,7 +924,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="225" y="393" width="75" height="36"/>
+                                    <rect key="frame" x="225" y="393" width="75" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="finishBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="AqR-xf-AkV"/>
@@ -928,6 +942,7 @@
                             <mask key="subviews">
                                 <exclude reference="k2C-RM-7ln"/>
                                 <exclude reference="kBZ-E9-DBX"/>
+                                <exclude reference="79N-Uc-KRp"/>
                                 <exclude reference="J0f-pw-dKJ"/>
                                 <exclude reference="OaW-Q4-c8n"/>
                                 <exclude reference="cR9-XZ-aAI"/>
@@ -941,6 +956,7 @@
                             <mask key="subviews">
                                 <include reference="k2C-RM-7ln"/>
                                 <include reference="kBZ-E9-DBX"/>
+                                <include reference="79N-Uc-KRp"/>
                                 <include reference="J0f-pw-dKJ"/>
                                 <include reference="OaW-Q4-c8n"/>
                                 <include reference="cR9-XZ-aAI"/>
@@ -955,6 +971,7 @@
                     <connections>
                         <outlet property="createPictureBtn2" destination="J0f-pw-dKJ" id="t9f-c4-8T2"/>
                         <outlet property="displayPictureView" destination="kBZ-E9-DBX" id="RbV-4n-Y6l"/>
+                        <outlet property="editBtn2" destination="79N-Uc-KRp" id="TVE-TB-6zQ"/>
                         <outlet property="explainLabel" destination="k2C-RM-7ln" id="ysc-yd-KU5"/>
                         <outlet property="finishBtn2" destination="cR9-XZ-aAI" id="evr-0X-sgf"/>
                         <outlet property="remakeBtn2" destination="OaW-Q4-c8n" id="GRJ-D3-Q1v"/>

@@ -8,8 +8,10 @@
 
 #import "pictureViewController.h"
 #import "titleViewController.h"
+#import "CLImageEditor.h"
 
 @interface pictureViewController ()
+<CLImageEditorDelegate>
 
 @end
 
@@ -20,6 +22,7 @@
     
     self.finishBtn2.hidden = YES;
     self.remakeBtn2.hidden = YES;
+    self.editBtn2.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -178,6 +181,7 @@
     [self.explainLabel removeFromSuperview];
     self.finishBtn2.hidden = NO;
     self.remakeBtn2.hidden = NO;
+    self.editBtn2.hidden = NO;
 }
 
 
@@ -382,6 +386,30 @@
     titleViewController.pathNo = ([hardListFinal2 count] -1);
     
     [self.navigationController popToRootViewControllerAnimated:NO];
+}
+
+
+
+- (IBAction)editBtn:(id)sender {
+    [self presentImageEditorWithImage:self.displayPictureView.image];
+    
+    
+}
+
+// 画像加工ライブラリ
+- (void)presentImageEditorWithImage:(UIImage*)image
+{
+    CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:image];
+    editor.delegate = self;[self presentViewController:editor animated:YES completion:nil];
+
+}
+
+// 画像の編集が終わったら呼ばれるデリゲート
+- (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
+{
+    self.trimmedImage = image;
+    self.displayPictureView.image = image;
+    [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
 
