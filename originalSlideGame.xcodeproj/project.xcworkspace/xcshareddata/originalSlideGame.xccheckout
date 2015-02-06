@@ -26,7 +26,7 @@
 		<key>550D6FB9D673019433D130AB7048D5FF23279B3D</key>
 		<string>../../..</string>
 		<key>7E3BF325ACA24920B64880B6AEE703826780C2BC</key>
-		<string>../../../../../../Desktop/CLImageEditor</string>
+		<string>../../../Desktop/CLImageEditor</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/nakashi100/OriginalSlideGame.git</string>

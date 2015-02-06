@@ -666,8 +666,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Ov-bq-8Nn">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="IUp-QR-AiA"/>
-                                    <constraint firstAttribute="height" constant="60" id="vsZ-Ap-7IL"/>
+                                    <constraint firstAttribute="width" constant="60" id="IUp-QR-AiA">
+                                        <variation key="widthClass=compact" constant="50"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="60" id="vsZ-Ap-7IL">
+                                        <variation key="widthClass=compact" constant="41"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -748,14 +752,22 @@
                                     <segue destination="6zF-Jb-AcG" kind="unwind" unwindAction="listViewReturnActionForSegue:" id="dRI-XL-rFI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JBH-rL-NAo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="101" y="220" width="47" height="47"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="iO5-Mx-o7l" secondAttribute="centerX" constant="-0.5" id="26r-jq-1YS"/>
                             <constraint firstAttribute="centerX" secondItem="ZIi-08-Veg" secondAttribute="centerX" id="2mg-eo-2jp"/>
-                            <constraint firstAttribute="centerX" secondItem="9Ov-bq-8Nn" secondAttribute="centerX" id="7CH-56-Hio"/>
+                            <constraint firstAttribute="centerX" secondItem="9Ov-bq-8Nn" secondAttribute="centerX" id="7CH-56-Hio">
+                                <variation key="widthClass=compact" constant="-62"/>
+                            </constraint>
                             <constraint firstItem="H31-gy-YKH" firstAttribute="top" secondItem="9Ov-bq-8Nn" secondAttribute="bottom" constant="99" id="9CA-id-Ek3">
-                                <variation key="widthClass=compact" constant="110"/>
+                                <variation key="widthClass=compact" constant="120"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="VDv-zO-POs" secondAttribute="centerX" constant="47" id="9pZ-iY-c8H">
                                 <variation key="widthClass=compact" constant="49.5"/>
@@ -764,14 +776,22 @@
                                 <variation key="widthClass=compact" constant="-43"/>
                             </constraint>
                             <constraint firstItem="VDv-zO-POs" firstAttribute="top" secondItem="ZIi-08-Veg" secondAttribute="bottom" constant="31" id="Jrw-gK-0cq"/>
-                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="VDv-zO-POs" secondAttribute="bottom" constant="40" id="SUX-sP-ePw"/>
-                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="mdD-bm-cJp" secondAttribute="bottom" constant="40" id="UHQ-ex-exO"/>
-                            <constraint firstItem="mdD-bm-cJp" firstAttribute="top" secondItem="ZIi-08-Veg" secondAttribute="bottom" constant="31" id="W5S-Lz-K33"/>
-                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="ZIi-08-Veg" secondAttribute="bottom" constant="109" id="ZhI-hY-qgg"/>
-                            <constraint firstItem="iO5-Mx-o7l" firstAttribute="top" secondItem="9Ov-bq-8Nn" secondAttribute="bottom" constant="33" id="i20-Ec-ndS">
-                                <variation key="widthClass=compact" constant="36"/>
+                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="VDv-zO-POs" secondAttribute="bottom" constant="40" id="SUX-sP-ePw">
+                                <variation key="widthClass=compact" constant="49"/>
                             </constraint>
-                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="OTH-2K-aFN" secondAttribute="bottom" constant="197" id="ltz-tk-VK0"/>
+                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="mdD-bm-cJp" secondAttribute="bottom" constant="40" id="UHQ-ex-exO">
+                                <variation key="widthClass=compact" constant="49"/>
+                            </constraint>
+                            <constraint firstItem="mdD-bm-cJp" firstAttribute="top" secondItem="ZIi-08-Veg" secondAttribute="bottom" constant="31" id="W5S-Lz-K33"/>
+                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="ZIi-08-Veg" secondAttribute="bottom" constant="109" id="ZhI-hY-qgg">
+                                <variation key="widthClass=compact" constant="118"/>
+                            </constraint>
+                            <constraint firstItem="iO5-Mx-o7l" firstAttribute="top" secondItem="9Ov-bq-8Nn" secondAttribute="bottom" constant="33" id="i20-Ec-ndS">
+                                <variation key="widthClass=compact" constant="46"/>
+                            </constraint>
+                            <constraint firstItem="9Ov-bq-8Nn" firstAttribute="top" secondItem="OTH-2K-aFN" secondAttribute="bottom" constant="197" id="ltz-tk-VK0">
+                                <variation key="widthClass=compact" constant="206"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="H31-gy-YKH" secondAttribute="centerX" constant="-0.5" id="sqN-9e-5np"/>
                         </constraints>
                         <variation key="default">
@@ -782,6 +802,7 @@
                                 <exclude reference="9Ov-bq-8Nn"/>
                                 <exclude reference="H31-gy-YKH"/>
                                 <exclude reference="iO5-Mx-o7l"/>
+                                <exclude reference="JBH-rL-NAo"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="9pZ-iY-c8H"/>
@@ -808,6 +829,7 @@
                                 <include reference="9Ov-bq-8Nn"/>
                                 <include reference="H31-gy-YKH"/>
                                 <include reference="iO5-Mx-o7l"/>
+                                <include reference="JBH-rL-NAo"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="9pZ-iY-c8H"/>
@@ -828,6 +850,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="facebookImage" destination="JBH-rL-NAo" id="hbs-4Y-dlt"/>
                         <outlet property="resultTime" destination="mdD-bm-cJp" id="vrh-c4-f6k"/>
                         <outlet property="retryBtn2" destination="iO5-Mx-o7l" id="6q8-OY-RLQ"/>
                         <outlet property="twitterImage" destination="9Ov-bq-8Nn" id="1Pc-Ki-KD1"/>

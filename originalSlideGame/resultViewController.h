@@ -16,10 +16,13 @@
 - (IBAction)goTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *resultTime;
 
+@property (weak, nonatomic) IBOutlet UIImageView *facebookImage;
+
 
 @property NSString *result; // タイムを受け取る
 @property NSInteger pathNo; // パスNo.(配列の何番目か)を受け取る
 @property NSMutableArray *divPicturesData; // プレイ中のゲーム配列を受け取る
 @property int playingArrayCount; // プレイ中のゲーム配列の個数(10コor17コ)※リダイレクト先を変えるため
+
 
 @end

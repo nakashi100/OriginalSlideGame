@@ -151,8 +151,8 @@ NSLog(@"play%d",self.pathNo);
  
  
     // image1〜8の中の数字を並び替える
-    int pattern = [self createRndArray];
-//    int pattern = 9; // テスト用
+//    int pattern = [self createRndArray];
+    int pattern = 9; // テスト用
     [self puzzlePattern:pattern];
     
     

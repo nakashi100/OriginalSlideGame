@@ -22,9 +22,17 @@
 
 - (void)viewWillAppear:(BOOL)animated{
 NSLog(@"result%d",self.pathNo);
-    self.twitterImage.image = [UIImage imageNamed:@"mihonSample"];
+    self.twitterImage.image = [UIImage imageNamed:@"twitter"];
+    self.facebookImage.image = [UIImage imageNamed:@"facebook"];
     self.resultTime.text = self.result;
     
+    self.twitterImage.userInteractionEnabled = YES;
+    self.facebookImage.userInteractionEnabled = YES;
+    
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(myView_Tapped:)];
+    // ビューにジェスチャーを追加
+    [self.facebookImage addGestureRecognizer:tapGesture];
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
@@ -162,6 +170,11 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
 }
 
 - (IBAction)goTitleBtn:(id)sender {
-    
 }
+
+- (void)myView_Tapped:(UITapGestureRecognizer *)sender
+{
+    NSLog(@"タップされました．");
+}
+
 @end
