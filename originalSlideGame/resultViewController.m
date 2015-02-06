@@ -83,6 +83,9 @@ NSLog(@"result%d",self.pathNo);
             normalFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
             
             [userDefault setObject:normalFinalListMutable forKey:@"normalFinalList"];
+            [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"]; //今回追加
+            
+            
 NSLog(@"3×3記録更新！タイムは%@",normalFinalListMutable[0][10]);
         }else if([self.divPicturesData[10] floatValue] < self.result.floatValue){
         
@@ -138,6 +141,7 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
             hardFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
             
             [userDefault setObject:hardFinalListMutable forKey:@"hardFinalList"];
+            [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"]; // 今回追加
 //            NSLog(@"3×3記録更新！タイムは%@",hardFinalListMutable[0][17]);
         }else if([self.divPicturesData[17] floatValue] < self.result.floatValue){
  NSLog(@"てすと2");
@@ -160,7 +164,11 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
     // retryBtnが押されたときだけ実行するようにsenderにtagをつけて条件処理する
     if ([sender tag] == 2) {
          listCollectionViewController *listCollectionView = [segue destinationViewController];
-        listCollectionView.playingArrayCount = self.playingArrayCount;
+    
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        NSArray *playingGame = [userDefault arrayForKey:@"nowPlaying"];
+        
+        listCollectionView.playingArrayCount = [playingGame count];
         listCollectionView.pathNo = self.pathNo;
     }
     
