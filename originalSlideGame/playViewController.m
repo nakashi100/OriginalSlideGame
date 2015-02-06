@@ -106,49 +106,6 @@ NSLog(@"play%d",self.pathNo);
     // image9(tag:19)を削除する
      [[self.view viewWithTag:19] removeFromSuperview];
     
-    
-/**********************************************************************************
-    // image1〜8の中の数字(sample1〜9)を並び替える
-    [self createRndArray];
-    
-//    NSString *randPic1 = [NSString stringWithFormat:@"sample%@", self.randNums[0]];
-//    NSString *randPic2 = [NSString stringWithFormat:@"sample%@", self.randNums[1]];
-//    NSString *randPic3 = [NSString stringWithFormat:@"sample%@", self.randNums[2]];
-//    NSString *randPic4 = [NSString stringWithFormat:@"sample%@", self.randNums[3]];
-//    NSString *randPic5 = [NSString stringWithFormat:@"sample%@", self.randNums[4]];
-//    NSString *randPic6 = [NSString stringWithFormat:@"sample%@", self.randNums[5]];
-//    NSString *randPic7 = [NSString stringWithFormat:@"sample%@", self.randNums[6]];
-//    NSString *randPic8 = [NSString stringWithFormat:@"sample%@", self.randNums[7]];
-//    
-//    self.image1.image = [UIImage imageNamed:randPic1];
-//    self.image2.image = [UIImage imageNamed:randPic2];
-//    self.image3.image = [UIImage imageNamed:randPic3];
-//    self.image4.image = [UIImage imageNamed:randPic4];
-//    self.image5.image = [UIImage imageNamed:randPic5];
-//    self.image6.image = [UIImage imageNamed:randPic6];
-//    self.image7.image = [UIImage imageNamed:randPic7];
-//    self.image8.image = [UIImage imageNamed:randPic8];
-
-    
-    // スライドしたときの処理で使用する配列を作成する
-    // array[0]はスライド空判定(0が空・1が空でない)、array[1]はimageがもつtagの番号、array[2]はtagの値(パズル完成の判定に用いる))
-    self.viewArray1 = [@[@1,@11,self.randNums[0]]mutableCopy];
-    self.viewArray2 = [@[@1,@12,self.randNums[1]]mutableCopy];
-    self.viewArray3 = [@[@1,@13,self.randNums[2]]mutableCopy];
-    self.viewArray4 = [@[@1,@14,self.randNums[3]]mutableCopy];
-    self.viewArray5 = [@[@1,@15,self.randNums[4]]mutableCopy];
-    self.viewArray6 = [@[@1,@16,self.randNums[5]]mutableCopy];
-    self.viewArray7 = [@[@1,@17,self.randNums[6]]mutableCopy];
-    self.viewArray8 = [@[@1,@18,self.randNums[7]]mutableCopy];
-    self.viewArray9 = [@[@0,@0,@0]mutableCopy];     //view9が最初に空になるので配列には{0,0,0}を入れておく
-
-    //うまくできない
-//    for (int i=1; i<10; i++) {
-//        NSString *testArray = [NSString stringWithFormat:@"viewArray%d",i];
-//        NSLog(@"%@",testArray);
-//    }
-**********************************************************************************/
- 
  
     // image1〜8の中の数字を並び替える
 //    int pattern = [self createRndArray];

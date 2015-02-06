@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C400450D1A81B3CE0084F8FF /* headerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */; };
 		C41BC5901A84C3F500DC6B59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41BC58F1A84C3F500DC6B59 /* Images.xcassets */; };
+		C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41BC5911A84D1E300DC6B59 /* Social.framework */; };
 		C4250B7A1A7375A9005B5F27 /* playViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4250B791A7375A9005B5F27 /* playViewController.m */; };
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
@@ -75,6 +76,7 @@
 		C400450B1A81B3CE0084F8FF /* headerCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCollectionReusableView.h; sourceTree = "<group>"; };
 		C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCollectionReusableView.m; sourceTree = "<group>"; };
 		C41BC58F1A84C3F500DC6B59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C41BC5911A84D1E300DC6B59 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C4250B781A7375A9005B5F27 /* playViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = playViewController.h; sourceTree = "<group>"; };
 		C4250B791A7375A9005B5F27 /* playViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = playViewController.m; sourceTree = "<group>"; };
 		C456DC931A76325F005E25B0 /* titleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = titleViewController.h; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */,
 				C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +204,7 @@
 				C4A9D4EE1A736D0900DA4AEA /* originalSlideGame */,
 				C4A9D50B1A736D0A00DA4AEA /* originalSlideGameTests */,
 				C4A9D4ED1A736D0900DA4AEA /* Products */,
+				C41BC5911A84D1E300DC6B59 /* Social.framework */,
 				C47865BC1A790E480090350E /* QuartzCore.framework */,
 			);
 			sourceTree = "<group>";

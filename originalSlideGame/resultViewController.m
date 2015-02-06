@@ -18,6 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // SNSシェアができるかの確認
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        NSLog(@"FB利用できるよ");
+    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        NSLog(@"FB利用できないよ");
+    }
+
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        NSLog(@"t利用できるよ");
+    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        NSLog(@"t利用できないよ");
+    }
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -26,13 +41,16 @@ NSLog(@"result%d",self.pathNo);
     self.facebookImage.image = [UIImage imageNamed:@"facebook"];
     self.resultTime.text = self.result;
     
+    // twitterとfacebookボタンにタップジェスチャービューをつける
     self.twitterImage.userInteractionEnabled = YES;
     self.facebookImage.userInteractionEnabled = YES;
     
+    UITapGestureRecognizer *fbTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(facebook_Tapped:)];
+    [self.facebookImage addGestureRecognizer:fbTapGesture]; // ビューにジェスチャーを追加
     
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(myView_Tapped:)];
-    // ビューにジェスチャーを追加
-    [self.facebookImage addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *twitterTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(twitter_Tapped:)];
+    [self.twitterImage addGestureRecognizer:twitterTapGesture]; // ビューにジェスチャーを追加
+    
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
@@ -180,9 +198,61 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
 - (IBAction)goTitleBtn:(id)sender {
 }
 
-- (void)myView_Tapped:(UITapGestureRecognizer *)sender
+- (void)facebook_Tapped:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"タップされました．");
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        [self postToFacebook];
+    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
+        NSLog(@"Facebook利用できません");
+    }
 }
+
+- (void)twitter_Tapped:(UITapGestureRecognizer *)sender
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        [self postToTwitter];
+    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        NSLog(@"twitter利用できません");
+    }
+}
+
+
+
+
+//Facebookへ投稿
+- (void)postToFacebook {
+    UIImage *playingPic = [UIImage imageWithData:self.divPicturesData[0]];
+    
+    SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [slc setInitialText:@"You can enjoy your original puzzle games!!"];
+    [slc addImage:playingPic];
+//    [slc addURL:[NSURL URLWithString:@"http://testリリース後に書く"]];
+    [self presentViewController:slc animated:YES completion:nil];
+}
+
+
+//Twitterへ投稿
+- (void)postToTwitter {
+    UIImage *playingPic = [UIImage imageWithData:self.divPicturesData[0]];
+    
+    
+    SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [slc setInitialText:@"You can create and play your original puzzle games!!"];
+    [slc addImage:playingPic];
+    [slc addURL:[NSURL URLWithString:@"http://nexseed.net/"]]; // リリース後に記載
+    [self presentViewController:slc animated:YES completion:nil];
+}
+
+
+
+////LINEへ投稿
+//- (IBAction)postToLine:(id)sender {
+//    UIPasteboard *pasteboard = [UIPasteboard pasteboardWithUniqueName];
+//    [pasteboard setData:UIImagePNGRepresentation([UIImage imageNamed:POST_IMG_NAME]) forPasteboardType:@"public.png"];
+//    NSString *LineUrlString = [NSString stringWithFormat:@"line://msg/image/%@", pasteboard.name];
+//    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
+//}
+
+
 
 @end
