@@ -38,8 +38,8 @@
     [self.createPictureBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
     // REMAKEボタンのレイアウト
-    self.remakeBtn2.buttonColor = [UIColor turquoiseColor]; // ボタンの色
-    self.remakeBtn2.shadowColor = [UIColor greenSeaColor]; // ボタンのシャドー色
+    self.remakeBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.remakeBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.remakeBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.remakeBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
     self.remakeBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
@@ -47,8 +47,8 @@
     [self.remakeBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
     // EDITボタンのレイアウト
-    self.editBtn2.buttonColor = [UIColor turquoiseColor]; // ボタンの色
-    self.editBtn2.shadowColor = [UIColor greenSeaColor]; // ボタンのシャドー色
+    self.editBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.editBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.editBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.editBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
     self.editBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
@@ -56,8 +56,8 @@
     [self.editBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
     // FINISHボタンのレイアウト
-    self.finishBtn2.buttonColor = [UIColor turquoiseColor]; // ボタンの色
-    self.finishBtn2.shadowColor = [UIColor greenSeaColor]; // ボタンのシャドー色
+    self.finishBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.finishBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.finishBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.finishBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
     self.finishBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
@@ -337,40 +337,98 @@
 
 ////////////////////////
 - (void)alert{
-    // アラートビューを作成
-    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Choose game level!"
-                          message:@"You can make the game of two kinds of levels. Please choose a favorite level."
-                          delegate:self
-                          cancelButtonTitle:@"Cancel"
-                          otherButtonTitles:@"NORMAL (3 × 3)", @"HARD (4 × 4)", nil];
+//    // アラートビューを作成
+//    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
+//    UIAlertView *alert = [[UIAlertView alloc]
+//                          initWithTitle:@"Choose game level!"
+//                          message:@"You can make the game of two kinds of levels. Please choose a favorite level."
+//                          delegate:self
+//                          cancelButtonTitle:@"Cancel"
+//                          otherButtonTitles:@"NORMAL (3 × 3)", @"HARD (4 × 4)", nil];
+//    
+//    [alert show];  // アラートビューを表示
+
+    ///////////////////////// アラートビューの作成/////////////////
+    self.alertView = [[FUIAlertView alloc] initWithTitle:@"Puzzle Level"
+                                                          message:@"You can make two types of puzzles. Please choose your favorite level."
+                                                         delegate:self
+                                                cancelButtonTitle:@"Cancel"
+                                                otherButtonTitles:@"NORMAL (3 × 3)", @"HARD (4 × 4)", nil];
+    // タイトルの文字色の設定
+    self.alertView.titleLabel.textColor = [UIColor cloudsColor];
+    // タイトルの文字フォントの設定
+    self.alertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    // メッセージの文字色の設定
+    self.alertView.messageLabel.textColor = [UIColor cloudsColor];
+    // メッセージの文字フォントの設定
+    self.alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    // オーバーレイ背景色の設定
+    self.alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+    // 背景色の設定
+    self.alertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
+    // ボタン色の設定
+    self.alertView.defaultButtonColor = [UIColor cloudsColor];
+    // ボタンシャドー色の設定
+    self.alertView.defaultButtonShadowColor = [UIColor concreteColor];
+    // ボタンの文字フォントの設定
+    self.alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
+    // ボタンの文字色の設定
+    self.alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    // 複数のAlertViewを管理するためにtagを使用
     
-    [alert show];  // アラートビューを表示
+    [self.alertView show];
+
 }
 
 
-// デリゲート処理
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 1: // 1番目が押されたとき
-            self.DVICOUNT = 3;
-            // 画像を分割
-            [self divImage:self.trimmedImage];
-            [self hozonPuzzleGame1];
-            break;
-        
-        case 2:
-            self.DVICOUNT = 4;
-            // 画像を分割
-            [self divImage:self.trimmedImage];
-            [self hozonPuzzleGame2];
-            break;
+
+
+- (void)alertView:(FUIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+        switch (buttonIndex) {
+            case 1: // 1番目が押されたとき
+                self.DVICOUNT = 3;
+                // 画像を分割
+                [self divImage:self.trimmedImage];
+                [self hozonPuzzleGame1];
+                self.alertView.delegate = nil;
+                break;
             
-        default: // キャンセルが押されたとき
-            break;
-    }
+            case 2:
+                self.DVICOUNT = 4;
+                // 画像を分割
+                [self divImage:self.trimmedImage];
+                [self hozonPuzzleGame2];
+                self.alertView.delegate = nil;
+                break;
+                            
+            default: // キャンセルが押されたとき
+                break;
+        }
 }
+
+
+//// デリゲート処理
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+//    switch (buttonIndex) {
+//        case 1: // 1番目が押されたとき
+//            self.DVICOUNT = 3;
+//            // 画像を分割
+//            [self divImage:self.trimmedImage];
+//            [self hozonPuzzleGame1];
+//            break;
+//        
+//        case 2:
+//            self.DVICOUNT = 4;
+//            // 画像を分割
+//            [self divImage:self.trimmedImage];
+//            [self hozonPuzzleGame2];
+//            break;
+//            
+//        default: // キャンセルが押されたとき
+//            break;
+//    }
+//}
 
 -(void)hozonPuzzleGame1{
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];

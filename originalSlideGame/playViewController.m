@@ -539,11 +539,6 @@ NSLog(@"play%d",self.pathNo);
 
 - (void)deleteAlert{
 
-// [UIAlertView alloc] initWithTitle:(NSString *)
-//    [FUIAlertView alloc] initWithTitle:<#(NSString *)#> message:<#(NSString *)#> delegate:<#(id<FUIAlertViewDelegate>)#> cancelButtonTitle:<#(NSString *)#> otherButtonTitles:<#(NSString *), ...#>, nil
-    
-    
-    
     
     self.deleteAlertView = [[FUIAlertView alloc] initWithTitle:@"Delete"
                                                           message:@"Do you want to delete this puzzle?"

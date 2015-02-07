@@ -10,7 +10,7 @@
 #import "FlatUIKit.h"
 
 
-@interface pictureViewController : UIViewController <UIAlertViewDelegate>
+@interface pictureViewController : UIViewController <FUIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
@@ -34,5 +34,7 @@
 
 @property int DVICOUNT; // 画像を切る際に3×3か4×4か
 @property UIImage *trimmedImage;
+
+@property FUIAlertView *alertView;
 
 @end
