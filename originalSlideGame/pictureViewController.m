@@ -9,6 +9,7 @@
 #import "pictureViewController.h"
 #import "titleViewController.h"
 #import "CLImageEditor.h"
+#import "FlatUIKit.h"
 
 @interface pictureViewController ()
 <CLImageEditorDelegate>

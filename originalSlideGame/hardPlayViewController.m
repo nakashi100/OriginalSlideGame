@@ -9,6 +9,7 @@
 #import "hardPlayViewController.h"
 #import "resultViewController.h"
 #import "titleViewController.h"
+#import "FlatUIKit.h"
 
 
 @interface hardPlayViewController ()

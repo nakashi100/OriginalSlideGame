@@ -12,6 +12,7 @@
 #import "pictureViewController.h"
 #import "hardPlayViewController.h"
 #import "headerCollectionReusableView.h"
+#import "FlatUIKit.h"
 
 @interface listCollectionViewController ()
 
@@ -27,7 +28,16 @@ static NSString * const reuseIdentifier = @"Cell";
 
 -(void)viewWillAppear:(BOOL)animated{
 NSLog(@"list%d",self.pathNo);
-    self.title = @"LIST";
+
+    // navitationのタイトルのカスタマイズ
+    // self.title = @"LIST";
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+    titleLabel.text = @"LIST";
+    titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    titleLabel.textAlignment = UITextAlignmentCenter;
+    [titleLabel sizeToFit];
+    self.navigationItem.titleView = titleLabel;
+    
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
@@ -92,10 +102,12 @@ NSLog(@"list%d",self.pathNo);
         
         if (indexPath.section == 0) {
             headerView.headerLabel.text = @"NORMAL (3×3)";
-            headerView.backgroundColor = [UIColor colorWithRed:0.118 green:0.565 blue:1.0 alpha:1.0];
+            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
+            headerView.backgroundColor = [UIColor peterRiverColor];
         } else {
             headerView.headerLabel.text = @"HARD (4×4)";
-            headerView.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
+            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
+            headerView.backgroundColor = [UIColor belizeHoleColor];
 ;
         }
         return headerView;

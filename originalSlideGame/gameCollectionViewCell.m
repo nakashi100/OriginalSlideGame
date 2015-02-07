@@ -7,6 +7,7 @@
 //
 
 #import "gameCollectionViewCell.h"
+#import "FlatUIKit.h"
 
 @implementation gameCollectionViewCell
 

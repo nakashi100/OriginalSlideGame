@@ -7,6 +7,7 @@
 //
 
 #import "headerCollectionReusableView.h"
+#import "FlatUIKit.h"
 
 @implementation headerCollectionReusableView
 
