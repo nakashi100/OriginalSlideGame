@@ -22,7 +22,7 @@
 @property NSInteger pathNo; // CollectionViewからセルの番号を引継ぐ
 @property NSArray *divPicturesData; // CollectionViewから該当するゲームの配列を引継ぐ
 
-
+@property FUIAlertView *deleteAlertView;
 
 // ハコことなるview
 @property (weak, nonatomic) IBOutlet UIView *view1;

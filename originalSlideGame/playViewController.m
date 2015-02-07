@@ -533,44 +533,52 @@ NSLog(@"play%d",self.pathNo);
 
 
 
-
 /*********************************************************************************
                 ゲームの削除処理
  *********************************************************************************/
 
 - (void)deleteAlert{
+
+// [UIAlertView alloc] initWithTitle:(NSString *)
+//    [FUIAlertView alloc] initWithTitle:<#(NSString *)#> message:<#(NSString *)#> delegate:<#(id<FUIAlertViewDelegate>)#> cancelButtonTitle:<#(NSString *)#> otherButtonTitles:<#(NSString *), ...#>, nil
     
-    FUIAlertView *deleteAlertView = [[FUIAlertView alloc] initWithTitle:@"Delete"
+    
+    
+    
+    self.deleteAlertView = [[FUIAlertView alloc] initWithTitle:@"Delete"
                                                           message:@"Do you want to delete this puzzle?"
                                                          delegate:self
                                                 cancelButtonTitle:@"NO"
                                                 otherButtonTitles:@"DELETE", nil];
-    // タイトルの文字色の設定
-    deleteAlertView.titleLabel.textColor = [UIColor cloudsColor];
-    // タイトルの文字フォントの設定
-    deleteAlertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
-    // メッセージの文字色の設定
-    deleteAlertView.messageLabel.textColor = [UIColor cloudsColor];
-    // メッセージの文字フォントの設定
-    deleteAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
-    // オーバーレイ背景色の設定
-    deleteAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
-    // 背景色の設定
-    deleteAlertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
-    // ボタン色の設定
-    deleteAlertView.defaultButtonColor = [UIColor cloudsColor];
-    // ボタンシャドー色の設定
-    deleteAlertView.defaultButtonShadowColor = [UIColor asbestosColor];
-    // ボタンの文字フォントの設定
-    deleteAlertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
-    // ボタンの文字色の設定
-    deleteAlertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    self.deleteAlertView.delegate = self;
     
-    [deleteAlertView show];
+    // タイトルの文字色の設定
+    self.deleteAlertView.titleLabel.textColor = [UIColor cloudsColor];
+    // タイトルの文字フォントの設定
+    self.deleteAlertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    // メッセージの文字色の設定
+    self.deleteAlertView.messageLabel.textColor = [UIColor cloudsColor];
+    // メッセージの文字フォントの設定
+    self.deleteAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    // オーバーレイ背景色の設定
+    self.deleteAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+    // 背景色の設定
+    self.deleteAlertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
+    // ボタン色の設定
+    self.deleteAlertView.defaultButtonColor = [UIColor cloudsColor];
+    // ボタンシャドー色の設定
+    self.deleteAlertView.defaultButtonShadowColor = [UIColor asbestosColor];
+    // ボタンの文字フォントの設定
+    self.deleteAlertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
+    // ボタンの文字色の設定
+    self.deleteAlertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    
+    [self.deleteAlertView show];
     // 複数のdeleteAlertViewを管理するためにtagを使用
-    deleteAlertView.tag = firstAlertTag;
+    self.deleteAlertView.tag = firstAlertTag;
     
 }
+
 
 
 // デリゲート処理
@@ -580,6 +588,8 @@ NSLog(@"play%d",self.pathNo);
         switch (buttonIndex) {
             case 1: // 1番目が押されたとき
                 [self deleteGame];
+                
+                self.deleteAlertView.delegate = nil;
                 break;
             
             default: // キャンセルが押されたとき

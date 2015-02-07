@@ -22,6 +22,8 @@
 @property NSInteger pathNo; // CollectionViewからセルの番号を引継ぐ
 @property NSArray *divPicturesData; // CollectionViewから該当するゲームの配列を引継ぐ
 
+@property FUIAlertView *deleteAlertView;
+
 
 // 正解判定用のハコことなるview (tagなし)
 @property (weak, nonatomic) IBOutlet UIView *view1;
