@@ -8,16 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
+#import "FlatUIKit.h"
 
 @interface resultViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
 - (IBAction)retryBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *retryBtn2;
+@property (weak, nonatomic) IBOutlet FUIButton *retryBtn2;
 - (IBAction)goTitleBtn:(id)sender;
+@property (weak, nonatomic) IBOutlet FUIButton *goTitleBtn2;
 @property (weak, nonatomic) IBOutlet UILabel *resultTime;
 
+
 @property (weak, nonatomic) IBOutlet UIImageView *facebookImage;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 
 @property NSString *result; // タイムを受け取る

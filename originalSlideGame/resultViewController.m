@@ -38,9 +38,38 @@
 
 - (void)viewWillAppear:(BOOL)animated{
 NSLog(@"result%d",self.pathNo);
+    
+    // 画面のレイアウト
+    self.messageLabel.text = @"Congratulations!";
+    self.messageLabel.font = [UIFont italicFlatFontOfSize:35];
+    self.resultTime.font = [UIFont italicFlatFontOfSize:27];
+    
     self.twitterImage.image = [UIImage imageNamed:@"twitter"];
     self.facebookImage.image = [UIImage imageNamed:@"facebook"];
-    self.resultTime.text = self.result;
+    NSString *resultTime = [NSString stringWithFormat:@"TIME: %@", self.result];
+    self.resultTime.text = resultTime;
+    
+    
+    // TITLEプレイボタン
+    self.goTitleBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.goTitleBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
+    self.goTitleBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
+    self.goTitleBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
+    self.goTitleBtn2.titleLabel.font = [UIFont italicFlatFontOfSize:18]; // ボタンの文字ファンド
+    [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
+    [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
+    
+    // TITLEプレイボタン
+    self.retryBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.retryBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
+    self.retryBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
+    self.retryBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
+    self.retryBtn2.titleLabel.font = [UIFont italicFlatFontOfSize:18]; // ボタンの文字ファンド
+    [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
+    [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
+    
+    
+    
     
     // twitterとfacebookボタンにタップジェスチャービューをつける
     self.twitterImage.userInteractionEnabled = YES;
