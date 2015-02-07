@@ -62,8 +62,8 @@
 NSLog(@"play%d",self.pathNo);
     
     // 画面のレイアウト
-    self.timeLabel.font = [UIFont italicFlatFontOfSize:21];
-    self.timeLapLabel.font = [UIFont italicFlatFontOfSize:23];
+    self.timeLabel.font = [UIFont flatFontOfSize:21];
+    self.timeLapLabel.font = [UIFont flatFontOfSize:23];
     
     
     // ナビゲーションバーに削除ボタンを設置
@@ -87,7 +87,7 @@ NSLog(@"play%d",self.pathNo);
     if (countArray == 11) {
         NSString *bestTime = [NSString stringWithFormat:@"( BEST: %6.2f )",[normalFinalList[self.pathNo][10] floatValue]];
         self.bestTimeLabel.text = bestTime;
-        self.bestTimeLabel.font = [UIFont italicFlatFontOfSize:14];
+        self.bestTimeLabel.font = [UIFont flatFontOfSize:14];
     }else if(countArray == 10){
         self.bestTimeLabel.text = nil;
     }

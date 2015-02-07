@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FlatUIKit.h"
 
 @interface AppDelegate ()
 
@@ -19,8 +20,14 @@
     // Override point for customization after application launch.
     
     //NSUserDefaultの中身を一括削除際する際に使用
-//    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
-//    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    // NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    // [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    
+    
+    
+    // UIナビゲーションバーのフォントを変更
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont flatFontOfSize:17]} forState:UIControlStateNormal];
+
     
     return YES;
 }

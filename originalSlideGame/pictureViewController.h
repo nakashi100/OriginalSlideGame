@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlatUIKit.h"
+
 
 @interface pictureViewController : UIViewController <UIAlertViewDelegate>
 
@@ -15,16 +17,16 @@
 
 
 - (IBAction)createPictureBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *createPictureBtn2;
+@property (weak, nonatomic) IBOutlet FUIButton *createPictureBtn2;
 
 - (IBAction)remakeBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *remakeBtn2;
+@property (weak, nonatomic) IBOutlet FUIButton *remakeBtn2;
 
 - (IBAction)finishBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *finishBtn2;
+@property (weak, nonatomic) IBOutlet FUIButton *finishBtn2;
 
 - (IBAction)editBtn:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *editBtn2;
+@property (weak, nonatomic) IBOutlet FUIButton *editBtn2;
 
 @property NSMutableArray *divPicData2; // 一時的に作成したデータを保存するための配列
 @property NSArray *normalFinalList; // 完成したゲームリストを格納するための配列(ノーマル)

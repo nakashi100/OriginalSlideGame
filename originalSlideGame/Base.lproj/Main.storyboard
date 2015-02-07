@@ -772,13 +772,13 @@
                                 <exclude reference="ljQ-xR-gMm"/>
                                 <exclude reference="tpb-OV-ajI"/>
                                 <exclude reference="JqK-7X-dVr"/>
+                                <exclude reference="9CA-id-Ek3"/>
+                                <exclude reference="sqN-9e-5np"/>
+                                <exclude reference="26r-jq-1YS"/>
+                                <exclude reference="i20-Ec-ndS"/>
                                 <exclude reference="7CH-56-Hio"/>
                                 <exclude reference="UHQ-ex-exO"/>
                                 <exclude reference="ltz-tk-VK0"/>
-                                <exclude reference="26r-jq-1YS"/>
-                                <exclude reference="i20-Ec-ndS"/>
-                                <exclude reference="9CA-id-Ek3"/>
-                                <exclude reference="sqN-9e-5np"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -795,13 +795,13 @@
                                 <include reference="ljQ-xR-gMm"/>
                                 <include reference="tpb-OV-ajI"/>
                                 <include reference="JqK-7X-dVr"/>
+                                <include reference="9CA-id-Ek3"/>
+                                <include reference="sqN-9e-5np"/>
+                                <include reference="26r-jq-1YS"/>
+                                <include reference="i20-Ec-ndS"/>
                                 <include reference="7CH-56-Hio"/>
                                 <include reference="UHQ-ex-exO"/>
                                 <include reference="ltz-tk-VK0"/>
-                                <include reference="26r-jq-1YS"/>
-                                <include reference="i20-Ec-ndS"/>
-                                <include reference="9CA-id-Ek3"/>
-                                <include reference="sqN-9e-5np"/>
                             </mask>
                         </variation>
                     </view>
@@ -859,53 +859,53 @@
                                     <rect key="frame" x="26" y="102" width="274" height="274"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Uc-KRp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79N-Uc-KRp" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="EDIT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="120" y="390" width="75" height="40"/>
+                                    <rect key="frame" x="120" y="395" width="85" height="35"/>
                                 </variation>
                                 <connections>
                                     <action selector="editBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="Vgi-D9-pQO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="creatPictureBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="creatPictureBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="CREATE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="92" y="391" width="143" height="39"/>
+                                    <rect key="frame" x="92" y="391" width="143" height="40"/>
                                 </variation>
                                 <connections>
                                     <action selector="createPictureBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="zk4-0I-gTN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-Q4-c8n">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-Q4-c8n" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="REMAKE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="31" y="391" width="75" height="40"/>
+                                    <rect key="frame" x="31" y="395" width="75" height="35"/>
                                 </variation>
                                 <connections>
                                     <action selector="remakeBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="VsC-70-ipJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-XZ-aAI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-XZ-aAI" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="FINISH">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="225" y="393" width="75" height="40"/>
+                                    <rect key="frame" x="227" y="395" width="75" height="35"/>
                                 </variation>
                                 <connections>
                                     <action selector="finishBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="AqR-xf-AkV"/>
