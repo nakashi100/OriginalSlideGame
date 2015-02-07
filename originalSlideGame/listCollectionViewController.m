@@ -30,10 +30,10 @@ static NSString * const reuseIdentifier = @"Cell";
 NSLog(@"list%d",self.pathNo);
 
     // navitationのタイトルのカスタマイズ
-    // self.title = @"LIST";
+    self.title = @"LIST";
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     titleLabel.text = @"LIST";
-    titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    titleLabel.font = [UIFont italicFlatFontOfSize:18];
     titleLabel.textAlignment = UITextAlignmentCenter;
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
@@ -102,11 +102,11 @@ NSLog(@"list%d",self.pathNo);
         
         if (indexPath.section == 0) {
             headerView.headerLabel.text = @"NORMAL (3×3)";
-            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
+            headerView.headerLabel.font = [UIFont italicFlatFontOfSize:17];
             headerView.backgroundColor = [UIColor peterRiverColor];
         } else {
             headerView.headerLabel.text = @"HARD (4×4)";
-            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
+            headerView.headerLabel.font = [UIFont italicFlatFontOfSize:17];
             headerView.backgroundColor = [UIColor belizeHoleColor];
 ;
         }

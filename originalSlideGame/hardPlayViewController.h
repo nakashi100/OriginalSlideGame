@@ -13,6 +13,8 @@
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property UIBarButtonItem *trashBtn; // 削除ボタン
+@property (weak, nonatomic) IBOutlet UILabel *timeLapLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property NSMutableArray *randNums;
 

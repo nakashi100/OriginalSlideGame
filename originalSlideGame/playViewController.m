@@ -61,6 +61,11 @@
 - (void)viewWillAppear:(BOOL)animated{
 NSLog(@"play%d",self.pathNo);
     
+    // 画面のレイアウト
+    self.timeLabel.font = [UIFont italicFlatFontOfSize:21];
+    self.timeLapLabel.font = [UIFont italicFlatFontOfSize:23];
+    
+    
     // ナビゲーションバーに削除ボタンを設置
     self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(alert)];
     self.navigationItem.rightBarButtonItem = self.trashBtn;
@@ -80,8 +85,9 @@ NSLog(@"play%d",self.pathNo);
     int countArray = [normalFinalList[self.pathNo] count];
     
     if (countArray == 11) {
-        NSString *bestTime = [NSString stringWithFormat:@"(BEST: %6.2f)",[normalFinalList[self.pathNo][10] floatValue]];
+        NSString *bestTime = [NSString stringWithFormat:@"( BEST: %6.2f )",[normalFinalList[self.pathNo][10] floatValue]];
         self.bestTimeLabel.text = bestTime;
+        self.bestTimeLabel.font = [UIFont italicFlatFontOfSize:14];
     }else if(countArray == 10){
         self.bestTimeLabel.text = nil;
     }

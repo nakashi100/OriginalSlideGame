@@ -443,7 +443,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="147" y="76" width="82" height="31"/>
+                                    <rect key="frame" x="145" y="76" width="82" height="31"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-BJ-VAF">
@@ -560,6 +560,8 @@
                         <outlet property="sampleImageView" destination="mPa-b8-GJK" id="Knn-ul-KXo"/>
                         <outlet property="sampleView" destination="VBP-3z-42N" id="H8i-K3-Rns"/>
                         <outlet property="testBtn2" destination="O1C-7t-eh9" id="dkc-mr-XtE"/>
+                        <outlet property="timeLabel" destination="jSl-BJ-VAF" id="jCl-4O-XP3"/>
+                        <outlet property="timeLapLabel" destination="AMu-s7-FZa" id="Vlv-gM-9Uk"/>
                         <outlet property="timerLabel" destination="AMu-s7-FZa" id="34n-wk-BKj"/>
                         <outlet property="view1" destination="YP2-Hy-KSm" id="edZ-v4-HVn"/>
                         <outlet property="view2" destination="KCB-aB-hMQ" id="DjL-wq-eWL"/>
@@ -1145,12 +1147,12 @@
                             <mask key="constraints">
                                 <exclude reference="Sxg-bM-KG0"/>
                                 <exclude reference="WAE-I0-FqG"/>
-                                <exclude reference="E1j-ew-0VX"/>
-                                <exclude reference="SMd-KT-s9r"/>
+                                <exclude reference="xjm-I6-wRo"/>
                                 <exclude reference="VgL-RJ-jtr"/>
                                 <exclude reference="x8F-Ba-1DV"/>
                                 <exclude reference="9Nh-L5-MMb"/>
-                                <exclude reference="xjm-I6-wRo"/>
+                                <exclude reference="E1j-ew-0VX"/>
+                                <exclude reference="SMd-KT-s9r"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1163,12 +1165,12 @@
                             <mask key="constraints">
                                 <include reference="Sxg-bM-KG0"/>
                                 <include reference="WAE-I0-FqG"/>
-                                <include reference="E1j-ew-0VX"/>
-                                <include reference="SMd-KT-s9r"/>
+                                <include reference="xjm-I6-wRo"/>
                                 <include reference="VgL-RJ-jtr"/>
                                 <include reference="x8F-Ba-1DV"/>
                                 <include reference="9Nh-L5-MMb"/>
-                                <include reference="xjm-I6-wRo"/>
+                                <include reference="E1j-ew-0VX"/>
+                                <include reference="SMd-KT-s9r"/>
                             </mask>
                         </variation>
                     </view>
@@ -1756,7 +1758,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="147" y="76" width="82" height="31"/>
+                                    <rect key="frame" x="145" y="76" width="82" height="31"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIME:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPY-OF-vva">
@@ -1888,6 +1890,8 @@
                         <outlet property="sampleImageView" destination="9nT-Eu-VfF" id="o3t-j5-van"/>
                         <outlet property="sampleView" destination="p4R-T6-lR7" id="kGu-eF-GLg"/>
                         <outlet property="testBtn2" destination="3T8-fw-lqr" id="1sH-uJ-HVB"/>
+                        <outlet property="timeLabel" destination="fPY-OF-vva" id="Bdy-L3-HDN"/>
+                        <outlet property="timeLapLabel" destination="V0G-7x-Orp" id="t6a-rf-CLG"/>
                         <outlet property="timerLabel" destination="V0G-7x-Orp" id="JB3-QZ-Xww"/>
                         <outlet property="view1" destination="oZn-Il-e2x" id="TfS-9H-A7d"/>
                         <outlet property="view11" destination="ltK-wV-dIo" id="hso-BY-T0O"/>
