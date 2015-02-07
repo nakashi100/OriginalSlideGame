@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlatUIKit.h"
 
 @interface titleViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *playButton;
-@property (weak, nonatomic) IBOutlet UIButton *createButton;
+@property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
+
+@property (weak, nonatomic) IBOutlet FUIButton *playButton;
+@property (weak, nonatomic) IBOutlet FUIButton *createButton;
 
 - (IBAction)useDefaultReset:(id)sender;
 

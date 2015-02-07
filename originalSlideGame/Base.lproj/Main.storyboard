@@ -1016,15 +1016,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO5-4x-iVc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FO5-4x-iVc" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20226178680000001" green="0.29624482870000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="HLd-Zg-Uv2"/>
                                     <constraint firstAttribute="width" constant="153" id="WmZ-KA-seX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="CREATE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1044,15 +1043,14 @@
                                     <segue destination="YOd-Nb-r9v" kind="push" id="eSM-vA-Wyw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa6-HW-obW" customClass="FUIButton">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.20226178680000001" green="0.29624482870000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="1Ws-fB-y0Z"/>
                                     <constraint firstAttribute="width" constant="153" id="qLp-5Z-4D4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="PLAY">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1101,44 +1099,39 @@
                                     <action selector="useDefaultReset:" destination="Mpc-bT-tvy" eventType="touchUpInside" id="scL-Q6-aY3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original Slide Game" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKX-j9-O0A">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WuB-cv-PKQ">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="142" id="gj2-yc-L9m"/>
-                                    <constraint firstAttribute="width" constant="401" id="lFO-5g-QiM"/>
+                                    <constraint firstAttribute="height" constant="92" id="nE5-ym-tGL"/>
+                                    <constraint firstAttribute="width" constant="400" id="sJO-aT-1r1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="gj2-yc-L9m"/>
-                                        <exclude reference="lFO-5g-QiM"/>
+                                        <exclude reference="nE5-ym-tGL"/>
+                                        <exclude reference="sJO-aT-1r1"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="gj2-yc-L9m"/>
-                                        <include reference="lFO-5g-QiM"/>
+                                        <include reference="nE5-ym-tGL"/>
+                                        <include reference="sJO-aT-1r1"/>
                                     </mask>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UKX-j9-O0A" firstAttribute="top" secondItem="zax-ef-C4w" secondAttribute="bottom" constant="38" id="6p7-Je-lS5">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="iPc-Up-ULF" secondAttribute="trailing" constant="8" id="9Nh-L5-MMb">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstAttribute="centerX" secondItem="UKX-j9-O0A" secondAttribute="centerX" constant="-0.5" id="DDn-P3-HwR">
-                                <variation key="widthClass=compact" constant="0.5"/>
-                            </constraint>
                             <constraint firstAttribute="centerY" secondItem="qa6-HW-obW" secondAttribute="centerY" constant="-31" id="E1j-ew-0VX"/>
                             <constraint firstAttribute="centerX" secondItem="qa6-HW-obW" secondAttribute="centerX" constant="-1.5" id="SMd-KT-s9r"/>
+                            <constraint firstAttribute="centerX" secondItem="WuB-cv-PKQ" secondAttribute="centerX" id="Sxg-bM-KG0"/>
                             <constraint firstAttribute="centerY" secondItem="FO5-4x-iVc" secondAttribute="centerY" constant="-144" id="VgL-RJ-jtr"/>
+                            <constraint firstItem="WuB-cv-PKQ" firstAttribute="top" secondItem="zax-ef-C4w" secondAttribute="bottom" constant="41" id="WAE-I0-FqG"/>
                             <constraint firstAttribute="centerX" secondItem="FO5-4x-iVc" secondAttribute="centerX" constant="-1.5" id="x8F-Ba-1DV"/>
                             <constraint firstItem="dL6-jn-DyG" firstAttribute="top" secondItem="iPc-Up-ULF" secondAttribute="bottom" constant="41" id="xjm-I6-wRo"/>
                         </constraints>
@@ -1147,17 +1140,17 @@
                                 <exclude reference="FO5-4x-iVc"/>
                                 <exclude reference="qa6-HW-obW"/>
                                 <exclude reference="iPc-Up-ULF"/>
-                                <exclude reference="UKX-j9-O0A"/>
+                                <exclude reference="WuB-cv-PKQ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6p7-Je-lS5"/>
-                                <exclude reference="DDn-P3-HwR"/>
-                                <exclude reference="xjm-I6-wRo"/>
+                                <exclude reference="Sxg-bM-KG0"/>
+                                <exclude reference="WAE-I0-FqG"/>
+                                <exclude reference="E1j-ew-0VX"/>
+                                <exclude reference="SMd-KT-s9r"/>
                                 <exclude reference="VgL-RJ-jtr"/>
                                 <exclude reference="x8F-Ba-1DV"/>
                                 <exclude reference="9Nh-L5-MMb"/>
-                                <exclude reference="E1j-ew-0VX"/>
-                                <exclude reference="SMd-KT-s9r"/>
+                                <exclude reference="xjm-I6-wRo"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1165,22 +1158,23 @@
                                 <include reference="FO5-4x-iVc"/>
                                 <include reference="qa6-HW-obW"/>
                                 <include reference="iPc-Up-ULF"/>
-                                <include reference="UKX-j9-O0A"/>
+                                <include reference="WuB-cv-PKQ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6p7-Je-lS5"/>
-                                <include reference="DDn-P3-HwR"/>
-                                <include reference="xjm-I6-wRo"/>
+                                <include reference="Sxg-bM-KG0"/>
+                                <include reference="WAE-I0-FqG"/>
+                                <include reference="E1j-ew-0VX"/>
+                                <include reference="SMd-KT-s9r"/>
                                 <include reference="VgL-RJ-jtr"/>
                                 <include reference="x8F-Ba-1DV"/>
                                 <include reference="9Nh-L5-MMb"/>
-                                <include reference="E1j-ew-0VX"/>
-                                <include reference="SMd-KT-s9r"/>
+                                <include reference="xjm-I6-wRo"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="oYx-MN-Uli"/>
                     <connections>
+                        <outlet property="appTitleLabel" destination="WuB-cv-PKQ" id="kJt-3v-S4O"/>
                         <outlet property="createButton" destination="FO5-4x-iVc" id="ott-86-PP3"/>
                         <outlet property="playButton" destination="qa6-HW-obW" id="RyO-Ro-YRO"/>
                     </connections>

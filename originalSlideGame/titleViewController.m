@@ -28,10 +28,44 @@
 //        NSLog(@"こんにちは");
     }
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 NSLog(@"title%d",self.pathNo);
+    
+    
+    // プレイボタンのレイアウト
+    self.playButton.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.playButton.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
+    self.playButton.shadowHeight = 3.0f; // ボタンのシャドー高度
+    self.playButton.cornerRadius = 6.0f; // ボタンの角丸みの半径
+    self.playButton.titleLabel.font = [UIFont boldFlatFontOfSize:16]; // ボタンの文字ファンド
+    [self.playButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
+    [self.playButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
+    
+    // クリエイトボタンのレイアウト
+    self.createButton.buttonColor = [UIColor peterRiverColor]; // ボタンの色
+    self.createButton.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
+    self.createButton.shadowHeight = 3.0f; // ボタンのシャドー高度
+    self.createButton.cornerRadius = 6.0f; // ボタンの角丸みの半径
+    self.createButton.titleLabel.font = [UIFont boldFlatFontOfSize:16]; // ボタンの文字ファンド
+    [self.createButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
+    [self.createButton setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
+    
+    
+    
+    self.appTitleLabel.text = @"My Slide Puzzle";
+    //    self.testLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    //    self.appTitleLabel.textColor = [UIColor blueColor];
+    self.appTitleLabel.font = [UIFont boldFlatFontOfSize:40];
+    //    self.appTitleLabel.textAlignment = UITextAlignmentCenter;
+    //    self.appTitleLabel.backgroundColor = [UIColor redColor];
+    
+    
+    
+    
+    
     
     // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagは0にする。
     if (self.createdFlag == 1) {  //3×3の場合
