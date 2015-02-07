@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlatUIKit.h"
 
-@interface hardPlayViewController : UIViewController <UIAlertViewDelegate>
+@interface hardPlayViewController : UIViewController <FUIAlertViewDelegate>
 
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;

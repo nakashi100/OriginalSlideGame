@@ -11,6 +11,9 @@
 #import "titleViewController.h"
 #import "FlatUIKit.h"
 
+//アラート画面のタグを宣言
+static const NSInteger firstAlertTag = 1;
+static const NSInteger secondAlertTag = 2;
 
 @interface playViewController ()
 
@@ -52,9 +55,6 @@
     self.isStart = NO;
     self.isFstCalled = NO;
     
-//    見本画像をセットする
-//    self.mihon9.image = [UIImage imageNamed:@"mihonSample"];
-    
 }
 
 
@@ -67,7 +67,7 @@ NSLog(@"play%d",self.pathNo);
     
     
     // ナビゲーションバーに削除ボタンを設置
-    self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(alert)];
+    self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlert)];
     self.navigationItem.rightBarButtonItem = self.trashBtn;
     
     // デフォルトゲームは削除できないようにnavigationの削除ボタンを非表示&無効にする
@@ -538,28 +538,69 @@ NSLog(@"play%d",self.pathNo);
                 ゲームの削除処理
  *********************************************************************************/
 
-- (void)alert{
-    // アラートビューを作成
-    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:@"Delete this puzzle"
-                          message:@"Do you want to delete this puzzle game?"
-                          delegate:self
-                          cancelButtonTitle:@"NO"
-                          otherButtonTitles:@"DELETE", nil];
-
-    [alert show];  // アラートビューを表示
+- (void)deleteAlert{
+    
+    FUIAlertView *deleteAlertView = [[FUIAlertView alloc] initWithTitle:@"Delete"
+                                                          message:@"Do you want to delete this puzzle?"
+                                                         delegate:self
+                                                cancelButtonTitle:@"NO"
+                                                otherButtonTitles:@"DELETE", nil];
+    // タイトルの文字色の設定
+    deleteAlertView.titleLabel.textColor = [UIColor cloudsColor];
+    // タイトルの文字フォントの設定
+    deleteAlertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    // メッセージの文字色の設定
+    deleteAlertView.messageLabel.textColor = [UIColor cloudsColor];
+    // メッセージの文字フォントの設定
+    deleteAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    // オーバーレイ背景色の設定
+    deleteAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+    // 背景色の設定
+    deleteAlertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
+    // ボタン色の設定
+    deleteAlertView.defaultButtonColor = [UIColor cloudsColor];
+    // ボタンシャドー色の設定
+    deleteAlertView.defaultButtonShadowColor = [UIColor asbestosColor];
+    // ボタンの文字フォントの設定
+    deleteAlertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
+    // ボタンの文字色の設定
+    deleteAlertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    
+    [deleteAlertView show];
+    // 複数のdeleteAlertViewを管理するためにtagを使用
+    deleteAlertView.tag = firstAlertTag;
+    
 }
 
+
 // デリゲート処理
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    switch (buttonIndex) {
-        case 1: // 1番目が押されたとき
-            [self deleteGame];
-            break;
+- (void)alertView:(FUIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if(alertView.tag == firstAlertTag){
+        switch (buttonIndex) {
+            case 1: // 1番目が押されたとき
+                [self deleteGame];
+                break;
             
-        default: // キャンセルが押されたとき
-            break;
+            default: // キャンセルが押されたとき
+                break;
+        }
+    }
+    
+    if(alertView.tag == secondAlertTag){
+        switch (buttonIndex) {
+            case 1: // 1番目が押されたとき
+                if(self.isFstCalled){
+                    [self timerStart];
+                    self.isStart = self.isStart;
+                }
+                break;
+            
+            default: // キャンセルが押されたとき
+                // タイトル画面に戻る(unwindsegue manual)
+                [self performSegueWithIdentifier:@"titleViewReturn" sender:self];
+                break;
+        }
     }
 }
 
@@ -594,83 +635,42 @@ NSLog(@"play%d",self.pathNo);
         self.isStart = !self.isStart;
     }
     
-    // 透明のViewを作成
-    UIView *wholeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    wholeView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.5];
-    wholeView.tag = 104;
     
-                         
-    // 中央のViewを作成
-    UIView *uiAdd = [[UIView alloc] initWithFrame:CGRectMake(53, 143, 214, 234)];
-    uiAdd.backgroundColor = [UIColor whiteColor];
-    uiAdd.tag = 101;
-    uiAdd.userInteractionEnabled = YES; // タッチイベントを取れるようにする
+    ///////////////////////// アラートビューの作成/////////////////
+    FUIAlertView *alertView = [[FUIAlertView alloc] initWithTitle:@"Break"
+                                                          message:@"Do you want to continue or quit?"
+                                                         delegate:self
+                                                cancelButtonTitle:@"QUIT"
+                                                otherButtonTitles:@"CONTINUE", nil];
+    // タイトルの文字色の設定
+    alertView.titleLabel.textColor = [UIColor cloudsColor];
+    // タイトルの文字フォントの設定
+    alertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    // メッセージの文字色の設定
+    alertView.messageLabel.textColor = [UIColor cloudsColor];
+    // メッセージの文字フォントの設定
+    alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    // オーバーレイ背景色の設定
+    alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+    // 背景色の設定
+    alertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
+    // ボタン色の設定
+    alertView.defaultButtonColor = [UIColor cloudsColor];
+    // ボタンシャドー色の設定
+    alertView.defaultButtonShadowColor = [UIColor concreteColor];
+    // ボタンの文字フォントの設定
+    alertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
+    // ボタンの文字色の設定
+    alertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    // 複数のAlertViewを管理するためにtagを使用
     
-    // Continueボタンを作成
-    UIButton *continueBtn = [[UIButton alloc]initWithFrame:CGRectMake(84, 192, 153, 42)];
-    continueBtn.backgroundColor = [UIColor blueColor];
-    continueBtn.tag = 102;
-    continueBtn.userInteractionEnabled = YES;
-    [continueBtn setTitle:@"CONTINUE" forState:UIControlStateNormal ];
-    
-    // Quitボタンを作成
-    UIButton *quitBtn = [[UIButton alloc]initWithFrame:CGRectMake(84, 292, 153 , 42)];
-    quitBtn.backgroundColor = [UIColor blueColor];
-    quitBtn.tag = 103;
-    quitBtn.userInteractionEnabled = YES;
-    [quitBtn setTitle:@"QUIT" forState:UIControlStateNormal ];
-    
-    // ボタンがタップされたときの動作を定義する
-    [continueBtn addTarget:self action:@selector( onTapButton1: ) forControlEvents:UIControlEventTouchUpInside ];
-    [quitBtn addTarget:self action:@selector( onTapButton2: ) forControlEvents:UIControlEventTouchUpInside ];
-    
-    
-    // サブビューに作ったUIViewを追加する
-    [self.view addSubview:uiAdd];
-    [self.view addSubview:wholeView];
-    [self.view addSubview:continueBtn];
-    [self.view addSubview:quitBtn];
-    
+    [alertView show];
+    alertView.tag = secondAlertTag;
     
 }
 
 
-- ( void )onTapButton1:( id )sender
-{
-    if(self.isFstCalled){
-        [self timerStart];
-        self.isStart = self.isStart;
-    }
-    
-    // viewを画面から削除
-    UIView *uiAdd = [self.view viewWithTag:101];
-    UIView *wholeView = [self.view viewWithTag:104];
-    UIView *continueBtn = [self.view viewWithTag:102];
-    UIView *quitBtn = [self.view viewWithTag:103];
-    [uiAdd removeFromSuperview];
-    [wholeView removeFromSuperview];
-    [continueBtn removeFromSuperview];
-    [quitBtn removeFromSuperview];
-}
 
-- ( void )onTapButton2:( id )sender
-{
-    
-    // viewを画面から削除
-    UIView *uiAdd = [self.view viewWithTag:101];
-    UIView *wholeView = [self.view viewWithTag:104];
-    UIView *continueBtn = [self.view viewWithTag:102];
-    UIView *quitBtn = [self.view viewWithTag:103];
-    [uiAdd removeFromSuperview];
-    [wholeView removeFromSuperview];
-    [continueBtn removeFromSuperview];
-    [quitBtn removeFromSuperview];
-    
-    
-    // タイトル画面に戻る(unwindsegue manual)
-    [self performSegueWithIdentifier:@"titleViewReturn" sender:self];
-    
-}
 
 
 

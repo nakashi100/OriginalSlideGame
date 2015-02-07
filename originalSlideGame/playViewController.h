@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
+#import "FlatUIKit.h"
 
-@interface playViewController : UIViewController <UIAlertViewDelegate>
+@interface playViewController : UIViewController <FUIAlertViewDelegate>
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property UIBarButtonItem *trashBtn; // 削除ボタン
@@ -20,6 +21,7 @@
 
 @property NSInteger pathNo; // CollectionViewからセルの番号を引継ぐ
 @property NSArray *divPicturesData; // CollectionViewから該当するゲームの配列を引継ぐ
+
 
 
 // ハコことなるview
