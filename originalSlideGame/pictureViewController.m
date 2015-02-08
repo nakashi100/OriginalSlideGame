@@ -28,6 +28,12 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    // Explainラベルのレイアウト
+    self.explainLabel.text = @"Using favorite photos,  let's make puzzles!";
+    self.explainLabel.numberOfLines = 2;
+    self.explainLabel.font = [UIFont flatFontOfSize:22];
+    
     // CREATEボタンのレイアウト
     self.createPictureBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
     self.createPictureBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色

@@ -830,29 +830,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Using favorite photographs, Let's make puzzles only for yourself!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2C-RM-7ln">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.83177268969999996" green="0.91209426859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="Pd3-ut-IX7"/>
-                                    <constraint firstAttribute="height" constant="189" id="a5S-eM-CJt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Pd3-ut-IX7"/>
-                                        <exclude reference="a5S-eM-CJt"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Pd3-ut-IX7"/>
-                                        <include reference="a5S-eM-CJt"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -911,40 +888,64 @@
                                     <action selector="finishBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="AqR-xf-AkV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcW-8L-XWL">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="42k-rV-mOT"/>
+                                    <constraint firstAttribute="width" constant="285" id="x88-J0-nL8">
+                                        <variation key="widthClass=compact" constant="223"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="42k-rV-mOT"/>
+                                        <exclude reference="x88-J0-nL8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="42k-rV-mOT"/>
+                                        <include reference="x88-J0-nL8"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="k2C-RM-7ln" secondAttribute="centerX" id="g3K-jk-0Ej"/>
-                            <constraint firstItem="k2C-RM-7ln" firstAttribute="top" secondItem="D1r-gY-1tt" secondAttribute="bottom" constant="85" id="tJk-ur-w1b">
-                                <variation key="widthClass=compact" constant="59"/>
+                            <constraint firstAttribute="centerX" secondItem="pcW-8L-XWL" secondAttribute="centerX" constant="-0.5" id="HPZ-Ef-xsd"/>
+                            <constraint firstItem="pcW-8L-XWL" firstAttribute="top" secondItem="D1r-gY-1tt" secondAttribute="bottom" constant="103" id="YaQ-bX-H5M">
+                                <variation key="widthClass=compact" constant="55"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="k2C-RM-7ln"/>
                                 <exclude reference="kBZ-E9-DBX"/>
                                 <exclude reference="79N-Uc-KRp"/>
                                 <exclude reference="J0f-pw-dKJ"/>
                                 <exclude reference="OaW-Q4-c8n"/>
                                 <exclude reference="cR9-XZ-aAI"/>
+                                <exclude reference="pcW-8L-XWL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="g3K-jk-0Ej"/>
-                                <exclude reference="tJk-ur-w1b"/>
+                                <exclude reference="HPZ-Ef-xsd"/>
+                                <exclude reference="YaQ-bX-H5M"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="k2C-RM-7ln"/>
                                 <include reference="kBZ-E9-DBX"/>
                                 <include reference="79N-Uc-KRp"/>
                                 <include reference="J0f-pw-dKJ"/>
                                 <include reference="OaW-Q4-c8n"/>
                                 <include reference="cR9-XZ-aAI"/>
+                                <include reference="pcW-8L-XWL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="g3K-jk-0Ej"/>
-                                <include reference="tJk-ur-w1b"/>
+                                <include reference="HPZ-Ef-xsd"/>
+                                <include reference="YaQ-bX-H5M"/>
                             </mask>
                         </variation>
                     </view>
@@ -953,7 +954,7 @@
                         <outlet property="createPictureBtn2" destination="J0f-pw-dKJ" id="t9f-c4-8T2"/>
                         <outlet property="displayPictureView" destination="kBZ-E9-DBX" id="RbV-4n-Y6l"/>
                         <outlet property="editBtn2" destination="79N-Uc-KRp" id="TVE-TB-6zQ"/>
-                        <outlet property="explainLabel" destination="k2C-RM-7ln" id="ysc-yd-KU5"/>
+                        <outlet property="explainLabel" destination="pcW-8L-XWL" id="CgU-NN-m5G"/>
                         <outlet property="finishBtn2" destination="cR9-XZ-aAI" id="evr-0X-sgf"/>
                         <outlet property="remakeBtn2" destination="OaW-Q4-c8n" id="GRJ-D3-Q1v"/>
                     </connections>

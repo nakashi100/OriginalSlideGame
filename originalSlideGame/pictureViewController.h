@@ -13,6 +13,7 @@
 @interface pictureViewController : UIViewController <FUIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
+
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
 
 
