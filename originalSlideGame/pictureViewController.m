@@ -32,14 +32,14 @@
     // Explainラベルのレイアウト
     self.explainLabel.text = @"Using favorite photos,  let's make puzzles!";
     self.explainLabel.numberOfLines = 2;
-    self.explainLabel.font = [UIFont flatFontOfSize:22];
+    self.explainLabel.font = [UIFont boldFlatFontOfSize:22];
     
     // CREATEボタンのレイアウト
     self.createPictureBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
     self.createPictureBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.createPictureBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.createPictureBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.createPictureBtn2.titleLabel.font = [UIFont flatFontOfSize:16]; // ボタンの文字ファンド
+    self.createPictureBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:16]; // ボタンの文字ファンド
     [self.createPictureBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.createPictureBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
@@ -48,7 +48,7 @@
     self.remakeBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.remakeBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.remakeBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.remakeBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
+    self.remakeBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:14]; // ボタンの文字ファンド
     [self.remakeBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.remakeBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
@@ -57,7 +57,7 @@
     self.editBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.editBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.editBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.editBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
+    self.editBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:14]; // ボタンの文字ファンド
     [self.editBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.editBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
@@ -66,7 +66,7 @@
     self.finishBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.finishBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.finishBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.finishBtn2.titleLabel.font = [UIFont flatFontOfSize:14]; // ボタンの文字ファンド
+    self.finishBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:14]; // ボタンの文字ファンド
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
@@ -100,7 +100,7 @@
     // メッセージの文字色の設定
     self.createAlertView.messageLabel.textColor = [UIColor cloudsColor];
     // メッセージの文字フォントの設定
-    self.createAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    self.createAlertView.messageLabel.font = [UIFont boldFlatFontOfSize:14];
     // オーバーレイ背景色の設定
     self.createAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
     // 背景色の設定
@@ -388,7 +388,7 @@
     // メッセージの文字色の設定
     self.alertView.messageLabel.textColor = [UIColor cloudsColor];
     // メッセージの文字フォントの設定
-    self.alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    self.alertView.messageLabel.font = [UIFont boldFlatFontOfSize:14];
     // オーバーレイ背景色の設定
     self.alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
     // 背景色の設定

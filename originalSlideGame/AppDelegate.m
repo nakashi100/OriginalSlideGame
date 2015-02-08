@@ -26,7 +26,7 @@
     
     
     // UIナビゲーションバーのフォントを変更
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont flatFontOfSize:17]} forState:UIControlStateNormal];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldFlatFontOfSize:17]} forState:UIControlStateNormal];
 
     
     return YES;

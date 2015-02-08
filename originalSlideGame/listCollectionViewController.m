@@ -33,7 +33,7 @@ NSLog(@"list%d",self.pathNo);
     self.title = @"LIST";
     UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     titleLabel.text = @"LIST";
-    titleLabel.font = [UIFont flatFontOfSize:18];
+    titleLabel.font = [UIFont boldFlatFontOfSize:18];
     titleLabel.textAlignment = UITextAlignmentCenter;
     [titleLabel sizeToFit];
     self.navigationItem.titleView = titleLabel;
@@ -102,11 +102,11 @@ NSLog(@"list%d",self.pathNo);
         
         if (indexPath.section == 0) {
             headerView.headerLabel.text = @"NORMAL (3×3)";
-            headerView.headerLabel.font = [UIFont flatFontOfSize:17];
+            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
             headerView.backgroundColor = [UIColor peterRiverColor];
         } else {
             headerView.headerLabel.text = @"HARD (4×4)";
-            headerView.headerLabel.font = [UIFont flatFontOfSize:17];
+            headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
             headerView.backgroundColor = [UIColor belizeHoleColor];
 ;
         }

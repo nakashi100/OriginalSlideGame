@@ -62,8 +62,8 @@ static const NSInteger secondAlertTag = 2;
 NSLog(@"play%d",self.pathNo);
     
     // 画面のレイアウト
-    self.timeLabel.font = [UIFont flatFontOfSize:21];
-    self.timeLapLabel.font = [UIFont flatFontOfSize:23];
+    self.timeLabel.font = [UIFont flatFontOfSize:20];
+    self.timeLapLabel.font = [UIFont flatFontOfSize:20];
     
     
     // ナビゲーションバーに削除ボタンを設置
@@ -554,7 +554,7 @@ NSLog(@"play%d",self.pathNo);
     // メッセージの文字色の設定
     self.deleteAlertView.messageLabel.textColor = [UIColor cloudsColor];
     // メッセージの文字フォントの設定
-    self.deleteAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    self.deleteAlertView.messageLabel.font = [UIFont boldFlatFontOfSize:14];
     // オーバーレイ背景色の設定
     self.deleteAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
     // 背景色の設定
@@ -654,7 +654,7 @@ NSLog(@"play%d",self.pathNo);
     // メッセージの文字色の設定
     alertView.messageLabel.textColor = [UIColor cloudsColor];
     // メッセージの文字フォントの設定
-    alertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    alertView.messageLabel.font = [UIFont boldFlatFontOfSize:14];
     // オーバーレイ背景色の設定
     alertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
     // 背景色の設定

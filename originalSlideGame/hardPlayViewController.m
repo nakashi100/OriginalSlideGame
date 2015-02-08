@@ -60,8 +60,8 @@
     NSLog(@"%d",self.pathNo);
     
     // 画面のレイアウト
-    self.timeLabel.font = [UIFont flatFontOfSize:21];
-    self.timeLapLabel.font = [UIFont flatFontOfSize:23];
+    self.timeLabel.font = [UIFont flatFontOfSize:20];
+    self.timeLapLabel.font = [UIFont flatFontOfSize:20];
     
     // ナビゲーションバーに削除ボタンを設置
     self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlert)];

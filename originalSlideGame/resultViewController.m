@@ -41,8 +41,8 @@ NSLog(@"result%d",self.pathNo);
     
     // 画面のレイアウト
     self.messageLabel.text = @"Congratulations!";
-    self.messageLabel.font = [UIFont flatFontOfSize:35];
-    self.resultTime.font = [UIFont flatFontOfSize:27];
+    self.messageLabel.font = [UIFont boldFlatFontOfSize:35];
+    self.resultTime.font = [UIFont boldFlatFontOfSize:27];
     
     self.twitterImage.image = [UIImage imageNamed:@"twitter"];
     self.facebookImage.image = [UIImage imageNamed:@"facebook"];
@@ -55,7 +55,7 @@ NSLog(@"result%d",self.pathNo);
     self.goTitleBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.goTitleBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.goTitleBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.goTitleBtn2.titleLabel.font = [UIFont flatFontOfSize:18]; // ボタンの文字ファンド
+    self.goTitleBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:18]; // ボタンの文字ファンド
     [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
@@ -64,7 +64,7 @@ NSLog(@"result%d",self.pathNo);
     self.retryBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.retryBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.retryBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.retryBtn2.titleLabel.font = [UIFont flatFontOfSize:18]; // ボタンの文字ファンド
+    self.retryBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:18]; // ボタンの文字ファンド
     [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
