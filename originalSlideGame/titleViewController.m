@@ -24,7 +24,7 @@
     NSArray *normalGame = [userDefault arrayForKey:@"normalFinalList"];
     
     if(!normalGame){
-        [self defaultGame]; // デフォルトゲームを作成
+        [self defaultGame]; // 初プレイ時のみデフォルトゲームを作成
     }
 }
 
@@ -33,7 +33,6 @@
     self.useDefaultReset2.hidden = YES;
     
     
-    //-----------------------------------------------------------------
     // プレイボタンのレイアウト
     self.playButton.buttonColor = [UIColor peterRiverColor]; // ボタンの色
     self.playButton.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
@@ -55,22 +54,18 @@
     // タイトルラベルのレイアウト
     self.appTitleLabel.text = @"My Slide Puzzle";
     self.appTitleLabel.font = [UIFont boldFlatFontOfSize:32];
-    //-----------------------------------------------------------------
     
     
     
     
-    
-    // createdFlagがあるということは、ゲームがcreateされているのでplay画面までリダイレクトさせるということ。遷移後はflagは0にする。
+    // createdFlagがある場合はゲームがcreateされているので、play画面までリダイレクトさせる。遷移後はflagは0に
     if (self.createdFlag == 1) {  //3×3の場合
-//        playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-//        playView.pathNo = self.pathNo;
+        // playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+        // playView.pathNo = self.pathNo;
         [self golistCollectionView];
         [self goPlayView];
         self.createdFlag = 0;
     }else if(self.createdFlag == 2) {  //4×4の場合
-//        hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-//        hardPlayView.pathNo = self.pathNo;
         [self golistCollectionView];
         [self goHardPlayView];
         self.createdFlag = 0;
@@ -92,7 +87,6 @@
 - (IBAction)useDefaultReset:(id)sender {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
-    NSLog(@"UserDefaultリセットしたよー!");
 }
 
 
@@ -103,20 +97,20 @@
 
 
 
-// list画面に遷移する
+// list画面に遷移
 - (void)golistCollectionView{
     listCollectionViewController *listCollectionView = [self.storyboard instantiateViewControllerWithIdentifier:@"listCollectionView"];
     [self.navigationController pushViewController:listCollectionView animated:NO];
 }
 
-// play画面に遷移する
+// play画面に遷移
 - (void)goPlayView{
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     playView.pathNo = self.pathNo;
     [self.navigationController pushViewController:playView animated:NO];
 }
 
-// hardPlay画面に遷移する
+// hardPlay画面に遷移
 - (void)goHardPlayView{
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
     hardPlayView.pathNo = self.pathNo;
@@ -129,7 +123,7 @@
 
     // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
     
-    NSMutableArray *divPicData = [NSMutableArray array]; // ゲーム配列
+    NSMutableArray *divPicData = [NSMutableArray array]; // 3×3用ゲーム配列
     NSString *picText;
     UIImage *picImage;
     NSData *picData;
@@ -145,7 +139,8 @@
     [normalFinalList addObject:divPicData];
     
     
-    NSMutableArray *divPicData2 = [NSMutableArray array]; // ゲーム配列
+    
+    NSMutableArray *divPicData2 = [NSMutableArray array]; // 4×4用ゲーム配列
     NSString *picText2;
     UIImage *picImage2;
     NSData *picData2;
@@ -160,7 +155,6 @@
     NSMutableArray *hardFinalList = [NSMutableArray array];
     [hardFinalList addObject:divPicData2];
     
-    
     picImage2 = [UIImage imageNamed:@"sample00"];
     picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
     [divPicData2 replaceObjectAtIndex:0 withObject:picData2]; // 4*4の完成画像と差し替える
@@ -170,7 +164,6 @@
     [userDefault setObject:normalFinalList forKey:@"normalFinalList"];
     [userDefault setObject:hardFinalList forKey:@"hardFinalList"];
     [userDefault synchronize];
-    
 }
 
 

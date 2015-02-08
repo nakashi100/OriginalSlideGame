@@ -43,9 +43,6 @@
 @property (weak, nonatomic) IBOutlet UIView *view15;
 @property (weak, nonatomic) IBOutlet UIView *view16;
 
-
-
-
 // ハコに入れる画像用のimage (tag 21〜36)
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
@@ -64,14 +61,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image15;
 @property (weak, nonatomic) IBOutlet UIImageView *image16;
 
-
-
 // 見本用 (tag )
 @property (weak, nonatomic) IBOutlet UIImageView *mihon9;
 
-
 // tap判定用の透明view (tag 1〜16)
-
 
 // 管理用の配列
 @property NSMutableArray *viewArray1;
@@ -90,7 +83,6 @@
 @property NSMutableArray *viewArray14;
 @property NSMutableArray *viewArray15;
 @property NSMutableArray *viewArray16;
-
 
 // 分割画像用のプロパティ
 @property UIImage *pic0;    // 完成画像
@@ -111,7 +103,6 @@
 @property UIImage *pic15;
 @property UIImage *pic16;
 
-
 // タイマーで使用するプロパティ
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property NSTimer *myTimer;  // 一定間隔でなにかする為のタイマー
@@ -121,15 +112,12 @@
 @property float timerCount;
 @property NSString *playTime;
 
-
 @property (weak, nonatomic) IBOutlet UIView *sampleView;
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 - (IBAction)testBtn:(id)sender; // ゲームを中断するためのボタン
 @property (weak, nonatomic) IBOutlet UIButton *testBtn2;
-
 @property (weak, nonatomic) IBOutlet UIView *forHideView4;
-
 @property (weak, nonatomic) IBOutlet UILabel *bestTimeLabel;
 
 

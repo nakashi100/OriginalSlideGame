@@ -461,7 +461,7 @@
                                     </label>
                                     <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="21BC516B-E3FF-4D39-901C-732669BBA030" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="3B3F0615-BF79-45D8-9945-3879781DFC83" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -1642,7 +1642,7 @@
                                     </label>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-T6-lR7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="7BD4C754-4FB8-4E80-9445-3FBE5153077D" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="5C042408-89D3-44E6-962A-AC5167C71CD1" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -1839,7 +1839,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="21BC516B-E3FF-4D39-901C-732669BBA030" width="256" height="256">
+        <image name="3B3F0615-BF79-45D8-9945-3879781DFC83" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -6285,7 +6285,7 @@ DyYABA8uAAQPMQAEDzYABA9FAAQPSQAED1AABA9YAAQPZQAED2oABA9sAAQPbgAED3MABA97AAQPfgAE
 D4MABA+LAAQPjgAED6AABA+jAAQPqAAAAAAAAAQBAAAAAAAAAFIAAAAAAAAAAAAAAAAABA+qA
 </mutableData>
         </image>
-        <image name="7BD4C754-4FB8-4E80-9445-3FBE5153077D" width="256" height="256">
+        <image name="5C042408-89D3-44E6-962A-AC5167C71CD1" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW

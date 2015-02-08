@@ -12,7 +12,6 @@
 @interface titleViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
-
 @property (weak, nonatomic) IBOutlet FUIButton *playButton;
 @property (weak, nonatomic) IBOutlet FUIButton *createButton;
 
@@ -23,6 +22,5 @@
 @property BOOL deletedFlag; // ゲーム削除後のリダイレクト判定用
 
 @property int pathNo; // ゲーム作成後にpathNoを受け取る
-
 
 @end

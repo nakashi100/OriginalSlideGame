@@ -21,13 +21,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     // ゲームリスト画面以外から来た場合(self.divPicturesDataが空の場合)は、forKey:nowPlayingでゲーム配列をセットする(result時か作成時に保存している)
     if(!self.divPicturesData){
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
         self.divPicturesData = [userDefault arrayForKey:@"nowPlaying"];
     }
-    
     
     // 写真のデータをdata型からimage型に変換する
     for (int i=0; i<17; i++) {
@@ -48,16 +46,14 @@
         imageView.image = pic; //写真をセット
     }
     
-    
     //タイマーの初期設定
     self.isStart = NO;
     self.isFstCalled = NO;
-    
 }
 
 
 - (void)viewWillAppear:(BOOL)animated{
-    NSLog(@"%d",self.pathNo);
+    // NSLog(@"%d",self.pathNo);
     
     // 画面のレイアウト
     self.timeLabel.font = [UIFont flatFontOfSize:20];
@@ -88,7 +84,6 @@
     }else if(countArray == 17){
         self.bestTimeLabel.text = nil;
     }
-    
 }
 
 
@@ -107,20 +102,17 @@
     self.testBtn2.hidden = NO;
     self.sampleView.hidden = NO;
     
-    
     // image16(tag:36)を削除する
     [[self.view viewWithTag:36] removeFromSuperview];
     
     
     // image1〜8の中の数字を並び替える
-//    int pattern = [self createRndArray];
+    // int pattern = [self createRndArray];
         int pattern = 9; // テスト用
     [self puzzlePattern:pattern];
     
-    
     // タイマーを起動する
     [self timerStart];
-    
     
     // STARTボタンを消す
     UIView *playBtn = [self.view viewWithTag:40];
@@ -128,7 +120,6 @@
     
     // forHideビューを消して、各種ボタンが表示・タップできるようにする
     [self.forHideView4 removeFromSuperview];
-    
 }
 
 
@@ -166,10 +157,9 @@
 {
     UITouch *touch = [touches anyObject];
     
-    //    NSLog(@"タッチしたビューは、%@", touch.view);
-    //    CGPoint location = [[touches anyObject] locationInView:self];
-    //    NSLog(@"タッチした座標は、%@", location);
-    
+    // NSLog(@"タッチしたビューは、%@", touch.view);
+    // CGPoint location = [[touches anyObject] locationInView:self];
+    // NSLog(@"タッチした座標は、%@", location);
     
     switch (touch.view.tag) {
             
@@ -676,7 +666,6 @@
             }
             
             break;
-            
             //--------------------------------------------------------------------------
             
             // 完成画像(見本)を表示する
@@ -703,7 +692,6 @@
                          int xx = [self.view viewWithTag:test].frame.origin.x;
                          int yy = [self.view viewWithTag:test].frame.origin.y;
                          
-                         
                          CGRect rect = CGRectMake(xx + xzahyo, yy + yzahyo, self.image1.frame.size.width, self.image1.frame.size.height);
                          [[self.view viewWithTag:test] setFrame:rect];
                      }
@@ -719,20 +707,17 @@
 - (void)judge {
     if(([self.viewArray1[2]intValue] == 1) && ([self.viewArray2[2]intValue] == 2) && ([self.viewArray3[2]intValue] == 3) && ([self.viewArray4[2]intValue] == 4) && ([self.viewArray5[2]intValue] == 5) && ([self.viewArray6[2]intValue] == 6) && ([self.viewArray7[2]intValue] == 7) && ([self.viewArray8[2]intValue] == 8) && ([self.viewArray9[2]intValue] == 9) && ([self.viewArray10[2]intValue] == 10) && ([self.viewArray11[2]intValue] == 11) && ([self.viewArray12[2]intValue] == 12) && ([self.viewArray13[2]intValue] == 13) && ([self.viewArray14[2]intValue] == 14) && ([self.viewArray15[2]intValue] == 15)){
         
-        
         // タイマーを止めて、タイムとプレイ中のゲーム配列を次ページへ引継ぐ
         [self.myTimer invalidate];
         resultViewController *resultView = [self.storyboard instantiateViewControllerWithIdentifier:@"resultView"];
         resultView.result = self.playTime;
         resultView.divPicturesData = self.divPicturesData;
         resultView.pathNo = self.pathNo;
-        NSLog(@"%d",self.pathNo);
         
         // Resultページへモーダルで遷移させる
         [self presentViewController:resultView animated:YES completion:nil];
     }
 }
-
 
 
 // タイマー機能メソッド
@@ -755,8 +740,6 @@
     // ラベルに表示する
     self.playTime = [NSString stringWithFormat:@"%6.2f", self.second]; //%05.2f は5桁で記述・小数点以下は2桁・不足は0で補う言う意味
     self.timerLabel.text = self.playTime;
-    
-    // 過去のベストタイムと比較して、最高タイムだったら配列に格納して使ってもよいかも
 }
 
 
@@ -811,7 +794,6 @@
     self.deleteAlertView.tag = 1;
     
     [self.deleteAlertView show];
-
 }
 
 // デリゲート処理
@@ -845,6 +827,7 @@
     }
 }
 
+
 - (void)deleteGame {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
@@ -855,11 +838,10 @@
     
     
     titleViewController *titleViewController = [self.navigationController viewControllers][0];
-    //    titleViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
+    // titleViewController *titleViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"titleView"];
     titleViewController.deletedFlag = YES;
 
     [self.navigationController popToRootViewControllerAnimated:NO]; // タイトル画面に戻る
-    
 }
 
 
@@ -905,11 +887,7 @@
     alertView.tag = 2;
     
     [alertView show];
-    
 }
-
-
-
 
 
 
@@ -1226,6 +1204,7 @@
             self.image7.image = self.pic7;
             self.image8.image = self.pic8;
             self.image9.image = self.pic9;
+            
             self.image10.image = self.pic10;
             self.image11.image = self.pic11;
             self.image12.image = self.pic12;
@@ -1256,11 +1235,7 @@
         default:
             break;
     }
-    
 }
-
-
-
 
 
 @end

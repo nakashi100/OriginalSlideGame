@@ -13,16 +13,16 @@
 @interface resultViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
+
 - (IBAction)retryBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet FUIButton *retryBtn2;
+
 - (IBAction)goTitleBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet FUIButton *goTitleBtn2;
+
 @property (weak, nonatomic) IBOutlet UILabel *resultTime;
-
-
 @property (weak, nonatomic) IBOutlet UIImageView *facebookImage;
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
-
 
 @property NSString *result; // タイムを受け取る
 @property NSInteger pathNo; // パスNo.(配列の何番目か)を受け取る

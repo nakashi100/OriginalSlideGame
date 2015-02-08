@@ -16,6 +16,8 @@
 @property UIBarButtonItem *trashBtn; // 削除ボタン
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLapLabel;
+@property (weak, nonatomic) IBOutlet UIView *sampleView;
+@property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 @property NSMutableArray *randNums;
 
@@ -46,13 +48,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *image8;
 @property (weak, nonatomic) IBOutlet UIImageView *image9;
 
-
 // 見本用 (tag 21〜29)
 @property (weak, nonatomic) IBOutlet UIImageView *mihon9;
 
-
 // tap判定用の透明view (tag 1〜9)
-
 
 // 管理用の配列
 @property NSMutableArray *viewArray1;
@@ -65,10 +64,9 @@
 @property NSMutableArray *viewArray8;
 @property NSMutableArray *viewArray9;
 
-
 // 分割画像用のプロパティ
-@property UIImage *pic0;    // 完成画像
-@property UIImage *pic1;    // 分割画像
+@property UIImage *pic0; // 完成画像
+@property UIImage *pic1; // 分割画像
 @property UIImage *pic2;
 @property UIImage *pic3;
 @property UIImage *pic4;
@@ -78,25 +76,19 @@
 @property UIImage *pic8;
 @property UIImage *pic9;
 
-
 // タイマーで使用するプロパティ
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property NSTimer *myTimer;  // 一定間隔でなにかする為のタイマー
 @property BOOL isStart;      // タイマーが動いているかのフラグ
 @property BOOL isFstCalled;  // タイマーがはじめて呼ばれたフラグ
-@property float second;       // 秒を表す変数
+@property float second;      // 秒を表す変数
 @property float timerCount;
 @property NSString *playTime;
 
 
-@property (weak, nonatomic) IBOutlet UIView *sampleView;
-@property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
-
 - (IBAction)testBtn:(id)sender; // ゲームを中断するためのボタン
 @property (weak, nonatomic) IBOutlet UIButton *testBtn2;
-
 @property (weak, nonatomic) IBOutlet UIView *forHideView4;
-
 @property (weak, nonatomic) IBOutlet UILabel *bestTimeLabel;
 
 @end

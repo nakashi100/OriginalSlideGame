@@ -69,7 +69,6 @@
     self.finishBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:14]; // ボタンの文字ファンド
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,14 +77,6 @@
 
 
 - (IBAction)createPictureBtn:(id)sender {
-    
-//    UIActionSheet *pictureActionSeet = [[UIActionSheet alloc]initWithTitle:@"Select"
-//                                                                  delegate:self cancelButtonTitle:@"Cancel"
-//                                                    destructiveButtonTitle:nil
-//                                                         otherButtonTitles:@"Camera",@"Photo Library", nil];
-//    [pictureActionSeet showInView:self.view];
-    
-    
     
     // アラートビューの作成
     self.createAlertView = [[FUIAlertView alloc] initWithTitle:@"Select"
@@ -121,22 +112,6 @@
 }
 
 
-
-//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-//    switch (buttonIndex) {
-//        case 0:
-//            [self showCamera:buttonIndex];
-//            break;
-//        case 1:
-//            [self showCamera:buttonIndex];
-//            break;
-//        default:
-//            NSLog(@"Cancel button was tapped");
-//            break;
-//    }
-//}
-
-
 - (IBAction)showCamera:(NSInteger)isCamera {
     // カメラが使用可能か判断
     if(![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -166,7 +141,6 @@
     // 撮影画面をモーダルビューとして表示
     [self presentViewController:imagePickerController animated:YES completion:nil];
     
-    
     /************************************************
      // カメラにボタンを配置したい場合
      UIButton *button = [UIButton new];
@@ -191,8 +165,6 @@
     //        default:
     //            break;
     //    }
-    
-    
     
     
     //////////////   画像のリサイズ (320(短い)×●●(320以上))を作成  ///////////////
@@ -253,7 +225,6 @@
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    
     // 初期ボタンやviewを非表示にし、新たなボタンを表示する
     [self.createPictureBtn2 removeFromSuperview];
     [self.explainLabel removeFromSuperview];
@@ -267,7 +238,6 @@
 // 画像を分割して配列に保存するメソッド
 - (NSMutableArray *)divImage:(UIImage *)image
 {
-    
     CGImageRef srcImageRef = [image CGImage];
     
     CGFloat blockWith = image.size.width / self.DVICOUNT;
@@ -304,7 +274,6 @@
          写真の表示と保存の向きの問題のため、配列し直す
  *********************************************************************************/
     self.divPicData2 = [NSMutableArray array];
-    
     
     if (image.imageOrientation == 0) {
         self.divPicData2 = divPicData;
@@ -349,12 +318,8 @@
         self.divPicData2[9] = divPicData[3];
     }
     
-    
-
     return divImages;
 }
-
-
 
 
 - (IBAction)remakeBtn:(id)sender {
@@ -364,9 +329,7 @@
 
 - (IBAction)finishBtn:(id)sender{
     
-    
     [self alert];
-    
 }
 
 
@@ -405,10 +368,7 @@
     self.alertView.tag = 2;
     
     [self.alertView show];
-
 }
-
-
 
 
 - (void)alertView:(FUIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
@@ -480,8 +440,6 @@
         titleViewController.pathNo = ([normalListFinal2 count]-1);
     
         [self.navigationController popToRootViewControllerAnimated:NO];
-    
-    NSLog(@"けんしょう%d",[normalListFinal2 count]);
 }
 
 
@@ -501,7 +459,6 @@
     [userDefault setObject:hardListFinal2 forKey:@"hardFinalList"]; // UserDefaultでゲームリストを保存し直す
     [userDefault setObject:self.divPicData2 forKey:@"nowPlaying"]; // finishボタン後のリスト画面で作成したばかりのゲームをプレイするため
     
-    
     [userDefault synchronize];
     
     // タイトル画面に戻る
@@ -516,16 +473,14 @@
 
 - (IBAction)editBtn:(id)sender {
     [self presentImageEditorWithImage:self.displayPictureView.image];
-    
-    
 }
+
 
 // 画像加工ライブラリ
 - (void)presentImageEditorWithImage:(UIImage*)image
 {
     CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:image];
     editor.delegate = self;[self presentViewController:editor animated:YES completion:nil];
-
 }
 
 // 画像の編集が終わったら呼ばれるデリゲート

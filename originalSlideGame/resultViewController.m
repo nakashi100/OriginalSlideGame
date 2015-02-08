@@ -32,12 +32,10 @@
     }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         NSLog(@"t利用できないよ");
     }
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-NSLog(@"result%d",self.pathNo);
+    //NSLog(@"result%d",self.pathNo);
     
     // 画面のレイアウト
     self.messageLabel.text = @"Congratulations!";
@@ -49,8 +47,7 @@ NSLog(@"result%d",self.pathNo);
     NSString *resultTime = [NSString stringWithFormat:@"TIME: %@", self.result];
     self.resultTime.text = resultTime;
     
-    
-    // TITLEプレイボタン
+    // TITLEボタン
     self.goTitleBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
     self.goTitleBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.goTitleBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
@@ -59,7 +56,7 @@ NSLog(@"result%d",self.pathNo);
     [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.goTitleBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
-    // TITLEプレイボタン
+    // RETRYボタン
     self.retryBtn2.buttonColor = [UIColor peterRiverColor]; // ボタンの色
     self.retryBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.retryBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
@@ -67,8 +64,6 @@ NSLog(@"result%d",self.pathNo);
     self.retryBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:18]; // ボタンの文字ファンド
     [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.retryBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
-    
-    
     
     
     // twitterとfacebookボタンにタップジェスチャービューをつける
@@ -98,17 +93,16 @@ NSLog(@"result%d",self.pathNo);
         
         [thisGameArrayMutable addObject:self.result]; // 配列の最後にタイムを追加する
         
-//NSLog(@"%d",[thisGameArrayMutable count]);
+        //NSLog(@"%d",[thisGameArrayMutable count]);
         
         normalFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
         
-//NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
-        
+        //NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
         
         [userDefault setObject:normalFinalListMutable forKey:@"normalFinalList"]; // 保存し直す
         
         
-//NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
+        //NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
   
         // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
         [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
@@ -133,19 +127,16 @@ NSLog(@"result%d",self.pathNo);
             [userDefault setObject:normalFinalListMutable forKey:@"normalFinalList"];
             [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"]; //今回追加
             
-            
-NSLog(@"3×3記録更新！タイムは%@",normalFinalListMutable[0][10]);
+            // NSLog(@"3×3記録更新！タイムは%@",normalFinalListMutable[0][10]);
         }else if([self.divPicturesData[10] floatValue] < self.result.floatValue){
-        
-NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMutable[0][10]);
-        // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
-        [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
+            // NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMutable[0][10]);
+            // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
+            [userDefault setObject:normalFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
         }
     }
     
     
-  
-//    // 4×4で初クリア
+    // 4×4で初クリア
     if (self.playingArrayCount == 17) {
         NSArray *hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
         NSMutableArray *hardFinalListMutable = [hardFinalList mutableCopy];
@@ -161,16 +152,12 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
         
         //NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
         
-        
         [userDefault setObject:hardFinalListMutable forKey:@"hardFinalList"]; // 保存し直す
         
-        
         //NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
-        
         // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
         [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
     }
-    
     
    
     // 4×4でクリア履歴あり
@@ -183,26 +170,23 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
         
         
         if ([self.divPicturesData[17] floatValue] > self.result.floatValue ) {
- NSLog(@"てすと1");
             [thisGameArrayMutable replaceObjectAtIndex:17 withObject:self.result]; // 記録更新
             
             hardFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
             
             [userDefault setObject:hardFinalListMutable forKey:@"hardFinalList"];
             [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"]; // 今回追加
-//            NSLog(@"3×3記録更新！タイムは%@",hardFinalListMutable[0][17]);
+            // NSLog(@"3×3記録更新！タイムは%@",hardFinalListMutable[0][17]);
         }else if([self.divPicturesData[17] floatValue] < self.result.floatValue){
- NSLog(@"てすと2");
-//            NSLog(@"3×3記録更新ならず。過去のベストは%@", hardFinalListMutable[0][17]);
+            // NSLog(@"3×3記録更新ならず。過去のベストは%@", hardFinalListMutable[0][17]);
             // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
             [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
         }
     }
 
-    
     [userDefault synchronize];
-    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -219,7 +203,6 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
         listCollectionView.playingArrayCount = [playingGame count];
         listCollectionView.pathNo = self.pathNo;
     }
-    
 }
 
 - (IBAction)retryBtn:(id)sender {
@@ -247,8 +230,6 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
 }
 
 
-
-
 //Facebookへ投稿
 - (void)postToFacebook {
     UIImage *playingPic = [UIImage imageWithData:self.divPicturesData[0]];
@@ -256,7 +237,7 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
     SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
     [slc setInitialText:@"You can enjoy your original puzzle games!!"];
     [slc addImage:playingPic];
-//    [slc addURL:[NSURL URLWithString:@"http://testリリース後に書く"]];
+    // [slc addURL:[NSURL URLWithString:@"http://testリリース後に書く"]];
     [self presentViewController:slc animated:YES completion:nil];
 }
 
@@ -265,14 +246,12 @@ NSLog(@"3×3記録更新ならず。過去のベストは%@", normalFinalListMut
 - (void)postToTwitter {
     UIImage *playingPic = [UIImage imageWithData:self.divPicturesData[0]];
     
-    
     SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     [slc setInitialText:@"You can create and play your original puzzle games!!"];
     [slc addImage:playingPic];
-    [slc addURL:[NSURL URLWithString:@"http://nexseed.net/"]]; // リリース後に記載
+    // [slc addURL:[NSURL URLWithString:@"http://nexseed.net/"]]; // リリース後に記載
     [self presentViewController:slc animated:YES completion:nil];
 }
-
 
 
 ////LINEへ投稿

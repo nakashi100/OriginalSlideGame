@@ -27,7 +27,7 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-NSLog(@"list%d",self.pathNo);
+    //NSLog(@"list%d",self.pathNo);
 
     // navitationのタイトルのカスタマイズ
     self.title = @"LIST";
@@ -45,6 +45,7 @@ NSLog(@"list%d",self.pathNo);
     self.normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
     self.hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
     
+    
     // ナビゲーションバーに追加ボタンを設置
     self.addBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addGame)];
     self.navigationItem.rightBarButtonItem = self.addBtn;
@@ -54,30 +55,27 @@ NSLog(@"list%d",self.pathNo);
     if (self.playingArrayCount > 2) {
         if (self.playingArrayCount == 11) { // タイム保存されているため18
             self.playingArrayCount = 0;
-//            playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
-//            playView.pathNo = self.pathNo;
+            // playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
+            // playView.pathNo = self.pathNo;
             [self goPlayView];
         }else if(self.playingArrayCount == 18){
-//            hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-//            hardPlayView.pathNo = self.pathNo;
+            // hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
+            // hardPlayView.pathNo = self.pathNo;
             self.playingArrayCount = 0;
             [self goHardPlayView];
         }
     }
-
-    
-
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    
     return 2;
 }
-
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -96,7 +94,6 @@ NSLog(@"list%d",self.pathNo);
 // ヘッダーを作成する
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
-
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         headerCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
         
@@ -108,26 +105,21 @@ NSLog(@"list%d",self.pathNo);
             headerView.headerLabel.text = @"HARD (4×4)";
             headerView.headerLabel.font = [UIFont boldFlatFontOfSize:17];
             headerView.backgroundColor = [UIColor belizeHoleColor];
-;
         }
         return headerView;
     }
-    
     return nil;
-    
 }
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     gameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"gameCell" forIndexPath:indexPath];
     
-    
     NSArray *normalGameData;
     UIImage *normalGamePic;
     NSArray *hardGameData;
     UIImage *hardGamePic;
     
-
     if (indexPath.section == 0) {
         normalGameData = self.normalFinalList[indexPath.row];  // 3×3のゲーム配列の1つ目を取得
         normalGamePic = [UIImage imageWithData:normalGameData[0]];  // 写真のデータをdataからimageに変換
@@ -148,7 +140,6 @@ NSLog(@"list%d",self.pathNo);
         default:
             break;
     }
-    
     return cell;
 }
 
@@ -156,23 +147,21 @@ NSLog(@"list%d",self.pathNo);
 
 // セグエする際にデータを渡す
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    NSArray *paths = [self.collectionView indexPathsForSelectedItems];
-//    NSIndexPath * path = [paths objectAtIndex:0];
-//    
-//    playViewController *playView = [segue destinationViewController];
-//    playView.pathNo =path.row;
-//    
-//    playView.divPicturesData = self.divPicDataFinal[path.row];
+    // NSArray *paths = [self.collectionView indexPathsForSelectedItems];
+    // NSIndexPath * path = [paths objectAtIndex:0];
+    //
+    // playViewController *playView = [segue destinationViewController];
+    // playView.pathNo =path.row;
+    //
+    // playView.divPicturesData = self.divPicDataFinal[path.row];
 }
 
 
 // セルがタップされたときの処理(遷移先と値渡し)
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-
     playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
     hardPlayViewController *hardPlayView = [self.storyboard instantiateViewControllerWithIdentifier:@"hardPlayView"];
-    
     
     if (indexPath.section == 0) {
         playView.pathNo = indexPath.row;  // 値渡し
@@ -183,9 +172,8 @@ NSLog(@"list%d",self.pathNo);
         hardPlayView.divPicturesData = self.hardFinalList[indexPath.row];
         [self.navigationController pushViewController:hardPlayView animated:YES];
     }
-    
-    
 }
+
 
 // unwindsegueでこの画面に戻すための処理
 - (IBAction)listViewReturnActionForSegue:(UIStoryboardSegue *)segue{

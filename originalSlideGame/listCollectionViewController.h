@@ -17,8 +17,6 @@
 
 @property int playingArrayCount;
 
-
-
 @property NSArray *normalFinalList; // 3×3のパズルだけを格納したリスト配列
 @property NSArray *hardFinalList;
 

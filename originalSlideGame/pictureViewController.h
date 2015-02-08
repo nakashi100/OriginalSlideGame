@@ -13,9 +13,7 @@
 @interface pictureViewController : UIViewController <FUIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
-
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
-
 
 - (IBAction)createPictureBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet FUIButton *createPictureBtn2;
