@@ -84,7 +84,7 @@
     if (countArray == 18) {
         NSString *bestTime = [NSString stringWithFormat:@"( BEST: %6.2f )",[hardFinalList[self.pathNo][17] floatValue]];
         self.bestTimeLabel.text = bestTime;
-        self.bestTimeLabel.font = [UIFont flatFontOfSize:14];
+        self.bestTimeLabel.font = [UIFont boldFlatFontOfSize:14];
     }else if(countArray == 17){
         self.bestTimeLabel.text = nil;
     }
