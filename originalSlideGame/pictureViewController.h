@@ -36,5 +36,6 @@
 @property UIImage *trimmedImage;
 
 @property FUIAlertView *alertView;
+@property FUIAlertView *createAlertView;
 
 @end

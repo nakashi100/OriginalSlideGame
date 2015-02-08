@@ -68,36 +68,67 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 - (IBAction)createPictureBtn:(id)sender {
     
-//NSLog(@"%@",sender);
+//    UIActionSheet *pictureActionSeet = [[UIActionSheet alloc]initWithTitle:@"Select"
+//                                                                  delegate:self cancelButtonTitle:@"Cancel"
+//                                                    destructiveButtonTitle:nil
+//                                                         otherButtonTitles:@"Camera",@"Photo Library", nil];
+//    [pictureActionSeet showInView:self.view];
     
-    UIActionSheet *pictureActionSeet = [[UIActionSheet alloc]initWithTitle:@"Select"
-                                                                  delegate:self cancelButtonTitle:@"Cancel"
-                                                    destructiveButtonTitle:nil
-                                                         otherButtonTitles:@"Camera",@"Photo Library", nil];
-    [pictureActionSeet showInView:self.view];
+    
+    
+    // アラートビューの作成
+    self.createAlertView = [[FUIAlertView alloc] initWithTitle:@"Select"
+                                                 message:nil
+                                                delegate:self
+                                       cancelButtonTitle:@"Cancel"
+                                       otherButtonTitles:@"Camera", @"Photo Library", nil];
+    // タイトルの文字色の設定
+    self.createAlertView.titleLabel.textColor = [UIColor cloudsColor];
+    // タイトルの文字フォントの設定
+    self.createAlertView.titleLabel.font = [UIFont boldFlatFontOfSize:18];
+    // メッセージの文字色の設定
+    self.createAlertView.messageLabel.textColor = [UIColor cloudsColor];
+    // メッセージの文字フォントの設定
+    self.createAlertView.messageLabel.font = [UIFont flatFontOfSize:14];
+    // オーバーレイ背景色の設定
+    self.createAlertView.backgroundOverlay.backgroundColor = [[UIColor cloudsColor] colorWithAlphaComponent:0.8];
+    // 背景色の設定
+    self.createAlertView.alertContainer.backgroundColor = [UIColor belizeHoleColor];
+    // ボタン色の設定
+    self.createAlertView.defaultButtonColor = [UIColor cloudsColor];
+    // ボタンシャドー色の設定
+    self.createAlertView.defaultButtonShadowColor = [UIColor concreteColor];
+    // ボタンの文字フォントの設定
+    self.createAlertView.defaultButtonFont = [UIFont boldFlatFontOfSize:18];
+    // ボタンの文字色の設定
+    self.createAlertView.defaultButtonTitleColor = [UIColor asbestosColor];
+    // 複数のAlertViewを管理するためにtagを使用
+    self.createAlertView.tag = 1;
+    
+    [self.createAlertView show];
+    
 }
 
 
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [self showCamera:buttonIndex];
-            break;
-        case 1:
-            [self showCamera:buttonIndex];
-            break;
-        default:
-            NSLog(@"Cancel button was tapped");
-            break;
-    }
-}
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    switch (buttonIndex) {
+//        case 0:
+//            [self showCamera:buttonIndex];
+//            break;
+//        case 1:
+//            [self showCamera:buttonIndex];
+//            break;
+//        default:
+//            NSLog(@"Cancel button was tapped");
+//            break;
+//    }
+//}
 
 
 - (IBAction)showCamera:(NSInteger)isCamera {
@@ -337,18 +368,8 @@
 
 ////////////////////////
 - (void)alert{
-//    // アラートビューを作成
-//    // キャンセルボタンを表示しない場合はcancelButtonTitleにnilを指定
-//    UIAlertView *alert = [[UIAlertView alloc]
-//                          initWithTitle:@"Choose game level!"
-//                          message:@"You can make the game of two kinds of levels. Please choose a favorite level."
-//                          delegate:self
-//                          cancelButtonTitle:@"Cancel"
-//                          otherButtonTitles:@"NORMAL (3 × 3)", @"HARD (4 × 4)", nil];
-//    
-//    [alert show];  // アラートビューを表示
 
-    ///////////////////////// アラートビューの作成/////////////////
+    // アラートビューの作成
     self.alertView = [[FUIAlertView alloc] initWithTitle:@"Puzzle Level"
                                                           message:@"You can make two types of puzzles. Please choose your favorite level."
                                                          delegate:self
@@ -375,6 +396,7 @@
     // ボタンの文字色の設定
     self.alertView.defaultButtonTitleColor = [UIColor asbestosColor];
     // 複数のAlertViewを管理するためにtagを使用
+    self.alertView.tag = 2;
     
     [self.alertView show];
 
@@ -385,6 +407,23 @@
 
 - (void)alertView:(FUIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     
+    if (alertView.tag == 1) {
+        switch (buttonIndex) {
+            case 1:
+                [self showCamera:0];
+                self.alertView.delegate = nil;
+                break;
+                
+            case 2:
+                [self showCamera:1];
+                self.alertView.delegate = nil;
+                break;
+                
+            default:
+                NSLog(@"Cancel button was tapped");
+                break;
+        }
+    }else if(alertView.tag == 2){
         switch (buttonIndex) {
             case 1: // 1番目が押されたとき
                 self.DVICOUNT = 3;
@@ -405,30 +444,10 @@
             default: // キャンセルが押されたとき
                 break;
         }
+    }
 }
 
 
-//// デリゲート処理
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    switch (buttonIndex) {
-//        case 1: // 1番目が押されたとき
-//            self.DVICOUNT = 3;
-//            // 画像を分割
-//            [self divImage:self.trimmedImage];
-//            [self hozonPuzzleGame1];
-//            break;
-//        
-//        case 2:
-//            self.DVICOUNT = 4;
-//            // 画像を分割
-//            [self divImage:self.trimmedImage];
-//            [self hozonPuzzleGame2];
-//            break;
-//            
-//        default: // キャンセルが押されたとき
-//            break;
-//    }
-//}
 
 -(void)hozonPuzzleGame1{
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
