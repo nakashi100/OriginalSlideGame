@@ -41,8 +41,8 @@ NSLog(@"result%d",self.pathNo);
     
     // 画面のレイアウト
     self.messageLabel.text = @"Congratulations!";
-    self.messageLabel.font = [UIFont boldFlatFontOfSize:35];
-    self.resultTime.font = [UIFont boldFlatFontOfSize:27];
+    self.messageLabel.font = [UIFont boldFlatFontOfSize:32];
+    self.resultTime.font = [UIFont boldFlatFontOfSize:25];
     
     self.twitterImage.image = [UIImage imageNamed:@"twitter"];
     self.facebookImage.image = [UIImage imageNamed:@"facebook"];

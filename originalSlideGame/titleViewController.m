@@ -25,14 +25,13 @@
     
     if(!normalGame){
         [self defaultGame]; // デフォルトゲームを作成
-//        NSLog(@"こんにちは");
     }
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-NSLog(@"title%d",self.pathNo);
+    // NSLog(@"title%d",self.pathNo);
+    self.useDefaultReset2.hidden = YES;
+    
     
     //-----------------------------------------------------------------
     // プレイボタンのレイアウト
@@ -87,9 +86,9 @@ NSLog(@"title%d",self.pathNo);
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+// UserDefaultsの中身を一括削除際
 - (IBAction)useDefaultReset:(id)sender {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
