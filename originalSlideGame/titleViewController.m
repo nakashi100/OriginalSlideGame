@@ -30,7 +30,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // NSLog(@"title%d",self.pathNo);
-    self.useDefaultReset2.hidden = YES;
+//    self.useDefaultReset2.hidden = YES;
     
     
     // プレイボタンのレイアウト
@@ -87,6 +87,7 @@
 - (IBAction)useDefaultReset:(id)sender {
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSLog(@"UserDefaultsリセットしたよー");
 }
 
 
@@ -122,14 +123,14 @@
 - (void)defaultGame{
 
     // divPicData[0](1つのゲーム配列)に1〜9の数字をセットして配列を作り、その配列自体をdivPicDataFinal[0](ゲーム配列リスト)に保存する
-    
-    NSMutableArray *divPicData = [NSMutableArray array]; // 3×3用ゲーム配列
+    // 3×3用ゲーム配列
+    NSMutableArray *divPicData = [NSMutableArray array];
     NSString *picText;
     UIImage *picImage;
     NSData *picData;
     
     for (int i=0; i<10; i++) {
-        picText = [NSString stringWithFormat:@"sample%d",i];
+        picText = [NSString stringWithFormat:@"normal%d",i];
         picImage = [UIImage imageNamed:picText];
 
         picData = UIImageJPEGRepresentation(picImage, 1.0);
@@ -139,14 +140,14 @@
     [normalFinalList addObject:divPicData];
     
     
-    
-    NSMutableArray *divPicData2 = [NSMutableArray array]; // 4×4用ゲーム配列
+    // 4×4用ゲーム配列
+    NSMutableArray *divPicData2 = [NSMutableArray array];
     NSString *picText2;
     UIImage *picImage2;
     NSData *picData2;
     
     for (int i=0; i<17; i++) {
-        picText2 = [NSString stringWithFormat:@"sample%d",i];
+        picText2 = [NSString stringWithFormat:@"hard%d",i];
         picImage2 = [UIImage imageNamed:picText2];
         
         picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
@@ -154,10 +155,6 @@
     }
     NSMutableArray *hardFinalList = [NSMutableArray array];
     [hardFinalList addObject:divPicData2];
-    
-    picImage2 = [UIImage imageNamed:@"sample00"];
-    picData2 = UIImageJPEGRepresentation(picImage2, 1.0);
-    [divPicData2 replaceObjectAtIndex:0 withObject:picData2]; // 4*4の完成画像と差し替える
     
     
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
