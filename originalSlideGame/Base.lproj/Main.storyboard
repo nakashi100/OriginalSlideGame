@@ -554,7 +554,7 @@
                                     </label>
                                     <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="0D64A31C-611A-450E-ADED-03C10F7ACC1D" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="764F3A16-B72B-48F1-AFE7-D50182BD1CD0" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -880,6 +880,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-gc-dSA" userLabel="test">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureimage" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="96" y="200" width="130" height="130"/>
+                                        </variation>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="creatPictureBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ" customClass="FUIButton">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -941,10 +947,10 @@
                                             <action selector="remakeBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="VsC-70-ipJ"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureimage" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVq-sJ-oTs">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="96" y="200" width="130" height="130"/>
+                                            <rect key="frame" x="48" y="121" width="225" height="225"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
@@ -955,12 +961,13 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="kBZ-E9-DBX"/>
                                         <exclude reference="J0f-pw-dKJ"/>
                                         <exclude reference="79N-Uc-KRp"/>
                                         <exclude reference="cR9-XZ-aAI"/>
                                         <exclude reference="pcW-8L-XWL"/>
                                         <exclude reference="OaW-Q4-c8n"/>
-                                        <exclude reference="kBZ-E9-DBX"/>
+                                        <exclude reference="gVq-sJ-oTs"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="W5H-Bm-jeL"/>
@@ -969,12 +976,13 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
+                                        <include reference="kBZ-E9-DBX"/>
                                         <include reference="J0f-pw-dKJ"/>
                                         <include reference="79N-Uc-KRp"/>
                                         <include reference="cR9-XZ-aAI"/>
                                         <include reference="pcW-8L-XWL"/>
                                         <include reference="OaW-Q4-c8n"/>
-                                        <include reference="kBZ-E9-DBX"/>
+                                        <include reference="gVq-sJ-oTs"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="W5H-Bm-jeL"/>
@@ -1015,6 +1023,7 @@
                         <outlet property="explainLabel" destination="pcW-8L-XWL" id="CgU-NN-m5G"/>
                         <outlet property="finishBtn2" destination="cR9-XZ-aAI" id="evr-0X-sgf"/>
                         <outlet property="remakeBtn2" destination="OaW-Q4-c8n" id="GRJ-D3-Q1v"/>
+                        <outlet property="samplePictureView" destination="gVq-sJ-oTs" id="1V1-1W-bGk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="urm-M3-tFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1760,7 +1769,7 @@
                                     </label>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-T6-lR7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="6C5E0D7E-BD13-4331-8742-2F2936C4B168" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="0A842F0F-56F0-4A85-93BF-BC0DBFA6227A" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -1957,7 +1966,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0D64A31C-611A-450E-ADED-03C10F7ACC1D" width="256" height="256">
+        <image name="0A842F0F-56F0-4A85-93BF-BC0DBFA6227A" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -6403,7 +6412,7 @@ DyYABA8uAAQPMQAEDzYABA9FAAQPSQAED1AABA9YAAQPZQAED2oABA9sAAQPbgAED3MABA97AAQPfgAE
 D4MABA+LAAQPjgAED6AABA+jAAQPqAAAAAAAAAQBAAAAAAAAAFIAAAAAAAAAAAAAAAAABA+qA
 </mutableData>
         </image>
-        <image name="6C5E0D7E-BD13-4331-8742-2F2936C4B168" width="256" height="256">
+        <image name="764F3A16-B72B-48F1-AFE7-D50182BD1CD0" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW

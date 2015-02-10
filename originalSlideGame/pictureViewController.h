@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
+@property (weak, nonatomic) IBOutlet UIImageView *samplePictureView;
 
 - (IBAction)createPictureBtn:(id)sender;
 @property (weak, nonatomic) IBOutlet FUIButton *createPictureBtn2;

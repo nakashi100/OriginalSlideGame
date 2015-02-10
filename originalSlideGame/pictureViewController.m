@@ -220,7 +220,7 @@
     /////////////////////////////////////////////////////////////////////////
     
     // 取得した画像を画面上へ表示
-    self.displayPictureView.image = self.trimmedImage;
+    self.samplePictureView.image = self.trimmedImage;
     
     // モーダルビューを閉じる
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -472,7 +472,7 @@
 
 
 - (IBAction)editBtn:(id)sender {
-    [self presentImageEditorWithImage:self.displayPictureView.image];
+    [self presentImageEditorWithImage:self.samplePictureView.image];
 }
 
 
@@ -487,7 +487,7 @@
 - (void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
 {
     self.trimmedImage = image;
-    self.displayPictureView.image = image;
+    self.samplePictureView.image = image;
     [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
