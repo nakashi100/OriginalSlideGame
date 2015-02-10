@@ -2,9 +2,101 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sek-QJ-6xy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Test View Controller-->
+        <scene sceneID="nRs-xZ-Li6">
+            <objects>
+                <viewController id="MVv-OJ-hHu" customClass="testViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EGw-1W-eFN"/>
+                        <viewControllerLayoutGuide type="bottom" id="383-r3-FCd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="or3-Lj-fDf">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-0V-oIA">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="71" width="70" height="79"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rup-1B-UJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                </accessibility>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="28" width="200" height="200"/>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2M-Jo-Ryu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3n2-Vq-JW1">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="9">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="140" name="HelveticaNeue"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="144"/>
+                                            <rect key="frame" x="5" y="5" width="200" height="200"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                </accessibility>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="3n2-Vq-JW1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="269" width="210" height="210"/>
+                                    <mask key="subviews">
+                                        <include reference="3n2-Vq-JW1"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="r8K-0V-oIA"/>
+                                <exclude reference="rup-1B-UJ6"/>
+                                <exclude reference="I2M-Jo-Ryu"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="r8K-0V-oIA"/>
+                                <include reference="rup-1B-UJ6"/>
+                                <include reference="I2M-Jo-Ryu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="test1" destination="r8K-0V-oIA" id="9jJ-Fk-as5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-gH-Rg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="369" y="-132"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pGb-JI-HKz">
             <objects>
@@ -462,7 +554,7 @@
                                     </label>
                                     <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="F75A6E44-5383-4477-9FCE-8AB5080EF88D" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="0D64A31C-611A-450E-ADED-03C10F7ACC1D" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -788,12 +880,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-gc-dSA" userLabel="test">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="22" y="95" width="274" height="274"/>
-                                        </variation>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="creatPictureBtn" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-pw-dKJ" customClass="FUIButton">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -855,6 +941,12 @@
                                             <action selector="remakeBtn:" destination="YOd-Nb-r9v" eventType="touchUpInside" id="VsC-70-ipJ"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pictureimage" translatesAutoresizingMaskIntoConstraints="NO" id="kBZ-E9-DBX">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="96" y="200" width="130" height="130"/>
+                                        </variation>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -863,12 +955,12 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="kBZ-E9-DBX"/>
                                         <exclude reference="J0f-pw-dKJ"/>
                                         <exclude reference="79N-Uc-KRp"/>
                                         <exclude reference="cR9-XZ-aAI"/>
                                         <exclude reference="pcW-8L-XWL"/>
                                         <exclude reference="OaW-Q4-c8n"/>
+                                        <exclude reference="kBZ-E9-DBX"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="W5H-Bm-jeL"/>
@@ -877,12 +969,12 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="subviews">
-                                        <include reference="kBZ-E9-DBX"/>
                                         <include reference="J0f-pw-dKJ"/>
                                         <include reference="79N-Uc-KRp"/>
                                         <include reference="cR9-XZ-aAI"/>
                                         <include reference="pcW-8L-XWL"/>
                                         <include reference="OaW-Q4-c8n"/>
+                                        <include reference="kBZ-E9-DBX"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="W5H-Bm-jeL"/>
@@ -1059,10 +1151,10 @@
                                 <exclude reference="iPc-Up-ULF"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="tee-ay-3Jm"/>
+                                <exclude reference="QCd-AH-MM7"/>
                                 <exclude reference="2D4-ud-DnC"/>
                                 <exclude reference="MLT-N5-DNk"/>
-                                <exclude reference="QCd-AH-MM7"/>
-                                <exclude reference="tee-ay-3Jm"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -1071,10 +1163,10 @@
                                 <include reference="iPc-Up-ULF"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="tee-ay-3Jm"/>
+                                <include reference="QCd-AH-MM7"/>
                                 <include reference="2D4-ud-DnC"/>
                                 <include reference="MLT-N5-DNk"/>
-                                <include reference="QCd-AH-MM7"/>
-                                <include reference="tee-ay-3Jm"/>
                             </mask>
                         </variation>
                     </view>
@@ -1668,7 +1760,7 @@
                                     </label>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-T6-lR7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="F7A7B766-5C21-4508-89C5-9FEE1E949897" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="6C5E0D7E-BD13-4331-8742-2F2936C4B168" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -1865,7 +1957,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F75A6E44-5383-4477-9FCE-8AB5080EF88D" width="256" height="256">
+        <image name="0D64A31C-611A-450E-ADED-03C10F7ACC1D" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -6311,7 +6403,7 @@ DyYABA8uAAQPMQAEDzYABA9FAAQPSQAED1AABA9YAAQPZQAED2oABA9sAAQPbgAED3MABA97AAQPfgAE
 D4MABA+LAAQPjgAED6AABA+jAAQPqAAAAAAAAAQBAAAAAAAAAFIAAAAAAAAAAAAAAAAABA+qA
 </mutableData>
         </image>
-        <image name="F7A7B766-5C21-4508-89C5-9FEE1E949897" width="256" height="256">
+        <image name="6C5E0D7E-BD13-4331-8742-2F2936C4B168" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -10757,6 +10849,7 @@ DyYABA8uAAQPMQAEDzYABA9FAAQPSQAED1AABA9YAAQPZQAED2oABA9sAAQPbgAED3MABA97AAQPfgAE
 D4MABA+LAAQPjgAED6AABA+jAAQPqAAAAAAAAAQBAAAAAAAAAFIAAAAAAAAAAAAAAAAABA+qA
 </mutableData>
         </image>
+        <image name="pictureimage" width="216" height="214"/>
     </resources>
     <color key="tintColor" red="0.5249782986" green="0.63810008949999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
