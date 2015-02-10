@@ -17,7 +17,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLapLabel;
 @property (weak, nonatomic) IBOutlet UIView *sampleView;
+@property (weak, nonatomic) IBOutlet UIImageView *samplePic;
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
+
+
 
 @property NSMutableArray *randNums;
 

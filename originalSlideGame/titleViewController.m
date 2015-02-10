@@ -56,7 +56,7 @@
     
     // タイトルラベルのレイアウト
     self.appTitleLabel.text = @"My Slide Puzzle";
-    self.appTitleLabel.font = [UIFont boldFlatFontOfSize:32];
+    self.appTitleLabel.font = [UIFont boldFlatFontOfSize:33];
     
     
     

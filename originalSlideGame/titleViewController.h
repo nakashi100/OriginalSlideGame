@@ -23,6 +23,4 @@
 
 @property int pathNo; // ゲーム作成後にpathNoを受け取る
 
-@property (weak, nonatomic) IBOutlet UIImageView *sampleImage;
-
 @end
