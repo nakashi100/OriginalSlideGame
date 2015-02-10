@@ -15,6 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="383-r3-FCd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="or3-Lj-fDf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r8K-0V-oIA">
@@ -554,7 +555,7 @@
                                     </label>
                                     <view tag="30" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-3z-42N">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="764F3A16-B72B-48F1-AFE7-D50182BD1CD0" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="486E77B0-5933-4810-A2CF-520EB7A8117A" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -950,7 +951,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVq-sJ-oTs">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="48" y="121" width="225" height="225"/>
+                                            <rect key="frame" x="31" y="105" width="255" height="260"/>
                                         </variation>
                                     </imageView>
                                 </subviews>
@@ -1246,7 +1247,7 @@
                                             <imageView tag="22" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-Iy-zFw">
                                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="69"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
                                                 </variation>
                                             </imageView>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okd-Rf-pOh">
@@ -1769,7 +1770,7 @@
                                     </label>
                                     <view tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4R-T6-lR7">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                        <color key="backgroundColor" patternImage="0A842F0F-56F0-4A85-93BF-BC0DBFA6227A" colorSpace="pattern"/>
+                                        <color key="backgroundColor" patternImage="CFDCE517-FA3D-40AC-86C1-2F62D61FADCB" colorSpace="pattern"/>
                                         <variation key="widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="31" y="422" width="30" height="30"/>
                                         </variation>
@@ -1966,7 +1967,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0A842F0F-56F0-4A85-93BF-BC0DBFA6227A" width="256" height="256">
+        <image name="486E77B0-5933-4810-A2CF-520EB7A8117A" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -6412,7 +6413,7 @@ DyYABA8uAAQPMQAEDzYABA9FAAQPSQAED1AABA9YAAQPZQAED2oABA9sAAQPbgAED3MABA97AAQPfgAE
 D4MABA+LAAQPjgAED6AABA+jAAQPqAAAAAAAAAQBAAAAAAAAAFIAAAAAAAAAAAAAAAAABA+qA
 </mutableData>
         </image>
-        <image name="764F3A16-B72B-48F1-AFE7-D50182BD1CD0" width="256" height="256">
+        <image name="CFDCE517-FA3D-40AC-86C1-2F62D61FADCB" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW

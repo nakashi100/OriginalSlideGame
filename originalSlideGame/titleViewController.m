@@ -30,7 +30,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // NSLog(@"title%d",self.pathNo);
-//    self.useDefaultReset2.hidden = YES;
+    self.useDefaultReset2.hidden = YES;
     
     
     // プレイボタンのレイアウト
