@@ -32,6 +32,9 @@
     // NSLog(@"title%d",self.pathNo);
     self.useDefaultReset2.hidden = YES;
     
+    //ナビゲーションバーを非表示
+     [self.navigationController setNavigationBarHidden:YES animated:YES];
+
     
     // プレイボタンのレイアウト
     self.playButton.buttonColor = [UIColor peterRiverColor]; // ボタンの色
@@ -57,7 +60,6 @@
     
     
     
-    
     // createdFlagがある場合はゲームがcreateされているので、play画面までリダイレクトさせる。遷移後はflagは0に
     if (self.createdFlag == 1) {  //3×3の場合
         // playViewController *playView = [self.storyboard instantiateViewControllerWithIdentifier:@"playView"];
@@ -76,8 +78,15 @@
         [self golistCollectionView];
         self.deletedFlag = NO;
     }
-    
 }
+
+
+// 別画面遷移時にはナビゲーションバーを表示
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

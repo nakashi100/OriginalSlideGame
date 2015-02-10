@@ -39,7 +39,7 @@
     self.createPictureBtn2.shadowColor = [UIColor belizeHoleColor]; // ボタンのシャドー色
     self.createPictureBtn2.shadowHeight = 3.0f; // ボタンのシャドー高度
     self.createPictureBtn2.cornerRadius = 6.0f; // ボタンの角丸みの半径
-    self.createPictureBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:16]; // ボタンの文字ファンド
+    self.createPictureBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:17]; // ボタンの文字ファンド
     [self.createPictureBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.createPictureBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
     
