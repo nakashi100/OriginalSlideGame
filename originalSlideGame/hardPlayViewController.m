@@ -59,6 +59,16 @@
     self.timeLabel.font = [UIFont flatFontOfSize:20];
     self.timeLapLabel.font = [UIFont flatFontOfSize:20];
     
+    UIImage *playImage = [UIImage imageNamed:@"play2"];
+    [self.playBtn setBackgroundImage:playImage forState:UIControlStateNormal];
+    
+    UIImage *sampleImage = [UIImage imageNamed:@"hint"];
+    self.samplePic.image = sampleImage;
+    
+    UIImage *testImage = [UIImage imageNamed:@"pause1"];
+    [self.testBtn2 setBackgroundImage:testImage forState:UIControlStateNormal];
+    
+    
     // ナビゲーションバーに削除ボタンを設置
     self.trashBtn = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(deleteAlert)];
     self.navigationItem.rightBarButtonItem = self.trashBtn;

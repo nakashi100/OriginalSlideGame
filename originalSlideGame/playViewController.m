@@ -65,8 +65,8 @@ static const NSInteger secondAlertTag = 2;
     UIImage *playImage = [UIImage imageNamed:@"play2"];
     [self.playBtn setBackgroundImage:playImage forState:UIControlStateNormal];
     
-//    UIImage *sampleImage = [UIImage imageNamed:@"hint"];
-//    self.samplePic.image = sampleImage;
+    UIImage *sampleImage = [UIImage imageNamed:@"hint"];
+    self.samplePic.image = sampleImage;
     
     UIImage *testImage = [UIImage imageNamed:@"pause1"];
     [self.testBtn2 setBackgroundImage:testImage forState:UIControlStateNormal];
@@ -432,7 +432,7 @@ static const NSInteger secondAlertTag = 2;
         //--------------------------------------------------------------------------
         
         // 完成画像(見本)を表示する
-        case 30:
+        case 100:
             self.sampleImageView.image = self.pic0;
             break;
 
@@ -510,7 +510,7 @@ static const NSInteger secondAlertTag = 2;
     UITouch *touch = [touches anyObject];
     
     switch (touch.view.tag) {
-        case 30:
+        case 100:
             self.sampleImageView.image = nil;
             break;
 

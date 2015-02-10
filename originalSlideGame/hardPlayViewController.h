@@ -113,6 +113,7 @@
 @property NSString *playTime;
 
 @property (weak, nonatomic) IBOutlet UIView *sampleView;
+@property (weak, nonatomic) IBOutlet UIImageView *samplePic;
 @property (weak, nonatomic) IBOutlet UIImageView *sampleImageView;
 
 - (IBAction)testBtn:(id)sender; // ゲームを中断するためのボタン
