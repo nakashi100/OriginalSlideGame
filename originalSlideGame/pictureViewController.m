@@ -69,6 +69,10 @@
     self.finishBtn2.titleLabel.font = [UIFont boldFlatFontOfSize:14]; // ボタンの文字ファンド
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateNormal]; // 通常状態の文字色
     [self.finishBtn2 setTitleColor:[UIColor cloudsColor] forState:UIControlStateHighlighted]; // ハイライト状態の文字色
+    
+    // iAd
+    // self.add_1.delegate = self;
+    self.add_1.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -386,7 +390,6 @@
                 break;
                 
             default:
-                NSLog(@"Cancel button was tapped");
                 break;
         }
     }else if(alertView.tag == 2){
@@ -491,5 +494,18 @@
     [editor dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark - iAd
+// iAdの処理
+//- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+//    NSLog(@"iAd取得成功");
+//    self.add_1.hidden = NO;
+//}
+//
+////iAd取得失敗
+//- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+//    NSLog(@"iAd取得失敗");
+//    self.add_1.hidden = YES;
+//}
 
 @end

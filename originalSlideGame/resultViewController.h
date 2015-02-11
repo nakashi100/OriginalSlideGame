@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import "FlatUIKit.h"
+#import <iAd/iAd.h>
 
-@interface resultViewController : UIViewController
+@interface resultViewController : UIViewController <ADInterstitialAdDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
 
@@ -28,6 +29,6 @@
 @property NSInteger pathNo; // パスNo.(配列の何番目か)を受け取る
 @property NSMutableArray *divPicturesData; // プレイ中のゲーム配列を受け取る
 @property int playingArrayCount; // プレイ中のゲーム配列の個数(10コor17コ)※リダイレクト先を変えるため
-
+@property ADInterstitialAd *iAdInterstitial;
 
 @end

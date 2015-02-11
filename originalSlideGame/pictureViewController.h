@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
-
+#import <iAd/iAd.h>
 
 @interface pictureViewController : UIViewController <FUIAlertViewDelegate>
 
@@ -37,5 +37,7 @@
 
 @property FUIAlertView *alertView;
 @property FUIAlertView *createAlertView;
+
+@property (weak, nonatomic) IBOutlet ADBannerView *add_1;
 
 @end

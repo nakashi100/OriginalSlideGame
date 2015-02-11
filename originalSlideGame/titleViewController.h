@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
+#import <iAd/iAd.h>
 
-@interface titleViewController : UIViewController
+@interface titleViewController : UIViewController<ADBannerViewDelegate, ADInterstitialAdDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
 @property (weak, nonatomic) IBOutlet FUIButton *playButton;
@@ -22,5 +23,8 @@
 @property BOOL deletedFlag; // ゲーム削除後のリダイレクト判定用
 
 @property int pathNo; // ゲーム作成後にpathNoを受け取る
+
+@property (weak, nonatomic) IBOutlet ADBannerView *add_1;
+
 
 @end

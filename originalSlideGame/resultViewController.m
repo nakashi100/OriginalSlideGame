@@ -21,17 +21,22 @@
     [super viewDidLoad];
     
     // SNSシェアができるかの確認
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        NSLog(@"FB利用できるよ");
-    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        NSLog(@"FB利用できないよ");
-    }
+    //    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+    //        NSLog(@"FB利用できるよ");
+    //    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+    //        NSLog(@"FB利用できないよ");
+    //    }
+    //
+    //    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+    //        NSLog(@"t利用できるよ");
+    //    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+    //        NSLog(@"t利用できないよ");
+    //    }
+    
+    
+    // iad
+    [self loadiAdInterstitial];
 
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        NSLog(@"t利用できるよ");
-    }else if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-        NSLog(@"t利用できないよ");
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -43,7 +48,7 @@
     self.resultTime.font = [UIFont boldFlatFontOfSize:25];
     
     self.twitterImage.image = [UIImage imageNamed:@"twitter"];
-    self.facebookImage.image = [UIImage imageNamed:@"facebook"];
+    // self.facebookImage.image = [UIImage imageNamed:@"facebook"];
     NSString *resultTime = [NSString stringWithFormat:@"TIME: %@", self.result];
     self.resultTime.text = resultTime;
     
@@ -185,6 +190,10 @@
     }
 
     [userDefault synchronize];
+    
+    // 今回はfacebookシェアは入れない
+    self.facebookImage.hidden = YES;
+    
 }
 
 
@@ -247,7 +256,7 @@
     UIImage *playingPic = [UIImage imageWithData:self.divPicturesData[0]];
     
     SLComposeViewController *slc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [slc setInitialText:@"You can create and play your original puzzle games!!"];
+    [slc setInitialText:@"You can create your original puzzles using your favorite photos! Let's enjoy!!"];
     [slc addImage:playingPic];
     // [slc addURL:[NSURL URLWithString:@"http://nexseed.net/"]]; // リリース後に記載
     [self presentViewController:slc animated:YES completion:nil];
@@ -261,6 +270,51 @@
 //    NSString *LineUrlString = [NSString stringWithFormat:@"line://msg/image/%@", pasteboard.name];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
 //}
+
+
+
+#pragma mark - iAd Interstitial Ad
+
+// iAdインタースティシャル広告読み込み
+- (void)loadiAdInterstitial
+{
+    self.iAdInterstitial = [[ADInterstitialAd alloc] init];
+    self.iAdInterstitial.delegate = self;
+    self.interstitialPresentationPolicy = ADInterstitialPresentationPolicyManual;
+    [self requestInterstitialAdPresentation];
+    NSLog(@"1");
+}
+
+
+// iAdインタースティシャル広告がロードされた時に呼ばれる
+- (void)interstitialAdDidLoad:(ADInterstitialAd *)interstitialAd
+{
+    if (self.iAdInterstitial.loaded) {
+        [self.iAdInterstitial presentFromViewController:self];
+    }
+    NSLog(@"2");
+}
+
+// iAdインタースティシャル広告がアンロードされた時に呼ばれる
+- (void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd
+{
+    self.iAdInterstitial = nil;
+    NSLog(@"3");
+}
+
+// iAdインタースティシャル広告の読み込み失敗時に呼ばれる
+- (void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error
+{
+    self.iAdInterstitial = nil;
+    NSLog(@"4");
+}
+
+// iAdインタースティシャル広告が閉じられた時に呼ばれる
+- (void)interstitialAdActionDidFinish:(ADInterstitialAd *)interstitialAd
+{
+    self.iAdInterstitial = nil;
+    NSLog(@"5");
+}
 
 
 

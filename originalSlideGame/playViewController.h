@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import "FlatUIKit.h"
+#import <iAd/iAd.h>
 
-@interface playViewController : UIViewController <FUIAlertViewDelegate>
+@interface playViewController : UIViewController <FUIAlertViewDelegate,ADBannerViewDelegate>
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property UIBarButtonItem *trashBtn; // 削除ボタン

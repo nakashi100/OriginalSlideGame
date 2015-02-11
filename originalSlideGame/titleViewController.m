@@ -26,6 +26,8 @@
     if(!normalGame){
         [self defaultGame]; // 初プレイ時のみデフォルトゲームを作成
     }
+    
+    self.add_1.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -78,6 +80,9 @@
         [self golistCollectionView];
         self.deletedFlag = NO;
     }
+    
+    // iAd
+    // self.add_1.delegate = self;
 }
 
 
@@ -171,6 +176,20 @@
     [userDefault setObject:hardFinalList forKey:@"hardFinalList"];
     [userDefault synchronize];
 }
+
+
+#pragma mark - iAd
+//// iAdの処理
+//- (void)bannerViewDidLoadAd:(ADBannerView *)banner{
+//    // NSLog(@"iAd取得成功");
+//    self.add_1.hidden = NO;
+//}
+//
+////iAd取得失敗
+//- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error{
+//    // NSLog(@"iAd取得失敗");
+//    self.add_1.hidden = YES;
+//}
 
 
 @end

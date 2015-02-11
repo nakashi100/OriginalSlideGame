@@ -97,6 +97,11 @@ static const NSInteger secondAlertTag = 2;
     }else if(countArray == 10){
         self.bestTimeLabel.text = nil;
     }
+    
+    // スワイプによる戻りを無効化する
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
 
@@ -120,8 +125,8 @@ static const NSInteger secondAlertTag = 2;
     
  
     // image1〜8の中の数字を並び替える
-    // int pattern = [self createRndArray];
-    int pattern = 9; // テスト用
+    int pattern = [self createRndArray];
+    // int pattern = 9; // テスト用
     [self puzzlePattern:pattern];
     
     // タイマーを起動する

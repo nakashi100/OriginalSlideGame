@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
+#import <iAd/iAd.h>
 
 @interface hardPlayViewController : UIViewController <FUIAlertViewDelegate>
 
