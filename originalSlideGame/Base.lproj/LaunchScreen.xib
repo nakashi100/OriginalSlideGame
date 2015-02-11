@@ -16,29 +16,67 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureimage" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-N9-tjx">
-                    <rect key="frame" x="140" y="140" width="200" height="200"/>
-                    <variation key="widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="95" y="175" width="130" height="130"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2A-bw-2sS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pictureimage" translatesAutoresizingMaskIntoConstraints="NO" id="bvh-N9-tjx">
+                            <rect key="frame" x="140" y="140" width="200" height="200"/>
+                            <variation key="widthClass=compact" fixedFrame="YES">
+                                <rect key="frame" x="42" y="96" width="130" height="130"/>
+                            </variation>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="322" id="Rgn-rD-XP9"/>
+                        <constraint firstAttribute="width" constant="214" id="cUA-jO-cEB"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="bvh-N9-tjx"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="Rgn-rD-XP9"/>
+                            <exclude reference="cUA-jO-cEB"/>
+                        </mask>
                     </variation>
-                </imageView>
+                    <variation key="widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="bvh-N9-tjx"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="Rgn-rD-XP9"/>
+                            <include reference="cUA-jO-cEB"/>
+                        </mask>
+                    </variation>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstAttribute="centerY" secondItem="X2A-bw-2sS" secondAttribute="centerY" id="eTh-Jk-c8A"/>
+                <constraint firstAttribute="centerX" secondItem="X2A-bw-2sS" secondAttribute="centerX" id="ojs-mU-BGt"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="bvh-N9-tjx"/>
+                    <exclude reference="X2A-bw-2sS"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="eTh-Jk-c8A"/>
+                    <exclude reference="ojs-mU-BGt"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="bvh-N9-tjx"/>
+                    <include reference="X2A-bw-2sS"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="eTh-Jk-c8A"/>
+                    <include reference="ojs-mU-BGt"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="468" y="455"/>
