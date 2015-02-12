@@ -116,7 +116,7 @@
     
     
     // 3×3でクリア履歴あり
-    if (self.playingArrayCount == 11) {
+    else if (self.playingArrayCount == 11) {
         NSArray *normalFinalList = [userDefault arrayForKey:@"normalFinalList"];
         NSMutableArray *normalFinalListMutable = [normalFinalList mutableCopy];
         
@@ -142,7 +142,7 @@
     
     
     // 4×4で初クリア
-    if (self.playingArrayCount == 17) {
+    else if (self.playingArrayCount == 17) {
         NSArray *hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
         NSMutableArray *hardFinalListMutable = [hardFinalList mutableCopy];
         
@@ -151,22 +151,22 @@
         
         [thisGameArrayMutable addObject:self.result]; // 配列の最後にタイムを追加する
         
-        //NSLog(@"%d",[thisGameArrayMutable count]);
+        // NSLog(@"%d",[thisGameArrayMutable count]);
         
         hardFinalListMutable[self.pathNo] = thisGameArrayMutable;  // 元のリストの配列と新しい配列を入れ替える
         
-        //NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
+        // NSLog(@"%d",[normalFinalListMutable[self.pathNo] count]);
         
         [userDefault setObject:hardFinalListMutable forKey:@"hardFinalList"]; // 保存し直す
         
-        //NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
+        // NSLog(@"3×3初クリア！タイムは%@", thisGameArrayMutable[10]);
         // RETRYしたときにプレイ中のデータを保持してプレイ画面でゲーム再構築する
         [userDefault setObject:hardFinalListMutable[self.pathNo] forKey:@"nowPlaying"];
     }
     
    
     // 4×4でクリア履歴あり
-    if (self.playingArrayCount == 18) {
+    else if (self.playingArrayCount == 18) {
         NSArray *hardFinalList = [userDefault arrayForKey:@"hardFinalList"];
         NSMutableArray *hardFinalListMutable = [hardFinalList mutableCopy];
         
