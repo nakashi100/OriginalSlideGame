@@ -40,7 +40,6 @@
 		C456DC951A76325F005E25B0 /* titleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC941A76325F005E25B0 /* titleViewController.m */; };
 		C456DC981A763303005E25B0 /* pictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C456DC971A763303005E25B0 /* pictureViewController.m */; };
 		C4598A6D1A7F91D300AEBBC9 /* hardPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4598A6C1A7F91D300AEBBC9 /* hardPlayViewController.m */; };
-		C45B94241A89AC85001A0B9F /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C45B94231A89AC85001A0B9F /* testViewController.m */; };
 		C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47865BC1A790E480090350E /* QuartzCore.framework */; };
 		C47D05751A8B003500D06781 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D05741A8B003500D06781 /* iAd.framework */; };
 		C4A9D4F21A736D0900DA4AEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A9D4F11A736D0900DA4AEA /* main.m */; };
@@ -160,8 +159,6 @@
 		C456DC971A763303005E25B0 /* pictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pictureViewController.m; sourceTree = "<group>"; };
 		C4598A6B1A7F91D300AEBBC9 /* hardPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hardPlayViewController.h; sourceTree = "<group>"; };
 		C4598A6C1A7F91D300AEBBC9 /* hardPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hardPlayViewController.m; sourceTree = "<group>"; };
-		C45B94221A89AC85001A0B9F /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
-		C45B94231A89AC85001A0B9F /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		C47865BC1A790E480090350E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C47D05741A8B003500D06781 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		C4A9D4EC1A736D0900DA4AEA /* originalSlideGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalSlideGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -391,8 +388,6 @@
 				C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */,
 				C4598A6B1A7F91D300AEBBC9 /* hardPlayViewController.h */,
 				C4598A6C1A7F91D300AEBBC9 /* hardPlayViewController.m */,
-				C45B94221A89AC85001A0B9F /* testViewController.h */,
-				C45B94231A89AC85001A0B9F /* testViewController.m */,
 				C4A9D5011A736D0A00DA4AEA /* LaunchScreen.xib */,
 				C41C76E71A860C5D00824696 /* Classes */,
 				C41C76DC1A860BD600824696 /* Resources */,
@@ -712,7 +707,6 @@
 				C4B489581A83C3950012EA48 /* CLEffectBase.m in Sources */,
 				C4B489521A83C3950012EA48 /* CLGloomEffect.m in Sources */,
 				C4B4897B1A83CF3E0012EA48 /* CLFontPickerView.m in Sources */,
-				C45B94241A89AC85001A0B9F /* testViewController.m in Sources */,
 				C4B489641A83C3950012EA48 /* UIView+CLImageToolInfo.m in Sources */,
 				C4B489531A83C3950012EA48 /* CLHighlightShadowEffect.m in Sources */,
 				C4B4895A1A83C3950012EA48 /* CLFilterBase.m in Sources */,
