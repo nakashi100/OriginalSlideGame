@@ -282,7 +282,7 @@
     self.iAdInterstitial.delegate = self;
     self.interstitialPresentationPolicy = ADInterstitialPresentationPolicyManual;
     [self requestInterstitialAdPresentation];
-    NSLog(@"1");
+    // NSLog(@"1");
 }
 
 
@@ -292,28 +292,28 @@
     if (self.iAdInterstitial.loaded) {
         [self.iAdInterstitial presentFromViewController:self];
     }
-    NSLog(@"2");
+    // NSLog(@"2");
 }
 
 // iAdインタースティシャル広告がアンロードされた時に呼ばれる
 - (void)interstitialAdDidUnload:(ADInterstitialAd *)interstitialAd
 {
     self.iAdInterstitial = nil;
-    NSLog(@"3");
+    // NSLog(@"3");
 }
 
 // iAdインタースティシャル広告の読み込み失敗時に呼ばれる
 - (void)interstitialAd:(ADInterstitialAd *)interstitialAd didFailWithError:(NSError *)error
 {
     self.iAdInterstitial = nil;
-    NSLog(@"4");
+    // NSLog(@"4");
 }
 
 // iAdインタースティシャル広告が閉じられた時に呼ばれる
 - (void)interstitialAdActionDidFinish:(ADInterstitialAd *)interstitialAd
 {
     self.iAdInterstitial = nil;
-    NSLog(@"5");
+    // NSLog(@"5");
 }
 
 
