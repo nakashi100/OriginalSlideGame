@@ -10,10 +10,12 @@
 #import <XCTest/XCTest.h>
 
 @interface originalSlideGameTests : XCTestCase
+//@interface MySlidePuzzleTests : XCTestCase
 
 @end
 
 @implementation originalSlideGameTests
+//@implementation MySlidePuzzleTests
 
 - (void)setUp {
     [super setUp];
