@@ -1,0 +1,51 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "191F2DA24073891FC429EC07991C4BE8B916169D+++06520B7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++7F70E67" : 0,
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++8597058" : 0,
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++E28C6E5" : 0,
+    "191F2DA24073891FC429EC07991C4BE8B916169D+++06520B7" : 0,
+    "550D6FB9D673019433D130AB7048D5FF23279B3D+++6B1E220" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "F00C222E-152E-405F-BF6F-55C114801967",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++7F70E67" : "OriginalSlideGameCLImageEditor",
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++8597058" : "OriginalSlideGameCLImageEditor",
+    "7E3BF325ACA24920B64880B6AEE703826780C2BC+++E28C6E5" : "OriginalSlideGame\/CLImageEditor\/",
+    "191F2DA24073891FC429EC07991C4BE8B916169D+++06520B7" : "OriginalSlideGame",
+    "550D6FB9D673019433D130AB7048D5FF23279B3D+++6B1E220" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MySlidePuzzle10",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MySlidePuzzle10.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nakashi100\/OriginalSlideGame.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "191F2DA24073891FC429EC07991C4BE8B916169D+++06520B7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nakashi100\/OriginalSlideGame.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "550D6FB9D673019433D130AB7048D5FF23279B3D+++6B1E220"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yackle\/CLImageEditor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E3BF325ACA24920B64880B6AEE703826780C2BC+++7F70E67"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yackle\/CLImageEditor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E3BF325ACA24920B64880B6AEE703826780C2BC+++8597058"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yackle\/CLImageEditor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E3BF325ACA24920B64880B6AEE703826780C2BC+++E28C6E5"
+    }
+  ]
+}
