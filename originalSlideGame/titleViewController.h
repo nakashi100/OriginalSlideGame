@@ -26,5 +26,4 @@
 
 @property (weak, nonatomic) IBOutlet ADBannerView *add_1;
 
-
 @end
