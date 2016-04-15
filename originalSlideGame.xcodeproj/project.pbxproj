@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EABB1761CC12962008F0B5F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABB1741CC12962008F0B5F /* Fabric.framework */; };
+		1EABB1771CC12962008F0B5F /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABB1751CC12962008F0B5F /* Answers.framework */; };
 		C400450D1A81B3CE0084F8FF /* headerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */; };
 		C41BC5901A84C3F500DC6B59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41BC58F1A84C3F500DC6B59 /* Images.xcassets */; };
 		C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41BC5911A84D1E300DC6B59 /* Social.framework */; };
@@ -98,6 +100,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EABB1741CC12962008F0B5F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		1EABB1751CC12962008F0B5F /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
 		C400450B1A81B3CE0084F8FF /* headerCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCollectionReusableView.h; sourceTree = "<group>"; };
 		C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCollectionReusableView.m; sourceTree = "<group>"; };
 		C41BC58F1A84C3F500DC6B59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -252,7 +256,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EABB1771CC12962008F0B5F /* Answers.framework in Frameworks */,
 				C47D05751A8B003500D06781 /* iAd.framework in Frameworks */,
+				1EABB1761CC12962008F0B5F /* Fabric.framework in Frameworks */,
 				C41C77271A860D2500824696 /* CoreText.framework in Frameworks */,
 				C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */,
 				C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */,
@@ -524,6 +530,8 @@
 				C4A9D4EE1A736D0900DA4AEA /* originalSlideGame */,
 				C4A9D50B1A736D0A00DA4AEA /* originalSlideGameTests */,
 				C4A9D4ED1A736D0900DA4AEA /* Products */,
+				1EABB1741CC12962008F0B5F /* Fabric.framework */,
+				1EABB1751CC12962008F0B5F /* Answers.framework */,
 				C47D05741A8B003500D06781 /* iAd.framework */,
 				C41C77261A860D2500824696 /* CoreText.framework */,
 				C41BC5911A84D1E300DC6B59 /* Social.framework */,
@@ -609,6 +617,7 @@
 				C4A9D4E81A736D0900DA4AEA /* Sources */,
 				C4A9D4E91A736D0900DA4AEA /* Frameworks */,
 				C4A9D4EA1A736D0900DA4AEA /* Resources */,
+				1EABB1731CC1286B008F0B5F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -699,6 +708,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EABB1731CC1286B008F0B5F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 456d53213cc64b7a439e8264644cf3705c538854 3f16a92deaf8df6d11a0f7220737e5930b4c00155abbfb467444a5f7639e458f";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4A9D4E81A736D0900DA4AEA /* Sources */ = {
@@ -890,6 +915,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = originalSlideGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -900,6 +929,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = originalSlideGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

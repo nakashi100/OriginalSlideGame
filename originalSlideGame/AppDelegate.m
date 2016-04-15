@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "FlatUIKit.h"
+#import "Fabric/Fabric.h"
+#import "Answers/Answers.h"
+
 
 @interface AppDelegate ()
 
@@ -21,6 +24,7 @@
     // UIナビゲーションバーのフォントを変更
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont boldFlatFontOfSize:17]} forState:UIControlStateNormal];
 
+    [Fabric with:@[[Answers class]]];
     
     return YES;
 }
