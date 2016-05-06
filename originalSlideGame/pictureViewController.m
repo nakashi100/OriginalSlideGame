@@ -27,13 +27,13 @@
     
     // Mopub
     // TODO: Replace this test id with your personal ad unit id
-    MPAdView* adView = [[MPAdView alloc] initWithAdUnitId:@"0fd404de447942edb7610228cb412614"
+    MPAdView* adView = [[MPAdView alloc] initWithAdUnitId:@"29563a19274e455aafea194624766952"
                                                      size:MOPUB_BANNER_SIZE];
     self.adView = adView;
     self.adView.delegate = self;
     
     // Positions the ad at the bottom, with the correct size
-    self.adView.frame = CGRectMake(0, self.view.bounds.size.height - MOPUB_BANNER_SIZE.height,
+    self.adView.frame = CGRectMake((self.view.bounds.size.width - MOPUB_BANNER_SIZE.width)/2, self.view.bounds.size.height - MOPUB_BANNER_SIZE.height,
                                    MOPUB_BANNER_SIZE.width, MOPUB_BANNER_SIZE.height);
     [self.view addSubview:self.adView];
     
