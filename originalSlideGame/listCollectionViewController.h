@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MoPub/MPAdView.h>
 
-@interface listCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+
+@interface listCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, MPAdViewDelegate>
 
 
 
@@ -21,5 +23,7 @@
 @property NSArray *hardFinalList;
 
 @property int pathNo; // リダイレクトされた際に受け取る
+
+@property (nonatomic, retain) MPAdView *adView; // Mopub
 
 @end

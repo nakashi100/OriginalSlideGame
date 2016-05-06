@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1EABB1761CC12962008F0B5F /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABB1741CC12962008F0B5F /* Fabric.framework */; };
 		1EABB1771CC12962008F0B5F /* Answers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EABB1751CC12962008F0B5F /* Answers.framework */; };
+		1EE43C8F1CD74EC1005DE7DC /* MoPub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE43C8D1CD74EC1005DE7DC /* MoPub.framework */; };
+		1EE43C901CD74EC1005DE7DC /* MoPub.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1EE43C8E1CD74EC1005DE7DC /* MoPub.bundle */; };
 		C400450D1A81B3CE0084F8FF /* headerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */; };
 		C41BC5901A84C3F500DC6B59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C41BC58F1A84C3F500DC6B59 /* Images.xcassets */; };
 		C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C41BC5911A84D1E300DC6B59 /* Social.framework */; };
@@ -102,6 +104,8 @@
 /* Begin PBXFileReference section */
 		1EABB1741CC12962008F0B5F /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1EABB1751CC12962008F0B5F /* Answers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Answers.framework; sourceTree = "<group>"; };
+		1EE43C8D1CD74EC1005DE7DC /* MoPub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MoPub.framework; sourceTree = "<group>"; };
+		1EE43C8E1CD74EC1005DE7DC /* MoPub.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MoPub.bundle; path = MoPub.framework/Versions/A/Resources/MoPub.bundle; sourceTree = "<group>"; };
 		C400450B1A81B3CE0084F8FF /* headerCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = headerCollectionReusableView.h; sourceTree = "<group>"; };
 		C400450C1A81B3CE0084F8FF /* headerCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = headerCollectionReusableView.m; sourceTree = "<group>"; };
 		C41BC58F1A84C3F500DC6B59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 				C41C77271A860D2500824696 /* CoreText.framework in Frameworks */,
 				C41BC5921A84D1E300DC6B59 /* Social.framework in Frameworks */,
 				C47865BE1A790E790090350E /* QuartzCore.framework in Frameworks */,
+				1EE43C8F1CD74EC1005DE7DC /* MoPub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +541,8 @@
 				C41C77261A860D2500824696 /* CoreText.framework */,
 				C41BC5911A84D1E300DC6B59 /* Social.framework */,
 				C47865BC1A790E480090350E /* QuartzCore.framework */,
+				1EE43C8D1CD74EC1005DE7DC /* MoPub.framework */,
+				1EE43C8E1CD74EC1005DE7DC /* MoPub.bundle */,
 			);
 			sourceTree = "<group>";
 		};
@@ -695,6 +702,7 @@
 				C4A9D4FE1A736D0A00DA4AEA /* Main.storyboard in Resources */,
 				C41C76E21A860BD600824696 /* flat-ui-icons-regular.ttf in Resources */,
 				C47118261B77A5270003B393 /* CLImageEditor.bundle in Resources */,
+				1EE43C901CD74EC1005DE7DC /* MoPub.bundle in Resources */,
 				C4A9D5031A736D0A00DA4AEA /* LaunchScreen.xib in Resources */,
 				C41C76E51A860BD600824696 /* Lato-Light.ttf in Resources */,
 			);

@@ -10,8 +10,10 @@
 #import <Social/Social.h>
 #import "FlatUIKit.h"
 #import <iAd/iAd.h>
+#import <MoPub/MPAdView.h>
 
-@interface playViewController : UIViewController <FUIAlertViewDelegate,ADBannerViewDelegate>
+
+@interface playViewController : UIViewController <FUIAlertViewDelegate, ADBannerViewDelegate, MPAdViewDelegate>
 - (IBAction)playButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 @property UIBarButtonItem *trashBtn; // 削除ボタン
@@ -96,5 +98,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *testBtn2;
 @property (weak, nonatomic) IBOutlet UIView *forHideView4;
 @property (weak, nonatomic) IBOutlet UILabel *bestTimeLabel;
+
+@property (nonatomic, retain) MPAdView *adView; // Mopub
 
 @end

@@ -10,8 +10,10 @@
 #import <Social/Social.h>
 #import "FlatUIKit.h"
 #import <iAd/iAd.h>
+#import <MoPub/MPAdView.h>
 
-@interface resultViewController : UIViewController <ADInterstitialAdDelegate>
+
+@interface resultViewController : UIViewController <ADInterstitialAdDelegate, MPAdViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *twitterImage;
 
@@ -30,5 +32,7 @@
 @property NSMutableArray *divPicturesData; // プレイ中のゲーム配列を受け取る
 @property int playingArrayCount; // プレイ中のゲーム配列の個数(10コor17コ)※リダイレクト先を変えるため
 @property ADInterstitialAd *iAdInterstitial;
+
+@property (nonatomic, retain) MPAdView *adView; // Mopub
 
 @end

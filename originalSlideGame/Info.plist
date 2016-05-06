@@ -32,6 +32,12 @@
 				<key>KitName</key>
 				<string>Answers</string>
 			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>MoPub</string>
+			</dict>
 		</array>
 	</dict>
 	<key>LSApplicationCategoryType</key>
@@ -58,5 +64,16 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+
+
+
+	    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+    </dict>
+
+
+
 </dict>
 </plist>

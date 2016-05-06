@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
 #import <iAd/iAd.h>
+#import <MoPub/MPAdView.h> // Mopub
 
-@interface titleViewController : UIViewController<ADBannerViewDelegate, ADInterstitialAdDelegate>
+
+@interface titleViewController : UIViewController<ADBannerViewDelegate, ADInterstitialAdDelegate, MPAdViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *appTitleLabel;
 @property (weak, nonatomic) IBOutlet FUIButton *playButton;
@@ -26,5 +28,6 @@
 
 @property (weak, nonatomic) IBOutlet ADBannerView *add_1;
 
+@property (nonatomic, retain) MPAdView *adView; // Mopub
 
 @end

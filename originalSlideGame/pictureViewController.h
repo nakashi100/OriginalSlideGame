@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "FlatUIKit.h"
 #import <iAd/iAd.h>
+#import <MoPub/MPAdView.h>
 
-@interface pictureViewController : UIViewController <FUIAlertViewDelegate>
+
+@interface pictureViewController : UIViewController <FUIAlertViewDelegate, MPAdViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *explainLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *displayPictureView;
@@ -39,5 +41,7 @@
 @property FUIAlertView *createAlertView;
 
 @property (weak, nonatomic) IBOutlet ADBannerView *add_1;
+
+@property (nonatomic, retain) MPAdView *adView; // Mopub
 
 @end
